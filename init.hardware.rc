@@ -706,6 +706,10 @@ on property:vendor.radio.sim_num.switch=2to1 && property:persist.radio.multisim.
 on property:persist.radio.multisim.config=dsds
     start vendor.qcrild2
 
+# Stop 2nd qcrild when the property set to empty string
+on property:persist.radio.multisim.config=
+    stop vendor.qcrild2
+
 # Write the dark theme magic to /misc partition.
 service vendor.theme_set /vendor/bin/misc_writer --set-dark-theme
     disabled
