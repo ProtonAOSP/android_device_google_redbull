@@ -589,7 +589,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 endif
 
 # Citadel
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     citadeld \
     citadel_updater \
     android.hardware.authsecret@1.0-service.citadel \
@@ -599,7 +599,7 @@ endif
     wait_for_strongbox
 
 # Citadel debug stuff
-#PRODUCT_PACKAGES_DEBUG += \
+PRODUCT_PACKAGES_DEBUG += \
     test_citadel
 
 # Storage: for factory reset protection feature
