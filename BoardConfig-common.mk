@@ -105,7 +105,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_ROOT_EXTRA_SYMLINKS := /vendor/lib/dsp:/dsp
 BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/persist:/persist
 
-#include device/google/redbull-sepolicy/redbull-sepolicy.mk
+include device/google/redbull-sepolicy/redbull-sepolicy.mk
 
 QCOM_BOARD_PLATFORMS += lito
 QC_PROP_ROOT := vendor/qcom/sm7250/proprietary
