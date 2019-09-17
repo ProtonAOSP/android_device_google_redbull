@@ -137,3 +137,8 @@ firmware_directories /vendor/firmware_mnt/image/
 
 # ABC PCIE DMA
 /dev/abc-pcie-dma         0666   cameraserver camera
+
+# fpc fingerprint
+/sys/devices/platform/soc/soc:fp_fpc*        irq               0600  system system
+/sys/devices/platform/soc/soc:fp_fpc*        wakeup_enable     0200  system system
+/sys/devices/platform/soc/soc:fp_fpc*        hw_reset          0600  system system
