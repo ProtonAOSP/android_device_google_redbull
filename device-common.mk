@@ -22,10 +22,6 @@ LOCAL_PATH := device/google/redbull
 PRODUCT_VENDOR_MOVE_ENABLED := true
 TARGET_BOARD_PLATFORM := lito
 
-# Enable keymaster 4.0
-KMGK_USE_QTI_SERVICE := true
-ENABLE_KM_4_0 := true
-
 PRODUCT_SOONG_NAMESPACES += \
     hardware/google/av \
     hardware/google/interfaces \
@@ -752,8 +748,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
--include hardware/qcom/sm7250/display/config/display-product.mk
-
 # Set Vendor SPL to match platform
 VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 
@@ -799,3 +793,18 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=50
 # MIDI feature
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
+
+
+#################################################################################
+# This is the End of device-common.mk file.
+# Now, Pickup other split device-common.mk files:
+#################################################################################
+
+# Display
+-include hardware/qcom/sm7250/display/config/display-product.mk
+
+# Security
+-include vendor/qcom/sm7250/proprietary/securemsm/config/keymaster_vendor_proprietary_board.mk
+-include vendor/qcom/sm7250/proprietary/securemsm/config/keymaster_vendor_proprietary_product.mk
+
+#################################################################################
