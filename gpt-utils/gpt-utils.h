@@ -81,8 +81,8 @@ extern "C" {
 #define PTN_XBL                         "xbl"
 #define PTN_SWAP_LIST                   PTN_XBL, \
             "abl", "aop", "devcfg", \
-            "dtbo", "hyp", "keymaster", "qupfw", "storsec", \
-            "tz", "vbmeta", "xbl_config"
+            "dtbo", "hyp", "keymaster", "qupfw", "tz", \
+            "uefisecapp", "vbmeta", "xbl_config", "featenabler"
 
 #define AB_PTN_LIST PTN_SWAP_LIST, "boot", "system", "vendor", "modem", "product"
 #define BOOT_DEV_DIR    "/dev/block/bootdevice/by-name"
