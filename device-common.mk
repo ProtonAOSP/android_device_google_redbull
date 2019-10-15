@@ -72,6 +72,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
+    $(LOCAL_PATH)/fstab.hardware:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.$(PRODUCT_PLATFORM) \
     $(LOCAL_PATH)/fstab.hardware:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(PRODUCT_PLATFORM) \
     $(LOCAL_PATH)/fstab.persist:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.persist \
     $(LOCAL_PATH)/init.hardware.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.$(PRODUCT_PLATFORM).rc \
@@ -703,6 +704,9 @@ PRODUCT_PACKAGES += \
 # Reliability reporting
 PRODUCT_PACKAGES += \
     pixelstats-vendor
+
+# dynamic partition
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # fastbootd
 PRODUCT_PACKAGES += \
