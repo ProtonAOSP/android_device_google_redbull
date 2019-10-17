@@ -250,7 +250,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.paneltype=2 \
     ro.vendor.display.sensortype=2 \
     vendor.display.foss.config=1 \
-    vendor.display.foss.config_path=/vendor/etc/FOSSConfig.xml
+    vendor.display.foss.config_path=/vendor/etc/FOSSConfig.xml \
+    vendor.display.enable_async_powermode=0
 
 # camera google face detection
 PRODUCT_PROPERTY_OVERRIDES += \
