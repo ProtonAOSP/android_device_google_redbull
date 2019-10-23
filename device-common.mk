@@ -831,6 +831,7 @@ PRODUCT_COPY_FILES += \
 
 # Display
 -include hardware/qcom/sm7250/display/config/display-product.mk
+-include vendor/qcom/sm7250/proprietary/display/config/display-product-proprietary.mk
 
 # Security
 -include vendor/qcom/sm7250/proprietary/securemsm/config/keymaster_vendor_proprietary_board.mk
