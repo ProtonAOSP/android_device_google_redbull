@@ -390,11 +390,17 @@ PRODUCT_PACKAGES += \
     camera.lito \
     libgooglecamerahal \
     libgooglecamerahwl_impl \
-    libgoogle_camera_hal_tests \
     libqomx_core \
     libmmjpeg_interface \
     libmmcamera_interface \
     libcameradepthcalibrator
+
+# Google Camera HAL test libraries in debug builds
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+PRODUCT_PACKAGES += \
+    libgoogle_camera_hal_proprietary_tests \
+    libgoogle_camera_hal_tests
+endif
 
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.0-impl \
