@@ -64,7 +64,7 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.display.color</name>
-        <version>1.0-4</version>
+        <version>1.0-5</version>
         <interface>
              <name>IDisplayColor</name>
              <instance>default</instance>
@@ -72,10 +72,18 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.display.config</name>
-        <version>1.0-9</version>
+        <version>1.0-10</version>
         <interface>
             <name>IDisplayConfig</name>
             <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.display.postproc</name>
+        <version>1.0</version>
+        <interface>
+             <name>IDisplayPostproc</name>
+             <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -182,6 +190,7 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.display.allocator</name>
+        <version>1.0</version>
         <version>3.0</version>
         <interface>
             <name>IQtiAllocator</name>
@@ -190,6 +199,7 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.display.mapper</name>
+        <version>2.0</version>
         <version>3.0</version>
         <interface>
             <name>IQtiMapper</name>
@@ -201,6 +211,14 @@
         <version>1.0</version>
         <interface>
             <name>IQtiMapperExtensions</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.display.composer</name>
+        <version>2.0</version>
+        <interface>
+            <name>IQtiComposer</name>
             <instance>default</instance>
         </interface>
     </hal>
