@@ -105,6 +105,7 @@ QC_PROP_ROOT := vendor/qcom/sm7250/proprietary
 QC_PROP_PATH := $(QC_PROP_ROOT)
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BOARD_HAVE_QCOM_FM := false
+BOARD_USE_QTI_BT_SAR := true
 BOARD_USES_COMMON_BLUETOOTH_HAL := true
 
 # Camera
