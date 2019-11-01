@@ -41,14 +41,13 @@
         <param enable_failure_detection="false" />
         <param support_device_switch="false" />
         <param transit_to_non_lpi_on_battery_charging="false" />
+        <param concurrent_capture="true" />
+        <param transit_to_adsp_on_playback="true" />
         <!-- Below backend params must match with port used in mixer path file -->
         <!-- param used to configure backend sample rate, format and channels -->
-        <param backend_port_name="VA_CDC_DMA_TX_0" />
+        <param backend_port_name="PRI_TDM_TX_0" />
         <!-- Param used to match and obtain device backend index -->
-        <param backend_dai_name="VA_CDC_DMA_TX_0" />
-        <!-- Param used to indicate if SVA has dedicated SLIM ports -->
-        <param dedicated_sva_path="true" />
-        <param platform_lpi_enable="true" />
+        <param backend_dai_name="PRI_TDM_TX_0" />
     </common_config>
     <acdb_ids>
         <param DEVICE_HANDSET_MIC_APE="100" />
@@ -222,7 +221,7 @@
             <param fluence_type="NONE" />
             <param execution_mode="ADSP" />
             <param app_type="3" /> <!-- app type used in ACDB -->
-            <param in_channels="1"/> <!-- Module input channels -->
+            <param in_channels="2"/> <!-- Module input channels -->
             <param load_sound_model_ids="0x18000001, 0x0, 0x00012C14" />
             <param unload_sound_model_ids="0x18000001, 0x0, 0x00012C15" />
             <param confidence_levels_ids="0x18000001, 0x0, 0x00012C07" />
@@ -275,13 +274,13 @@
             <param fluence_type="NONE" />
             <param execution_mode="ADSP" />
             <param app_type="3" /> <!-- app type used in ACDB -->
-            <param in_channels="1"/> <!-- Module input channels -->
-            <param load_sound_model_ids="0x18000001, 0x0, 0x00012C14" />
-            <param unload_sound_model_ids="0x18000001, 0x0, 0x00012C15" />
-            <param confidence_levels_ids="0x18000001, 0x0, 0x00012C07" />
-            <param operation_mode_ids="0x18000001, 0x0, 0x00012C02" />
-            <param polling_enable_ids="0x18000001, 0x0, 0x00012C1B" />
-            <param custom_config_ids="0x18000001, 0x0, 0x00012C20" />
+            <param in_channels="2"/> <!-- Module input channels -->
+            <param load_sound_model_ids="0x18100000, 0x0, 0x00012C14" />
+            <param unload_sound_model_ids="0x18100000, 0x0, 0x00012C15" />
+            <param confidence_levels_ids="0x18100000, 0x0, 0x00012C07" />
+            <param operation_mode_ids="0x18100000, 0x0, 0x00012C02" />
+            <param polling_enable_ids="0x18100000, 0x0, 0x00012C1B" />
+            <param custom_config_ids="0x18100000, 0x0, 0x00012C20" />
         </lsm_usecase>
         <lsm_usecase>
             <param capture_device="HEADSET" />
@@ -289,13 +288,13 @@
             <param fluence_type="NONE" />
             <param execution_mode="ADSP" />
             <param app_type="3" /> <!-- app type used in ACDB -->
-            <param in_channels="1"/> <!-- Module input channels -->
-            <param load_sound_model_ids="0x18000001, 0x0, 0x00012C14" />
-            <param unload_sound_model_ids="0x18000001, 0x0, 0x00012C15" />
-            <param confidence_levels_ids="0x18000001, 0x0, 0x00012C07" />
-            <param operation_mode_ids="0x18000001, 0x0, 0x00012C02" />
-            <param polling_enable_ids="0x18000001, 0x0, 0x00012C1B" />
-            <param custom_config_ids="0x18000001, 0x0, 0x00012C20" />
+            <param in_channels="2"/> <!-- Module input channels -->
+            <param load_sound_model_ids="0x18100000, 0x0, 0x00012C14" />
+            <param unload_sound_model_ids="0x18100000, 0x0, 0x00012C15" />
+            <param confidence_levels_ids="0x18100000, 0x0, 0x00012C07" />
+            <param operation_mode_ids="0x18100000, 0x0, 0x00012C02" />
+            <param polling_enable_ids="0x18100000, 0x0, 0x00012C1B" />
+            <param custom_config_ids="0x18100000, 0x0, 0x00012C20" />
         </lsm_usecase>
 
         <!-- format: "ADPCM_packet" or "PCM_packet" !-->
