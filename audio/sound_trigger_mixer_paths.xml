@@ -28,6 +28,14 @@
 
 <mixer>
     <!-- These are the initial mixer settings -->
+    <ctl name="LSM1 Mixer PRI_TDM_TX_0" value="0" />
+    <ctl name="LSM2 Mixer PRI_TDM_TX_0" value="0" />
+    <ctl name="LSM3 Mixer PRI_TDM_TX_0" value="0" />
+    <ctl name="LSM4 Mixer PRI_TDM_TX_0" value="0" />
+    <ctl name="LSM5 Mixer PRI_TDM_TX_0" value="0" />
+    <ctl name="LSM6 Mixer PRI_TDM_TX_0" value="0" />
+    <ctl name="LSM7 Mixer PRI_TDM_TX_0" value="0" />
+    <ctl name="LSM8 Mixer PRI_TDM_TX_0" value="0" />
     <ctl name="LSM1 Mixer VA_CDC_DMA_TX_0" value="0" />
     <ctl name="LSM2 Mixer VA_CDC_DMA_TX_0" value="0" />
     <ctl name="LSM3 Mixer VA_CDC_DMA_TX_0" value="0" />
@@ -81,37 +89,58 @@
     <ctl name="EC Reference Channels" value="Zero"/>
     <ctl name="EC Reference Bit Format" value="0"/>
     <ctl name="EC Reference SampleRate" value="0"/>
+    <ctl name="PRI_TDM_TX_0 LSM Function" value="None" />
+    <ctl name="PRI_TDM_TX_0 Channels" value="One" />
+    <ctl name="Sto1 ADC MIXL DMIC Switch" value="1" />
+    <ctl name="Sto2 ADC MIXL DMIC Switch" value="1" />
+    <ctl name="Sto2 ADC MIXR DMIC Switch" value="1" />
 
     <path name="listen-voice-wakeup-1">
-        <ctl name="LSM1 Mixer VA_CDC_DMA_TX_0" value="1" />
+        <ctl name="PRI_TDM_TX_0 LSM Function" value="AUDIO" />
+        <ctl name="LSM1 Port" value="PRI_TDM_TX_0" />
+        <ctl name="LSM1 Mixer PRI_TDM_TX_0" value="1" />
     </path>
 
     <path name="listen-voice-wakeup-2">
-        <ctl name="LSM2 Mixer VA_CDC_DMA_TX_0" value="1" />
+        <ctl name="PRI_TDM_TX_0 LSM Function" value="AUDIO" />
+        <ctl name="LSM2 Port" value="PRI_TDM_TX_0" />
+        <ctl name="LSM2 Mixer PRI_TDM_TX_0" value="1" />
     </path>
 
     <path name="listen-voice-wakeup-3">
-        <ctl name="LSM3 Mixer VA_CDC_DMA_TX_0" value="1" />
+        <ctl name="PRI_TDM_TX_0 LSM Function" value="AUDIO" />
+        <ctl name="LSM3 Port" value="PRI_TDM_TX_0" />
+        <ctl name="LSM3 Mixer PRI_TDM_TX_0" value="1" />
     </path>
 
     <path name="listen-voice-wakeup-4">
-        <ctl name="LSM4 Mixer VA_CDC_DMA_TX_0" value="1" />
+        <ctl name="PRI_TDM_TX_0 LSM Function" value="AUDIO" />
+        <ctl name="LSM4 Port" value="PRI_TDM_TX_0" />
+        <ctl name="LSM4 Mixer PRI_TDM_TX_0" value="1" />
     </path>
 
     <path name="listen-voice-wakeup-5">
-        <ctl name="LSM5 Mixer VA_CDC_DMA_TX_0" value="1" />
+        <ctl name="PRI_TDM_TX_0 LSM Function" value="AUDIO" />
+        <ctl name="LSM5 Port" value="PRI_TDM_TX_0" />
+        <ctl name="LSM5 Mixer PRI_TDM_TX_0" value="1" />
     </path>
 
     <path name="listen-voice-wakeup-6">
-        <ctl name="LSM6 Mixer VA_CDC_DMA_TX_0" value="1" />
+        <ctl name="PRI_TDM_TX_0 LSM Function" value="AUDIO" />
+        <ctl name="LSM6 Port" value="PRI_TDM_TX_0" />
+        <ctl name="LSM6 Mixer PRI_TDM_TX_0" value="1" />
     </path>
 
     <path name="listen-voice-wakeup-7">
-        <ctl name="LSM7 Mixer VA_CDC_DMA_TX_0" value="1" />
+        <ctl name="PRI_TDM_TX_0 LSM Function" value="AUDIO" />
+        <ctl name="LSM7 Port" value="PRI_TDM_TX_0" />
+        <ctl name="LSM7 Mixer PRI_TDM_TX_0" value="1" />
     </path>
 
     <path name="listen-voice-wakeup-8">
-        <ctl name="LSM8 Mixer VA_CDC_DMA_TX_0" value="1" />
+        <ctl name="PRI_TDM_TX_0 LSM Function" value="AUDIO" />
+        <ctl name="LSM8 Port" value="PRI_TDM_TX_0" />
+        <ctl name="LSM8 Mixer PRI_TDM_TX_0" value="1" />
     </path>
 
     <path name="listen-voice-wakeup-1 preproc">
@@ -147,35 +176,35 @@
     </path>
 
     <path name="listen-voice-wakeup-1 port">
-        <ctl name="LSM1 Port" value="VA_CDC_DMA_TX_0" />
+        <ctl name="LSM1 Port" value="PRI_TDM_TX_0" />
     </path>
 
     <path name="listen-voice-wakeup-2 port">
-        <ctl name="LSM2 Port" value="VA_CDC_DMA_TX_0" />
+        <ctl name="LSM2 Port" value="PRI_TDM_TX_0" />
     </path>
 
     <path name="listen-voice-wakeup-3 port">
-        <ctl name="LSM3 Port" value="VA_CDC_DMA_TX_0" />
+        <ctl name="LSM3 Port" value="PRI_TDM_TX_0" />
     </path>
 
     <path name="listen-voice-wakeup-4 port">
-        <ctl name="LSM4 Port" value="VA_CDC_DMA_TX_0" />
+        <ctl name="LSM4 Port" value="PRI_TDM_TX_0" />
     </path>
 
     <path name="listen-voice-wakeup-5 port">
-        <ctl name="LSM5 Port" value="VA_CDC_DMA_TX_0" />
+        <ctl name="LSM5 Port" value="PRI_TDM_TX_0" />
     </path>
 
     <path name="listen-voice-wakeup-6 port">
-        <ctl name="LSM6 Port" value="VA_CDC_DMA_TX_0" />
+        <ctl name="LSM6 Port" value="PRI_TDM_TX_0" />
     </path>
 
     <path name="listen-voice-wakeup-7 port">
-        <ctl name="LSM7 Port" value="VA_CDC_DMA_TX_0" />
+        <ctl name="LSM7 Port" value="PRI_TDM_TX_0" />
     </path>
 
     <path name="listen-voice-wakeup-8 port">
-        <ctl name="LSM8 Port" value="VA_CDC_DMA_TX_0" />
+        <ctl name="LSM8 Port" value="PRI_TDM_TX_0" />
     </path>
 
     <path name="listen-voice-wakeup-1 preproc port">
@@ -211,36 +240,21 @@
     </path>
 
     <path name="listen-ape-handset-mic">
-        <ctl name="VA_AIF1_CAP Mixer DEC0" value="1" />
-        <ctl name="VA DEC0 MUX" value="MSM_DMIC" />
-        <ctl name="VA DMIC MUX0" value="DMIC4" />
-    </path>
-
-    <path name="listen-ape-handset-mic-preproc">
-        <path name="listen-ape-handset-mic" />
+        <ctl name="ADC1 Capture Volume" value="45" />
+        <ctl name="ADC2 Capture Volume" value="45" />
+        <ctl name="PRI_TDM_TX_0 Channels" value="One" />
     </path>
 
     <path name="listen-ape-handset-dmic">
-        <ctl name="VA_CDC_DMA_TX_0 Channels" value="Two" />
-        <ctl name="VA_AIF1_CAP Mixer DEC0" value="1" />
-        <ctl name="VA_AIF1_CAP Mixer DEC1" value="1" />
-        <ctl name="VA DEC0 MUX" value="MSM_DMIC" />
-        <ctl name="VA DEC1 MUX" value="MSM_DMIC" />
-        <ctl name="VA DMIC MUX0" value="DMIC4" />
-        <ctl name="VA DMIC MUX1" value="DMIC0" />
+        <ctl name="ADC1 Capture Volume" value="45"/>
+        <ctl name="ADC2 Capture Volume" value="45"/>
+        <ctl name="PRI_TDM_TX_0 Channels" value="Two"/>
     </path>
 
     <path name="listen-ape-handset-tmic">
-        <ctl name="VA_CDC_DMA_TX_0 Channels" value="Three" />
-        <ctl name="VA_AIF1_CAP Mixer DEC0" value="1" />
-        <ctl name="VA_AIF1_CAP Mixer DEC1" value="1" />
-        <ctl name="VA_AIF1_CAP Mixer DEC2" value="1" />
-        <ctl name="VA DEC0 MUX" value="MSM_DMIC" />
-        <ctl name="VA DEC1 MUX" value="MSM_DMIC" />
-        <ctl name="VA DEC2 MUX" value="MSM_DMIC" />
-        <ctl name="VA DMIC MUX0" value="DMIC4" />
-        <ctl name="VA DMIC MUX1" value="DMIC0" />
-        <ctl name="VA DMIC MUX2" value="DMIC1" />
+        <ctl name="ADC1 Capture Volume" value="45" />
+        <ctl name="ADC2 Capture Volume" value="45" />
+        <ctl name="PRI_TDM_TX_0 Channels" value="Three" />
     </path>
 
     <path name="listen-ape-handset-qmic">
@@ -269,7 +283,7 @@
     </path>
 
     <path name="echo-reference">
-        <ctl name="AUDIO_REF_EC_UL1 MUX" value="WSA_CDC_DMA_RX_0"/>
+        <ctl name="AUDIO_REF_EC_UL1 MUX" value="QUIN_TDM_TX_0"/>
         <ctl name="EC Reference Channels" value="Two"/>
         <ctl name="EC Reference Bit Format" value="S16_LE"/>
         <ctl name="EC Reference SampleRate" value="48000"/>
