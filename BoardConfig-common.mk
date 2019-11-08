@@ -65,7 +65,8 @@ AB_OTA_PARTITIONS += \
     vbmeta \
     dtbo \
     product \
-    vbmeta_system
+    vbmeta_system \
+    system_ext
 
 # Partitions (listed in the file) to be wiped under recovery.
 TARGET_RECOVERY_WIPE := device/google/redbull/recovery.wipe
@@ -205,7 +206,8 @@ BOARD_SUPER_PARTITION_GROUPS := google_dynamic_partitions
 BOARD_GOOGLE_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     system \
     vendor \
-    product
+    product \
+    system_ext
 
 #BOARD_GOOGLE_DYNAMIC_PARTITIONS_SIZE is set to BOARD_SUPER_PARTITION_SIZE / 2 - 4MB
 BOARD_GOOGLE_DYNAMIC_PARTITIONS_SIZE := 4873781248
