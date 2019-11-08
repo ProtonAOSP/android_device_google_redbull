@@ -24,6 +24,7 @@ TARGET_BOARD_PLATFORM := lito
 
 PRODUCT_SOONG_NAMESPACES += \
     hardware/google/av \
+    hardware/google/camera \
     hardware/google/interfaces \
     hardware/google/pixel \
     device/google/redbull \
@@ -394,7 +395,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl-google \
     android.hardware.camera.provider@2.4-service-google \
     camera.lito \
-    libgooglecamerahal \
     libgooglecamerahwl_impl \
     libqomx_core \
     libmmjpeg_interface \
@@ -402,11 +402,9 @@ PRODUCT_PACKAGES += \
     libcameradepthcalibrator
 
 # Google Camera HAL test libraries in debug builds
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES_DEBUG += \
     libgoogle_camera_hal_proprietary_tests \
-    libgoogle_camera_hal_tests
-endif
+    libgoogle_camera_hal_tests.vendor
 
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.0-impl \
