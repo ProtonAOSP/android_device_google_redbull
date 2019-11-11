@@ -548,7 +548,11 @@ PRODUCT_COPY_FILES += \
     device/google/redbull/audio/rt5514_dsp_fw1.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/rt5514_dsp_fw1.bin \
     device/google/redbull/audio/rt5514_dsp_fw2.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/rt5514_dsp_fw2.bin \
     device/google/redbull/audio/rt5514_dsp_fw3.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/rt5514_dsp_fw3.bin \
-    device/google/redbull/audio/rt5514_dsp_fw4.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/rt5514_dsp_fw4.bin
+    device/google/redbull/audio/rt5514_dsp_fw4.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/rt5514_dsp_fw4.bin \
+    device/google/redbull/audio/rt5514p_dsp_fw1.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/rt5514p_dsp_fw1.bin \
+    device/google/redbull/audio/rt5514p_dsp_fw2.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/rt5514p_dsp_fw2.bin \
+    device/google/redbull/audio/rt5514p_dsp_fw3.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/rt5514p_dsp_fw3.bin \
+    device/google/redbull/audio/rt5514p_dsp_fw4.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/rt5514p_dsp_fw4.bin
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
