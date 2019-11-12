@@ -37,8 +37,6 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/sm7250 \
     vendor/google/interfaces
 
-DEVICE_USES_SM8150_DIAG_HAL := true
-
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true
 
