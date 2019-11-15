@@ -267,10 +267,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.managebuffer.enable=0
 
-# camera HAL HDR+
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.hdrplus.disable=1
-
 # Lets the vendor library that Google Camera HWL is enabled
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.google_hwl.enabled=true \
