@@ -47,7 +47,6 @@ on early-fs
 on init && property:vendor.skip.init=0
     # Disable UFS powersaving
     write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkgate_enable 0
-    write /sys/devices/platform/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 0
 
     # Disable powersaving
     write /sys/module/lpm_levels/parameters/sleep_disabled 1
@@ -351,13 +350,13 @@ on early-boot
 
     # Permission for Pixelstats
     chown system system /sys/class/misc/msm_cirrus_playback/resistance_left_right
-    chown system system /sys/devices/platform/soc/1d84000.ufshc/slowio_read_cnt
-    chown system system /sys/devices/platform/soc/1d84000.ufshc/slowio_write_cnt
-    chown system system /sys/devices/platform/soc/1d84000.ufshc/slowio_unmap_cnt
-    chown system system /sys/devices/platform/soc/1d84000.ufshc/slowio_sync_cnt
+    chown system system /sys/devices/platform/soc/${ro.boot.bootdevice}/slowio_read_cnt
+    chown system system /sys/devices/platform/soc/${ro.boot.bootdevice}/slowio_write_cnt
+    chown system system /sys/devices/platform/soc/${ro.boot.bootdevice}/slowio_unmap_cnt
+    chown system system /sys/devices/platform/soc/${ro.boot.bootdevice}/slowio_sync_cnt
 
     # Permission for Health Storage HAL
-    chown system system /sys/devices/platform/soc/1d84000.ufshc/manual_gc
+    chown system system /sys/devices/platform/soc/${ro.boot.bootdevice}/manual_gc
 
     # Permissions for reading display native color gamut
     chown system graphics /mnt/vendor/persist/display/native_gamut.csv
@@ -394,7 +393,6 @@ on charger
 
     # Enable UFS powersaving
     write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkgate_enable 1
-    write /sys/devices/platform/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 1
 
     # Enable EAS
     write /sys/kernel/debug/sched_features ENERGY_AWARE
@@ -411,7 +409,6 @@ on property:sys.boot_completed=1
 
     # Enable UFS powersaving
     write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkgate_enable 1
-    write /sys/devices/platform/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 1
 
     # Enable powersaving
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
@@ -440,13 +437,6 @@ on property:sys.boot_completed=1
     write /dev/blkio/background/blkio.weight 10
     write /dev/blkio/blkio.group_idle 2000
     write /dev/blkio/background/blkio.group_idle 0
-
-    # UFS health
-    chmod 755 /sys/kernel/debug/ufshcd0
-    chmod 644 /sys/kernel/debug/ufshcd0/show_hba
-    chmod 644 /sys/kernel/debug/ufshcd0/stats/err_stats
-    chmod 644 /sys/kernel/debug/ufshcd0/stats/io_stats
-    chmod 644 /sys/kernel/debug/ufshcd0/stats/req_stats
 
     # HardwareInfo needs to be able to read display info
     chmod 444 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/panel_info/panel0/serial_number
