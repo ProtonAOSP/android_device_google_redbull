@@ -37,13 +37,13 @@
                    channels="1" />
         </EncoderProfile>
 
-        <!-- high: 3840 x 2160 60fps 72.0 Mbps -->
+        <!-- high: 3840 x 2160 30fps -->
         <EncoderProfile quality="high" fileFormat="mp4" duration="30">
             <Video codec="h264"
-                   bitRate="72000000"
+                   bitRate="48000000"
                    width="3840"
                    height="2160"
-                   frameRate="60" />
+                   frameRate="30" />
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
@@ -128,13 +128,13 @@
                    channels="1" />
         </EncoderProfile>
 
-        <!-- 2160p: 3840 x 2160 60fps 72.0 Mbps -->
+        <!-- 2160p: 3840 x 2160 30fps -->
         <EncoderProfile quality="2160p" fileFormat="mp4" duration="30">
             <Video codec="h264"
-                   bitRate="72000000"
+                   bitRate="48000000"
                    width="3840"
                    height="2160"
-                   frameRate="60" />
+                   frameRate="30" />
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
@@ -971,7 +971,7 @@
         minBitRate="64000" maxBitRate="100000000"
         minFrameWidth="176" maxFrameWidth="3840"
         minFrameHeight="144" maxFrameHeight="2160"
-        minFrameRate="15" maxFrameRate="60" />
+        minFrameRate="15" maxFrameRate="30" />
 
     <VideoEncoderCap name="h263" enabled="true"
         minBitRate="64000" maxBitRate="2000000"
