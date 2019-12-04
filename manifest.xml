@@ -199,6 +199,17 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <fqname>@1.1::IGnss/default</fqname>
         <fqname>@2.0::IGnss/default</fqname>
     </hal>
+    <!-- iwlan -->
+    <hal format="hidl">
+        <name>vendor.qti.hardware.data.iwlan</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IIWlan</name>
+            <instance>slot1</instance>
+            <instance>slot2</instance>
+        </interface>
+    </hal>
     <!-- qcrilhook -->
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.qcrilhook</name>
