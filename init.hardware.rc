@@ -690,6 +690,10 @@ service bugreport /system/bin/dumpstate -d -p -z
     keycodes 114 115 116
 
 # DSDS feature
+# Set to Dual-sim mode based on CDT setting
+on property:ro.boot.hardware.dsds=1
+    setprop persist.radio.multisim.config dsds
+
 # Enable 2nd qcrild when the property set to dsds
 on property:persist.radio.multisim.config=dsds
     start vendor.qcrild2
