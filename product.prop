@@ -10,8 +10,8 @@ persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 DEVICE_PROVISIONED=1
 
-# Set network mode to Global by default and no DSDS/DSDA
-ro.telephony.default_network=10
+# Set network mode to Global (NR 5G, LTE, CDMA, EvDo, GSM and WCDMA) by default and no DSDS/DSDA
+ro.telephony.default_network=27
 
 debug.sf.hw=1
 debug.gralloc.enable_fb_ubwc=1
