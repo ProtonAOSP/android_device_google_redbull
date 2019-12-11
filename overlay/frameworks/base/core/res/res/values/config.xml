@@ -162,12 +162,6 @@
     <!-- Mask to use when checking skb mark defined in config_networkWakeupPacketMark above. -->
     <integer name="config_networkWakeupPacketMask">0x80000000</integer>
 
-    <!-- ImsService package name to bind to by default, if config_dynamic_bind_ims is true -->
-    <string name="config_ims_package">org.codeaurora.ims</string>
-
-    <!-- Flag specifying whether or not IMS will use the ImsResolver dynamically -->
-    <bool name="config_dynamic_bind_ims">true</bool>
-
     <!-- Specifies whether to decouple the auto-suspend state of the device from the display on/off state. -->
     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
 
