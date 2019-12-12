@@ -757,10 +757,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     vendor.skip.init=0
 
-# Oslo feature flag
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.vendor.aware_available=true
-
 QTI_TELEPHONY_UTILS := qti-telephony-utils
 QTI_TELEPHONY_UTILS += qti_telephony_utils.xml
 PRODUCT_PACKAGES += $(QTI_TELEPHONY_UTILS)
