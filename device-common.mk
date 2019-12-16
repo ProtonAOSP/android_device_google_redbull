@@ -437,7 +437,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libgps.utils \
     libgnss \
+    libloc_core \
     liblocation_api \
+    libbatching \
+    libgeofencing \
     android.hardware.gnss@2.0-impl-qti \
     android.hardware.gnss@2.0-service-qti
 
