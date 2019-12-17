@@ -389,6 +389,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl-google \
     android.hardware.camera.provider@2.4-service-google \
     camera.lito \
+    lib_multicam_dualfov_capture_session \
     libgooglecamerahwl_impl \
     libqomx_core \
     libmmjpeg_interface \
