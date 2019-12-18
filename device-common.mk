@@ -54,7 +54,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.verified_boot.xml
 
 PRODUCT_PACKAGES += \
-    messaging
+    messaging \
+    dmabuf_dump
 
 TARGET_PRODUCT_PROP := $(LOCAL_PATH)/product.prop
 
