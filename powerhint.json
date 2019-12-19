@@ -93,7 +93,7 @@
       "Name": "GPUBusMinFreq",
       "Path": "/sys/class/devfreq/soc:qcom,gpubw/min_freq",
       "Values": [
-        "6881",
+        "7980",
         "5931",
         "3879",
         "0"
@@ -185,7 +185,7 @@
       "Name": "CPUBWMinFreq",
       "Path": "/sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/min_freq",
       "Values": [
-        "14236",
+        "16265",
         "9155",
         "2288"
       ],
@@ -195,7 +195,7 @@
       "Name": "LLCCBWMinFreq",
       "Path": "/sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/min_freq",
       "Values": [
-        "6881",
+        "7980",
         "2597",
         "762"
       ],
@@ -403,7 +403,7 @@
       "PowerHint": "LAUNCH",
       "Node": "CPUBWMinFreq",
       "Duration": 5000,
-      "Value": "14236"
+      "Value": "16265"
     },
     {
       "PowerHint": "LAUNCH",
@@ -427,7 +427,7 @@
       "PowerHint": "LAUNCH",
       "Node": "LLCCBWMinFreq",
       "Duration": 5000,
-      "Value": "6881"
+      "Value": "7980"
     },
     {
       "PowerHint": "LAUNCH",
