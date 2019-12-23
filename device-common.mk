@@ -17,6 +17,8 @@
 # define hardware platform
 PRODUCT_PLATFORM := sm7250
 
+PRODUCT_CHECK_ELF_FILES := true
+
 LOCAL_PATH := device/google/redbull
 
 PRODUCT_VENDOR_MOVE_ENABLED := true
