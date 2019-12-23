@@ -709,6 +709,12 @@ ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
       persist.vendor.usb.usbradio.config=diag
 endif
 
+# Default app/sf phase offset
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.vsync_event_phase_offset_ns=2000000
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
+
 # Early phase offset configuration for SurfaceFlinger (b/75985430)
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.early_phase_offset_ns=500000
@@ -838,7 +844,6 @@ PRODUCT_PROPERTY_OVERRIDES += vendor.audio.mic_break=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.use_color_management=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.has_wide_color_display=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.has_HDR_display=true
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=50
 
 # MIDI feature
 PRODUCT_COPY_FILES += \
