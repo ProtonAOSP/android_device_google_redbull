@@ -318,10 +318,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
-# Health HAL
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-service
-
 # Light HAL
 PRODUCT_PACKAGES += \
     lights.lito \
