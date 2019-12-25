@@ -267,7 +267,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.sensortype=2 \
     vendor.display.foss.config=1 \
     vendor.display.foss.config_path=/vendor/etc/FOSSConfig.xml \
-    vendor.display.enable_async_powermode=0
+    vendor.display.enable_async_powermode=0 \
+    vendor.display.qdcm.mode_combine=1
 
 # camera google face detection
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -671,11 +672,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_cdma_sub=0
 
-# Set display color mode to Boosted by default
+# Set display color mode to Adaptive by default
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.sf.color_saturation=1.1 \
-    persist.sys.sf.native_mode=0 \
-    persist.sys.sf.color_mode=0
+    persist.sys.sf.color_saturation=1.0 \
+    persist.sys.sf.native_mode=2 \
+    persist.sys.sf.color_mode=9
 
 # Keymaster configuration
 PRODUCT_COPY_FILES += \
@@ -846,6 +847,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.use_color_management=tr
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.has_wide_color_display=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.has_HDR_display=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=50
+
+# Must align with HAL types Dataspace
+# The data space of wide color gamut composition preference is Dataspace::DISPLAY_P3
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.wcg_composition_dataspace=143261696
 
 # MIDI feature
 PRODUCT_COPY_FILES += \
