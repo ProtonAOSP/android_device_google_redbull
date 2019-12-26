@@ -375,6 +375,9 @@ on boot
     setprop wifi.interface wlan0
 
     chown system system /sys/kernel/hbtp/display_pwr
+
+    start init-modem-sh
+
     start rmt_storage
     start rfs_access
 
@@ -386,6 +389,12 @@ on boot
 
 service init-radio-sh /vendor/bin/init.radio.sh
     class late_start
+    user radio
+    group root radio
+    oneshot
+
+service init-modem-sh /vendor/bin/init.modem.sh
+    class core
     user radio
     group root radio
     oneshot
