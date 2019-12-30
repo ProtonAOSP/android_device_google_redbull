@@ -14,7 +14,13 @@
 # limitations under the License.
 #
 
-on property:sys.boot_completed=1
+on property:vendor.setup.power=1
+    # Enable EAS
+    write /sys/kernel/debug/sched_features ENERGY_AWARE
+
+    # Enable suspend clock reporting
+    write /sys/kernel/debug/clk/debug_suspend 1
+
     # Enable bus-dcvs
     write /sys/devices/platform/soc/soc:qcom,cpu-cpu-llcc-bw/devfreq/soc:qcom,cpu-cpu-llcc-bw/governor bw_hwmon
     write /sys/devices/platform/soc/soc:qcom,cpu-cpu-llcc-bw/devfreq/soc:qcom,cpu-cpu-llcc-bw/polling_interval 50
@@ -125,8 +131,12 @@ on property:sys.boot_completed=1
     #Enable cdspl3 governor for L3 cdsp nodes
     write /sys/devices/platform/soc/18321000.qcom,devfreq-l3/18321000.qcom,devfreq-l3:qcom,cdsp-cdsp-l3-lat/devfreq/18321000.qcom,devfreq-l3:qcom,cdsp-cdsp-l3-lat/governor cdspl3
 
-    # Turn on sleep modes
+    # Enable powersaving
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
+
+    # Enable UFS powersaving
+    write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkgate_enable 1
+    write /sys/devices/platform/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 1
 
     # Enable idle state listener
     write /sys/class/drm/card0/device/idle_encoder_mask 1
@@ -135,8 +145,8 @@ on property:sys.boot_completed=1
     #Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
 
-# Disable console_suspend to get better logging for kernel crashes
 on boot
+    # Disable console_suspend to get better logging for kernel crashes
     write /sys/module/printk/parameters/console_suspend N
 
 # If UART is on, enable console_suspend on boot_complete to save power
