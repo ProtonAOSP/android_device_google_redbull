@@ -844,6 +844,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     misc_writer
 
+# Set thermal warm reset
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.thermal_warmreset = true \
+
 #################################################################################
 # This is the End of device-common.mk file.
 # Now, Pickup other split device-common.mk files:
