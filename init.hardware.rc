@@ -40,10 +40,6 @@ on early-init && property:ro.revision="DEV1.0"
 on early-init && property:ro.boot.mode=charger
     setprop vendor.skip.init 1
 
-# We need vold early for metadata encryption
-on early-fs
-    start vold
-
 on init && property:vendor.skip.init=0
     # Boot time fs tuning
     write /sys/block/sda/queue/iostats 0
