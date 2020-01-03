@@ -315,6 +315,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
     ro.hardware.keystore_desede=true \
     persist.vendor.radio.procedure_bytes=SKIP \
+    persist.vendor.radio.hidl_dev_service=true \
 
 # Disable snapshot timer
 PRODUCT_PROPERTY_OVERRIDES += \
