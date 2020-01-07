@@ -70,33 +70,32 @@
     },
     {
       "Name": "GPUMaxFreq",
-      "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/max_freq",
+      "Path": "/sys/class/kgsl/kgsl-3d0/max_pwrlevel",
       "Values": [
-        "625000000",
-        "500000000"
+        "0",
+        "1"
+      ],
+      "Comments": [
+        "0 => 625000000",
+        "1 => 500000000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
     },
     {
       "Name": "GPUMinFreq",
-      "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/min_freq",
+      "Path": "/sys/class/kgsl/kgsl-3d0/min_pwrlevel",
       "Values": [
-        "625000000",
-        "500000000",
-        "400000000",
-        "275000000"
+        "0",
+        "1",
+        "2",
+        "3"
       ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "GPUBusMinFreq",
-      "Path": "/sys/class/devfreq/soc:qcom,gpubw/min_freq",
-      "Values": [
-        "7980",
-        "5931",
-        "3879",
-        "0"
+      "Comments": [
+        "0 => 625000000",
+        "1 => 500000000",
+        "2 => 400000000",
+        "3 => 275000000"
       ],
       "ResetOnInit": true
     },
@@ -295,7 +294,7 @@
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "GPUMaxFreq",
       "Duration": 0,
-      "Value": "500000000"
+      "Value": "1"
     },
     {
       "PowerHint": "INTERACTION",
@@ -601,13 +600,13 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUMinFreq",
       "Duration": 0,
-      "Value": "500000000"
+      "Value": "1"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUMaxFreq",
       "Duration": 0,
-      "Value": "625000000"
+      "Value": "0"
     },
     {
       "PowerHint": "TPU_BOOST",
