@@ -365,7 +365,7 @@ PRODUCT_PACKAGES += \
     Tag \
     SecureElement \
     android.hardware.nfc@1.2-service.st \
-    android.hardware.secure_element@1.0-service.st
+    android.hardware.secure_element@1.2-service.st
 
 PRODUCT_COPY_FILES += \
     device/google/redbull/nfc/libnfc-hal-st.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st.conf \
