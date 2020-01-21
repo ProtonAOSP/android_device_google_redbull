@@ -186,7 +186,7 @@ on late-fs
     start vendor.qti.hardware.display.allocator
 
     # Wait for keymaster HALs (TEE and StrongBox)
-    #exec_start wait_for_strongbox
+    exec_start wait_for_strongbox
 
 
     # Mount RW partitions which need run fsck
