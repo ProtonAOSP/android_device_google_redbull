@@ -836,8 +836,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.thermal_warmreset = true \
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-
 #################################################################################
 # This is the End of device-common.mk file.
 # Now, Pickup other split device-common.mk files:
