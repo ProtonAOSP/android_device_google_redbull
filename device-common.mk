@@ -19,6 +19,9 @@ PRODUCT_PLATFORM := sm7250
 
 LOCAL_PATH := device/google/redbull
 
+# Enable userspace reboot
+$(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)
+
 PRODUCT_VENDOR_MOVE_ENABLED := true
 TARGET_BOARD_PLATFORM := lito
 
