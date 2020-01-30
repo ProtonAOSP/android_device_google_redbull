@@ -149,6 +149,11 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     checkpoint_gc
 
+# Enable wider inodes for project quotas
+# Later, replace with $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+PRODUCT_QUOTA_PROJID := 1
+PRODUCT_PRODUCT_PROPERTIES += ro.emulated_storage.projid=1
+
 # The following modules are included in debuggable builds only.
 PRODUCT_PACKAGES_DEBUG += \
     bootctl \
