@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016 The Android Open-Source Project
+# Copyright (C) 2020 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -57,6 +57,9 @@ on early-boot
 
 on property:init.svc.console=running
     write /sys/class/power_supply/usb/moisture_detection_enabled 0
+
+on property:init.svc.vendor.charger=running
+    write /sys/class/typec/port0/port_type sink
 
 on boot
     setprop sys.usb.configfs 2
