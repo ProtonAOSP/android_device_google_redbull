@@ -40,6 +40,12 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/sm7250 \
     vendor/google/interfaces
 
+# Single vendor RIL/Telephony/data with SM7250
+  PRODUCT_SOONG_NAMESPACES += \
+      vendor/qcom/sm7250/codeaurora/commonsys/telephony/ims \
+      vendor/qcom/sm7250/proprietary/qcril-data-hal \
+      vendor/qcom/sm7250/proprietary/qcril-hal
+
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true
 
@@ -221,6 +227,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.feature.usb_offload.enable=true \
     vendor.audio.feature.audiozoom.enable=true \
     vendor.audio.feature.snd_mon.enable=true \
+    vendor.audio.feature.multi_voice_session.enable=true \
     vendor.audio.capture.enforce_legacy_copp_sr=true \
     vendor.audio.offload.buffer.size.kb=256 \
     persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24 \
@@ -341,6 +348,8 @@ PRODUCT_PACKAGES += \
 #Bluetooth SAR HAL
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.bluetooth_sar@1.0-impl
+PRODUCT_PACKAGES_DEBUG += \
+    bluetooth_sar_test
 
 # Bluetooth SoC
 PRODUCT_PROPERTY_OVERRIDES += \
