@@ -909,12 +909,6 @@ endif
 
 # Sensor
 -include vendor/qcom/sm7250/proprietary/dspservices_ship/contexthub_system_product.mk
--include vendor/qcom/sm7250/proprietary/commonsys-intf/sensors-see/build_config/sns_intf_system_board.mk
--include vendor/qcom/sm7250/proprietary/commonsys-intf/sensors-see/build_config/sns_intf_system_product.mk
--include vendor/qcom/sm7250/proprietary/commonsys-intf/sensors-see/build_config/sns_intf_vendor_board.mk
--include vendor/qcom/sm7250/proprietary/commonsys-intf/sensors-see/build_config/sns_intf_vendor_product.mk
--include vendor/qcom/sm7250/proprietary/commonsys/sensors-see/build_config/sns_system_board.mk
--include vendor/qcom/sm7250/proprietary/commonsys/sensors-see/build_config/sns_system_product.mk
 -include vendor/qcom/sm7250/proprietary/sensors-see/build_config/sns_vendor_board.mk
 -include vendor/qcom/sm7250/proprietary/sensors-see/build_config/sns_vendor_product.mk
 
