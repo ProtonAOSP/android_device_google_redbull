@@ -874,6 +874,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Security
 -include vendor/qcom/sm7250/proprietary/securemsm/config/keymaster_vendor_proprietary_board.mk
 -include vendor/qcom/sm7250/proprietary/securemsm/config/keymaster_vendor_proprietary_product.mk
+-include vendor/qcom/sm7250/proprietary/securemsm/config/cpz_vendor_proprietary_board.mk
+-include vendor/qcom/sm7250/proprietary/securemsm/config/cpz_vendor_proprietary_product.mk
+-include vendor/qcom/sm7250/proprietary/securemsm/config/smcinvoke_vendor_proprietary_product.mk
+-include vendor/qcom/sm7250/proprietary/commonsys/securemsm/securemsm_system_product.mk
 
 # RIL
 -include vendor/qcom/sm7250/proprietary/commonsys-intf/data/data_commonsys-intf_vendor_product.mk
