@@ -795,6 +795,10 @@ PRODUCT_COPY_FILES += \
 # Set Vendor SPL to match platform
 VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 
+PRODUCT_PROPERTY_OVERRIDES += vendor.audio.adm.buffering.ms=3
+PRODUCT_PROPERTY_OVERRIDES += vendor.audio_hal.period_multiplier=2
+PRODUCT_PROPERTY_OVERRIDES += af.fast_track_multiplier=1
+
 # Enable AAudio MMAP/NOIRQ data path.
 # 1 is AAUDIO_POLICY_NEVER  means only use Legacy path.
 # 2 is AAUDIO_POLICY_AUTO   means try MMAP then fallback to Legacy path.
@@ -849,6 +853,14 @@ PRODUCT_PROPERTY_OVERRIDES += vendor.audio.mic_break=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.use_color_management=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.has_wide_color_display=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.has_HDR_display=true
+
+# Audio low latency feature
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml
+
+# Pro audio feature
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml
 
 # MIDI feature
 PRODUCT_COPY_FILES += \
