@@ -490,10 +490,6 @@ PRODUCT_COPY_FILES += \
 LIB_NL := libnl_2
 PRODUCT_PACKAGES += $(LIB_NL)
 
-# Factory OTA
-PRODUCT_PACKAGES += \
-    FactoryOta
-
 # Audio effects
 PRODUCT_PACKAGES += \
     libvolumelistener \
@@ -905,5 +901,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 -include vendor/qcom/sm7250/proprietary/commonsys/sensors-see/build_config/sns_system_product.mk
 -include vendor/qcom/sm7250/proprietary/sensors-see/build_config/sns_vendor_board.mk
 -include vendor/qcom/sm7250/proprietary/sensors-see/build_config/sns_vendor_product.mk
+
+# Factory OTA
+-include vendor/google/factoryota/client/factoryota.mk
 
 #################################################################################
