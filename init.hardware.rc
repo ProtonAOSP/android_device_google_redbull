@@ -323,6 +323,7 @@ on early-boot
     chown system system /sys/class/backlight/panel0-backlight/brightness
     chown system system /sys/class/backlight/panel0-backlight/vr_mode
     chown system system /sys/class/backlight/panel0-backlight/hbm_mode
+    chown system system /sys/class/backlight/panel0-backlight/als_table
 
     # Wait for insmod_sh to finish all modules
     wait_for_prop vendor.all.modules.ready 1
