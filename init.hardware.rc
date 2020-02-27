@@ -187,6 +187,8 @@ on late-fs
     #setprop ro.surface_flinger.display_primary_green ${vendor.display.primary_green}
     #setprop ro.surface_flinger.display_primary_blue ${vendor.display.primary_blue}
     #setprop ro.surface_flinger.display_primary_white ${vendor.display.primary_white}
+    # Permission for hwcomposer
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/gamma
     start surfaceflinger
     start bootanim
     start vendor.qti.hardware.display.composer
