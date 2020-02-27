@@ -50,6 +50,15 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>android.hardware.radio</name>
+        <transport>hwbinder</transport>
+        <version>1.2</version>
+        <interface>
+            <name>ISap</name>
+            <instance>slot2</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>android.hardware.radio.config</name>
         <version>1.1</version>
         <interface>
@@ -91,7 +100,7 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.google.wireless_charger</name>
-        <version>1.0</version>
+        <version>1.2</version>
         <interface>
             <name>IWirelessCharger</name>
             <instance>default</instance>
@@ -137,6 +146,7 @@
         <interface>
             <name>IUimLpa</name>
             <instance>UimLpa0</instance>
+            <instance>UimLpa1</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -150,7 +160,7 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.uim</name>
-        <version>1.1</version>
+        <version>1.2</version>
         <interface>
             <name>IUim</name>
             <instance>Uim0</instance>
@@ -219,7 +229,7 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.imsrtpservice</name>
-        <version>2.0-1</version>
+        <version>3.0</version>
         <interface>
             <name>IRTPService</name>
             <instance>imsrtpservice</instance>
@@ -257,6 +267,45 @@
         <interface>
             <name>IWifiExt</name>
             <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.cacert</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.data.connection</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>IDataConnection</name>
+            <instance>slot1</instance>
+            <instance>slot2</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.radio.qtiradio</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IQtiRadio</name>
+            <instance>slot1</instance>
+            <instance>slot2</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.radio.qtiradio</name>
+        <transport>hwbinder</transport>
+        <version>2.3</version>
+        <interface>
+            <name>IQtiRadio</name>
+            <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
 </compatibility-matrix>

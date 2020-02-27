@@ -122,6 +122,9 @@ on init && property:vendor.skip.init=0
     chown system system /dev/cpuset/camera-daemon/tasks
     chmod 0664 /dev/cpuset/camera-daemon/tasks
 
+    # Allow PAI targeting per hardware SKU
+    setprop ro.oem.key1 ${ro.boot.hardware.sku}
+
 on late-init
     setprop vendor.thermal.config thermal_info_config.json
     chown system system /sys/devices/virtual/thermal/tz-by-name/skin-therm-monitor/trip_point_0_temp
@@ -478,6 +481,10 @@ on property:sys.boot_completed=1
     chown system system /sys/kernel/debug/google_battery/ssoc_uicurve
     chown system system /sys/kernel/debug/google_charger/pps_op_ua
     chown system system /sys/kernel/debug/google_charger/pps_out_uv
+
+    # For rTx
+    chown system system /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/rtx
+    chmod 0660 /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/rtx
 
     # Permission for Athletico
     chown system system /dev/iaxxx-module-celldrv
