@@ -315,10 +315,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.snapshot_enabled=0 \
     persist.vendor.radio.snapshot_timer=0
 
-# Enable USB debugging by default for bringup
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=adb
-
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
