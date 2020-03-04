@@ -72,9 +72,6 @@ TARGET_PRODUCT_PROP := $(LOCAL_PATH)/product.prop
 
 $(call inherit-product, $(LOCAL_PATH)/utils.mk)
 
-# Installs gsi keys into ramdisk, to boot a GSI with verified boot.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
-
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
@@ -427,9 +424,9 @@ PRODUCT_PACKAGES += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-impl.recovery \
-    android.hardware.boot@1.0-service \
+    android.hardware.boot@1.1-impl-pixel-legacy \
+    android.hardware.boot@1.1-impl-pixel-legacy.recovery \
+    android.hardware.boot@1.1-service \
 
 # Thermal HAL
 PRODUCT_PACKAGES += \
@@ -878,6 +875,8 @@ else
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.verbose_logging_enabled=false
 endif
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 #################################################################################
 # This is the End of device-common.mk file.

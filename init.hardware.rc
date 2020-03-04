@@ -237,6 +237,7 @@ on post-fs-data
     mkdir /data/vendor/time 0770 system system
     mkdir /data/vendor/modem_fdr 0700 root system
     mkdir /data/vendor/display 0770 system graphics
+    mkdir /data/vendor/camera 0770 system system
 
 on zygote-start
     # zygote is started in common init.rc
@@ -483,7 +484,9 @@ on property:sys.boot_completed=1
     chown system system /sys/kernel/debug/google_charger/pps_op_ua
     chown system system /sys/kernel/debug/google_charger/pps_out_uv
 
-    # For rTx
+    # Permission for wireless charging
+    chown system system /sys/class/power_supply/wireless/capacity
+    chmod 0660 /sys/class/power_supply/wireless/capacity
     chown system system /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/rtx
     chmod 0660 /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/rtx
 
