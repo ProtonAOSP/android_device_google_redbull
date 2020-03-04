@@ -346,6 +346,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bluetooth_sar_test
 
+#Bluetooth AFH HAL
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.bt_channel_avoidance@1.0-impl
+
 # Bluetooth SoC
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=cherokee
