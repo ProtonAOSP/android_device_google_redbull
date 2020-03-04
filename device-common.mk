@@ -479,10 +479,6 @@ PRODUCT_COPY_FILES += \
 LIB_NL := libnl_2
 PRODUCT_PACKAGES += $(LIB_NL)
 
-# Factory OTA
-PRODUCT_PACKAGES += \
-    FactoryOta
-
 # Audio effects
 PRODUCT_PACKAGES += \
     libvolumelistener \
@@ -898,5 +894,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 -include vendor/qcom/sm7250/proprietary/dspservices_ship/contexthub_system_product.mk
 -include vendor/qcom/sm7250/proprietary/sensors-see/build_config/sns_vendor_board.mk
 -include vendor/qcom/sm7250/proprietary/sensors-see/build_config/sns_vendor_product.mk
+
+# Factory OTA
+-include vendor/google/factoryota/client/factoryota.mk
 
 #################################################################################
