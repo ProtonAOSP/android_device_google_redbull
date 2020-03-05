@@ -33,7 +33,7 @@ PRODUCT_SOONG_NAMESPACES += \
     device/google/redbull \
     hardware/qcom/sm7250 \
     vendor/google/airbrush/floral \
-    vendor/google/biometrics/face \
+    vendor/google/biometrics/face/florence \
     vendor/google/darwinn \
     hardware/qcom/sm7250/display \
     vendor/google/camera \
