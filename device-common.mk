@@ -564,7 +564,8 @@ PRODUCT_PACKAGES += \
     liba2dpoffload \
     btaudio_offload_if \
     libmaxxaudio \
-    libaudiozoom
+    libaudiozoom \
+    libdevicestatelistener
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES += \
