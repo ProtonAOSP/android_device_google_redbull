@@ -135,6 +135,7 @@ on late-init
     chown system system /sys/devices/virtual/thermal/tz-by-name/skin-therm-monitor/trip_point_0_hyst
     chown system system /sys/devices/virtual/thermal/tz-by-name/usbc-therm-monitor/trip_point_0_temp
     chown system system /sys/devices/virtual/thermal/tz-by-name/usbc-therm-monitor/trip_point_0_hyst
+    chown system system /sys/devices/virtual/thermal/tz-by-name/soc/mode
 
 on fs
     mount_all /vendor/etc/fstab.${ro.boot.hardware.platform} --early
@@ -541,14 +542,6 @@ service init-sensors-sh /vendor/bin/init.sensors.sh
     disabled
     oneshot
 
-service sensors.qti /vendor/bin/sensors.qti
-    class core
-    user system
-    group system
-    # Grants the ability for this daemon to bind IPC router ports so it can
-    # register QMI services
-    capabilities NET_BIND_SERVICE
-
 service vendor.adsprpcd /vendor/bin/adsprpcd
    class main
    user system
@@ -558,11 +551,6 @@ service vendor.adsprpcd_audiopd /vendor/bin/adsprpcd audiopd
    class main
    user media
    group media
-
-service vendor.adsprpcd_sensorspd /vendor/bin/adsprpcd sensorspd
-   class main
-   user system
-   group system
 
 service vendor.cdsprpcd /vendor/bin/cdsprpcd
    class main
