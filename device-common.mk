@@ -745,10 +745,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.atrace@1.0-service
 
-# Reliability reporting
-PRODUCT_PACKAGES += \
-    pixelstats-vendor
-
 # dynamic partition
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
@@ -908,4 +904,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 # Factory OTA
 -include vendor/google/factoryota/client/factoryota.mk
 
+# storage
+-include hardware/google/pixel/pixelstats/device.mk
 #################################################################################
