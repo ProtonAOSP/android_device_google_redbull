@@ -723,6 +723,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += debug.sf.earlyGl.app.duration=38000000
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     vendor.skip.init=0
 
+# Enable backpressure for GL comp
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.enable_gl_backpressure=1
+
 BOARD_USES_QCNE := true
 
 PRODUCT_COPY_FILES += \
@@ -835,9 +839,6 @@ persist.vendor.bt.aac_frm_ctl.enabled=true
 # Set lmkd options
 PRODUCT_PRODUCT_PROPERTIES += \
         ro.config.low_ram = false \
-        ro.lmk.kill_heaviest_task = true \
-        ro.lmk.kill_timeout_ms = 100 \
-        ro.lmk.use_minfree_levels = true \
         ro.lmk.log_stats = true \
 
 # Modem logging file
