@@ -319,6 +319,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.procedure_bytes=SKIP \
     persist.vendor.radio.hidl_dev_service=true \
 
+# Enable reboot free DSDS
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.telephony.max.active.modems=2 \
+    persist.radio.reboot_on_modem_change=false
+
 # Disable snapshot timer
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.snapshot_enabled=0 \
