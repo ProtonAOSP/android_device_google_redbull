@@ -278,10 +278,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.googfd.enable=1
 
-# camera disable FaceSSD temporarily
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.facessd.enable=0
-
 # camera hal buffer management
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.managebuffer.enable=1
