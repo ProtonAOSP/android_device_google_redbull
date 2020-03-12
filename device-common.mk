@@ -125,6 +125,11 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier
 
+PRODUCT_PACKAGES += \
+    e2fsck_ramdisk \
+    tune2fs_ramdisk \
+    resize2fs_ramdisk
+
 # Use Sdcardfs
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.sys.sdcardfs=1
@@ -158,10 +163,8 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     checkpoint_gc
 
-# Enable wider inodes for project quotas
-# Later, replace with $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-PRODUCT_QUOTA_PROJID := 1
-PRODUCT_PRODUCT_PROPERTIES += ro.emulated_storage.projid=1
+# Enable project quotas and casefolding for emulated storage without sdcardfs
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # The following modules are included in debuggable builds only.
 PRODUCT_PACKAGES_DEBUG += \
@@ -879,6 +882,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 else
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.verbose_logging_enabled=false
+endif
+
+# Disable Rescue Party on userdebug & eng build
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.disable_rescue=true
 endif
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
