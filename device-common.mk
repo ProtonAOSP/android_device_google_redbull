@@ -386,6 +386,10 @@ PRODUCT_COPY_FILES += \
     device/google/redbull/nfc/libese-hal-st.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libese-hal-st.conf \
     device/google/redbull/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
 
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl-redbull \
+    android.hardware.health@2.1-service
+
 # Storage health HAL
 PRODUCT_PACKAGES += \
     android.hardware.health.storage@1.0-service
