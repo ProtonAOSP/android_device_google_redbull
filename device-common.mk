@@ -405,8 +405,16 @@ PRODUCT_PACKAGES += \
 
 # Enable Codec 2.0
 PRODUCT_PACKAGES += \
-    libqcodec2 \
+    libqcodec2_base \
+    libqcodec2_utils \
+    libqcodec2_platform \
+    libqcodec2_core \
+    libqcodec2_basecodec \
+    libqcodec2_v4l2codec \
     vendor.qti.media.c2@1.0-service \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.stagefright.omx_default_rank=512
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.6-impl-google \
@@ -572,6 +580,9 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    $(LOCAL_PATH)/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
+    $(LOCAL_PATH)/media_codecs_performance_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_c2.xml \
+    $(LOCAL_PATH)/media_codecs_omx.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_omx.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
@@ -579,6 +590,7 @@ PRODUCT_COPY_FILES += \
 
 # Vendor seccomp policy files for media components:
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/seccomp_policy/codec2.vendor.ext.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.ext.policy \
     $(LOCAL_PATH)/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
 
 PRODUCT_PROPERTY_OVERRIDES += \
