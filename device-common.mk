@@ -278,10 +278,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.googfd.enable=1
 
-# camera disable FaceSSD temporarily
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.facessd.enable=0
-
 # camera hal buffer management
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.managebuffer.enable=1
@@ -389,6 +385,10 @@ PRODUCT_COPY_FILES += \
     device/google/redbull/nfc/libnfc-hal-st.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st.conf \
     device/google/redbull/nfc/libese-hal-st.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libese-hal-st.conf \
     device/google/redbull/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
+
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl-redbull \
+    android.hardware.health@2.1-service
 
 # Storage health HAL
 PRODUCT_PACKAGES += \
