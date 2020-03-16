@@ -192,6 +192,7 @@ on late-fs
     start vendor.qti.hardware.display.composer
     start vendor.configstore-hal
     start vendor.qti.hardware.display.allocator
+    start vendor.light-1-0
 
     # Wait for keymaster HALs (TEE and StrongBox)
     exec_start wait_for_strongbox
