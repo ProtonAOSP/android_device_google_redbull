@@ -39,6 +39,10 @@ const struct SysfsCollector::SysfsPaths sysfs_paths = {
     .CodecPath =     "/sys/devices/platform/codec_detect/codec_state",
     .SpeechDspPath = "/sys/devices/platform/codec_detect/wdsp_stat",
     .Codec1Path = "/sys/devices/platform/codec_detect/headset_codec_state",
+    .UFSLifetimeA = UFSHC_PATH(health_descriptor/life_time_estimation_a),
+    .UFSLifetimeB = UFSHC_PATH(health_descriptor/life_time_estimation_b),
+    .UFSLifetimeC = UFSHC_PATH(health_descriptor/life_time_estimation_c),
+    .F2fsStatsPath = "/sys/fs/f2fs/",
 };
 
 const char *const kAudioUevent = "/kernel/q6audio/q6voice_uevent";
