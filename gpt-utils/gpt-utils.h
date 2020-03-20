@@ -85,7 +85,7 @@ extern "C" {
             "uefisecapp", "vbmeta", "vbmeta_system", "xbl_config", \
             "featenabler"
 
-#define AB_PTN_LIST PTN_SWAP_LIST, "boot", "system", "vendor", "system_ext", "modem", "product"
+#define AB_PTN_LIST PTN_SWAP_LIST, "boot", "vendor_boot", "system", "vendor", "system_ext", "modem", "product"
 #define BOOT_DEV_DIR    "/dev/block/bootdevice/by-name"
 
 /******************************************************************************
