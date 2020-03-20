@@ -166,6 +166,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     checkpoint_gc
 
+# Context hub HAL
+PRODUCT_PACKAGES += \
+    android.hardware.contexthub@1.1-service.generic
+
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
@@ -948,7 +952,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 -include vendor/qcom/sm7250/proprietary/commonsys-intf/data/data_commonsys-intf_vendor_product.mk
 
 # Sensor
--include vendor/qcom/sm7250/proprietary/dspservices_ship/contexthub_system_product.mk
 -include vendor/qcom/sm7250/proprietary/sensors-see/build_config/sns_vendor_board.mk
 -include vendor/qcom/sm7250/proprietary/sensors-see/build_config/sns_vendor_product.mk
 
