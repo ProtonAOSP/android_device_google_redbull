@@ -434,6 +434,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.media.omx=0 \
 
+# Enable ECO service
+QC2_HAVE_ECO_SERVICE := true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.qc2.venc.avgqp.enable=1
+
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.6-impl-google \
     android.hardware.camera.provider@2.6-service-google \
