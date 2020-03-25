@@ -471,15 +471,6 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl-pixel-legacy.recovery \
     android.hardware.boot@1.1-service \
 
-# Thermal HAL
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.pixel \
-
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_PACKAGES += \
-    thermal_logd
-endif
-
 #GNSS HAL
 PRODUCT_PACKAGES += \
     libgps.utils \
@@ -966,4 +957,7 @@ include hardware/google/pixel/common/pixel-common-device.mk
 
 # storage
 -include hardware/google/pixel/pixelstats/device.mk
+
+# thermal
+-include hardware/google/pixel/thermal/device.mk
 #################################################################################
