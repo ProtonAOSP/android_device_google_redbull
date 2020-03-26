@@ -5,7 +5,7 @@
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq",
       "Values": [
         "9999999",
-        "1228800"
+        "1075200"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -15,7 +15,7 @@
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq",
       "Values": [
         "9999999",
-        "1228800",
+        "1075200",
         "576000"
       ],
       "ResetOnInit": true
@@ -25,8 +25,8 @@
       "Path": "/sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq",
       "Values": [
         "9999999",
-        "2131200",
-        "1708800",
+        "1900800",
+        "1728000",
         "1478400"
       ],
       "DefaultIndex": 0,
@@ -37,10 +37,10 @@
       "Path": "/sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq",
       "Values": [
         "9999999",
-        "1708800",
+        "1996800",
+        "1766400",
         "1478400",
-        "1228800",
-        "672000"
+        "652800"
       ],
       "ResetOnInit": true
     },
@@ -49,9 +49,9 @@
       "Path": "/sys/devices/system/cpu/cpu7/cpufreq/scaling_max_freq",
       "Values": [
         "9999999",
-        "2131200",
-        "1516800",
-        "1228800"
+        "1996800",
+        "1766400",
+        "1401600"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -61,10 +61,10 @@
       "Path": "/sys/devices/system/cpu/cpu7/cpufreq/scaling_min_freq",
       "Values": [
         "9999999",
-        "1708800",
-        "1516800",
-        "1228800",
-        "672000"
+        "1996800",
+        "1766400",
+        "1401600",
+        "806400"
       ],
       "ResetOnInit": true
     },
@@ -213,7 +213,7 @@
       "Name": "L3LittleClusterMinFreq",
       "Path": "/sys/class/devfreq/18321000.qcom,devfreq-l3:qcom,cpu0-cpu-l3-lat/min_freq",
       "Values": [
-        "1420800000",
+        "1440000000",
         "300000000"
       ],
       "ResetOnInit": true
@@ -222,7 +222,7 @@
       "Name": "L3BigClusterMinFreq",
       "Path": "/sys/class/devfreq/18321000.qcom,devfreq-l3:qcom,cpu6-cpu-l3-lat/min_freq",
       "Values": [
-        "1420800000",
+        "1440000000",
         "300000000"
       ],
       "ResetOnInit": true
@@ -282,13 +282,13 @@
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "CPUBigPlusClusterMaxFreq",
       "Duration": 0,
-      "Value": "1228800"
+      "Value": "1401600"
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
-      "Value": "1228800"
+      "Value": "1075200"
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
@@ -300,13 +300,13 @@
       "PowerHint": "INTERACTION",
       "Node": "CPUBigPlusClusterMinFreq",
       "Duration": 0,
-      "Value": "1228800"
+      "Value": "1401600"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
-      "Value": "1228800"
+      "Value": "1075200"
     },
     {
       "PowerHint": "INTERACTION",
@@ -432,13 +432,13 @@
       "PowerHint": "LAUNCH",
       "Node": "L3LittleClusterMinFreq",
       "Duration": 5000,
-      "Value": "1420800000"
+      "Value": "1440000000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "L3BigClusterMinFreq",
       "Duration": 5000,
-      "Value": "1420800000"
+      "Value": "1440000000"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
@@ -492,13 +492,13 @@
       "PowerHint": "CAMERA_STREAMING",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
-      "Value": "2131200"
+      "Value": "2092800"
     },
     {
       "PowerHint": "CAMERA_STREAMING",
       "Node": "CPUBigPlusClusterMaxFreq",
       "Duration": 0,
-      "Value": "2131200"
+      "Value": "1996800"
     },
     {
       "PowerHint": "CAMERA_STREAMING",
@@ -570,7 +570,7 @@
       "PowerHint": "AUDIO_STREAMING",
       "Node": "CPUBigPlusClusterMinFreq",
       "Duration": 2000,
-      "Value": "1516800"
+      "Value": "1766400"
     },
     {
       "PowerHint": "AUDIO_STREAMING",
