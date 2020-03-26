@@ -766,10 +766,6 @@ BOARD_USES_QCNE := true
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
-# power HAL
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.pixel-libperfmgr
-
 # GPS configuration file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
@@ -967,4 +963,7 @@ include hardware/google/pixel/common/pixel-common-device.mk
 
 # thermal
 -include hardware/google/pixel/thermal/device.mk
+
+# power HAL
+-include hardware/google/pixel/power-libperfmgr/hidl/device.mk
 #################################################################################
