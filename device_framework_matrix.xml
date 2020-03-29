@@ -197,6 +197,7 @@
         <name>vendor.qti.hardware.display.allocator</name>
         <version>1.0</version>
         <version>3.0</version>
+        <version>4.0</version>
         <interface>
             <name>IQtiAllocator</name>
             <instance>default</instance>
@@ -206,6 +207,7 @@
         <name>vendor.qti.hardware.display.mapper</name>
         <version>2.0</version>
         <version>3.0</version>
+        <version>4.0</version>
         <interface>
             <name>IQtiMapper</name>
             <instance>default</instance>
