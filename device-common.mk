@@ -99,7 +99,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.radio.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.radio.sh \
     $(LOCAL_PATH)/init.hardware.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.$(PRODUCT_PLATFORM).usb.rc \
     $(LOCAL_PATH)/init.sensors.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.sensors.sh \
-    $(LOCAL_PATH)/sensors.hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
     $(LOCAL_PATH)/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
 		$(LOCAL_PATH)/init.ramoops.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.ramoops.sh
 
@@ -459,11 +458,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     libgoogle_camera_hal_proprietary_tests \
     libgoogle_camera_hal_tests.vendor
-
-PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.0-impl \
-    android.hardware.sensors@2.0-service \
-    android.hardware.sensors@2.0-service.rc
 
 PRODUCT_PACKAGES += \
     fs_config_dirs \
