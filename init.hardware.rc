@@ -179,6 +179,15 @@ on fs
     # for cycle count backup
     mkdir /mnt/vendor/persist/battery 0700 system system
 
+    # Set up sensors-related directories and permissions
+    chmod 775 /mnt/vendor/persist/sensors
+    chmod 664 /mnt/vendor/persist/sensors/sensors_settings
+    chmod 775 /mnt/vendor/persist/sensors/registry
+    chmod 775 /mnt/vendor/persist/sensors/registry/registry
+    chmod 775 /mnt/vendor/persist/sensors/registry/factory_data
+    chmod 664 /mnt/vendor/persist/sensors/registry/factory_data/sns_fac_registry
+    chmod 664 /mnt/vendor/persist/sensors/registry/registry/sensors_registry
+
     restorecon_recursive /mnt/vendor/persist
 
 on post-fs
@@ -304,25 +313,21 @@ on zygote-start
     mkdir /dev/socket/location/xtra 0770 gps gps
 
 on early-boot
-    # Set up sensors-related directories and permissions
-    chmod 775 /mnt/vendor/persist/sensors
-    chmod 664 /mnt/vendor/persist/sensors/sensors_settings
+    # Change owner for sensors-related directories
     chown root system /mnt/vendor/persist/sensors/registry
-    chmod 775 /mnt/vendor/persist/sensors/registry
     chown root system /mnt/vendor/persist/sensors/registry/registry
-    chmod 775 /mnt/vendor/persist/sensors/registry/registry
-    chmod 664 /mnt/vendor/persist/sensors/registry/registry/sensors_registry
     chown system root /mnt/vendor/persist/sensors/sensors_settings
     chown root root /mnt/vendor/persist/sensors/registry/registry/sensors_settings
 
+    # Set up sensors-related data directories and permissions
     mkdir /data/vendor/sensors 0770
     chown system system /data/vendor/sensors
     mkdir /data/vendor/sensors/log 0770
     chown system system /data/vendor/sensors/log
 
-    # For sensors factory calibrated registry
-    chown root system /mnt/vendor/persist/sensors/registry/factory_data
-    chmod 775 /mnt/vendor/persist/sensors/registry/factory_data
+    # Change owner for sensors factory calibrated registries directory
+    chown system system /mnt/vendor/persist/sensors/registry/factory_data
+    chown system system /mnt/vendor/persist/sensors/registry/factory_data/sns_fac_registry
     restorecon_recursive /mnt/vendor/persist/sensors/registry/factory_data
 
     chmod 770 /mnt/vendor/persist/audio
