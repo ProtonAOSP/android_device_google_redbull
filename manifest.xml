@@ -169,15 +169,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <fqname>@1.0::ISecureElement/SIM1</fqname>
         <fqname>@1.2::ISecureElement/eSE1</fqname>
     </hal>
-    <hal format="hidl">
-        <name>android.hardware.sensors</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISensors</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <!-- gatekeeper -->
     <hal format="hidl">
        <name>android.hardware.gatekeeper</name>
