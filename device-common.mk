@@ -43,6 +43,7 @@ PRODUCT_SOONG_NAMESPACES += \
 # Single vendor RIL/Telephony/data with SM7250
   PRODUCT_SOONG_NAMESPACES += \
       vendor/qcom/sm7250/codeaurora/commonsys/telephony/ims/ims-ext-common \
+      vendor/qcom/sm7250/codeaurora/dataservices/rmnetctl \
       vendor/qcom/sm7250/proprietary/commonsys/qcrilOemHook \
       vendor/qcom/sm7250/proprietary/commonsys/telephony-apps/ims \
       vendor/qcom/sm7250/proprietary/commonsys/telephony-apps/QtiTelephonyService \
