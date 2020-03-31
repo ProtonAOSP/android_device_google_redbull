@@ -43,6 +43,7 @@ PRODUCT_SOONG_NAMESPACES += \
 # Single vendor RIL/Telephony/data with SM7250
   PRODUCT_SOONG_NAMESPACES += \
       vendor/qcom/sm7250/codeaurora/commonsys/telephony/ims/ims-ext-common \
+      vendor/qcom/sm7250/codeaurora/dataservices/rmnetctl \
       vendor/qcom/sm7250/proprietary/commonsys/qcrilOemHook \
       vendor/qcom/sm7250/proprietary/commonsys/telephony-apps/ims \
       vendor/qcom/sm7250/proprietary/commonsys/telephony-apps/QtiTelephonyService \
@@ -99,7 +100,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.radio.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.radio.sh \
     $(LOCAL_PATH)/init.hardware.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.$(PRODUCT_PLATFORM).usb.rc \
     $(LOCAL_PATH)/init.sensors.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.sensors.sh \
-    $(LOCAL_PATH)/sensors.hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
     $(LOCAL_PATH)/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
 		$(LOCAL_PATH)/init.ramoops.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.ramoops.sh
 
@@ -461,11 +461,6 @@ PRODUCT_PACKAGES_DEBUG += \
     libgoogle_camera_hal_tests.vendor
 
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.0-impl \
-    android.hardware.sensors@2.0-service \
-    android.hardware.sensors@2.0-service.rc
-
-PRODUCT_PACKAGES += \
     fs_config_dirs \
     fs_config_files
 
@@ -474,15 +469,6 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl-pixel-legacy \
     android.hardware.boot@1.1-impl-pixel-legacy.recovery \
     android.hardware.boot@1.1-service \
-
-# Thermal HAL
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.pixel \
-
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_PACKAGES += \
-    thermal_logd
-endif
 
 #GNSS HAL
 PRODUCT_PACKAGES += \
@@ -545,7 +531,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl:32 \
     android.hardware.audio.effect@5.0-impl:32 \
-    android.hardware.soundtrigger@2.2-impl \
+    android.hardware.soundtrigger@2.3-impl \
     android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.audio@2.0-service
 
@@ -775,10 +761,6 @@ BOARD_USES_QCNE := true
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
-# power HAL
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.pixel-libperfmgr
-
 # GPS configuration file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
@@ -973,4 +955,10 @@ include hardware/google/pixel/common/pixel-common-device.mk
 
 # storage
 -include hardware/google/pixel/pixelstats/device.mk
+
+# thermal
+-include hardware/google/pixel/thermal/device.mk
+
+# power HAL
+-include hardware/google/pixel/power-libperfmgr/hidl/device.mk
 #################################################################################
