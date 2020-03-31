@@ -475,15 +475,6 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl-pixel-legacy.recovery \
     android.hardware.boot@1.1-service \
 
-# Thermal HAL
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.pixel \
-
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_PACKAGES += \
-    thermal_logd
-endif
-
 #GNSS HAL
 PRODUCT_PACKAGES += \
     libgps.utils \
@@ -545,7 +536,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl:32 \
     android.hardware.audio.effect@5.0-impl:32 \
-    android.hardware.soundtrigger@2.2-impl \
+    android.hardware.soundtrigger@2.3-impl \
     android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.audio@2.0-service
 
@@ -775,10 +766,6 @@ BOARD_USES_QCNE := true
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
-# power HAL
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.pixel-libperfmgr
-
 # GPS configuration file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
@@ -973,4 +960,10 @@ include hardware/google/pixel/common/pixel-common-device.mk
 
 # storage
 -include hardware/google/pixel/pixelstats/device.mk
+
+# thermal
+-include hardware/google/pixel/thermal/device.mk
+
+# power HAL
+-include hardware/google/pixel/power-libperfmgr/hidl/device.mk
 #################################################################################
