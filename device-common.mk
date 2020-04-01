@@ -957,5 +957,5 @@ include hardware/google/pixel/common/pixel-common-device.mk
 -include hardware/google/pixel/thermal/device.mk
 
 # power HAL
--include hardware/google/pixel/power-libperfmgr/hidl/device.mk
+-include hardware/google/pixel/power-libperfmgr/aidl/device.mk
 #################################################################################
