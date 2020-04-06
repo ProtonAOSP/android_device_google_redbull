@@ -223,7 +223,7 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.display.composer</name>
-        <version>2.1</version>
+        <version>3.0</version>
         <interface>
             <name>IQtiComposer</name>
             <instance>default</instance>
