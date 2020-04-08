@@ -891,10 +891,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.wcg_composition_dataspa
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
 
-# Write flags to the vendor space in /misc partition.
-PRODUCT_PACKAGES += \
-    misc_writer
-
 # Set thermal warm reset
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.thermal_warmreset = true \
