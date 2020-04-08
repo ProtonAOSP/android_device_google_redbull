@@ -550,13 +550,13 @@
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
-      "Value": "1900800"
+      "Value": "1728000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CPUBigPlusClusterMaxFreq",
       "Duration": 0,
-      "Value": "1996800"
+      "Value": "1766400"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
