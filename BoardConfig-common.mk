@@ -108,6 +108,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_ROOT_EXTRA_SYMLINKS := /vendor/lib/dsp:/dsp
 BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/persist:/persist
+BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/ramdump:/ramdump
 
 include device/google/redbull-sepolicy/redbull-sepolicy.mk
 
