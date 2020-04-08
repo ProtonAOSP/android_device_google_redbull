@@ -383,4 +383,10 @@
       <item>523.991735578</item>    <!--  10000+ -->
     </array>
 
+    <!-- What source to use to estimate link upstream and downstream bandwidth capacities.
+      Default is carrier_config, but it should be set to modem if the modem is returning
+      predictive (instead of instantaneous) bandwidth estimates.
+      Values are carrier_config and modem. -->
+    <string name="config_bandwidthEstimateSource">modem</string>
+
 </resources>
