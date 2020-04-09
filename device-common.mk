@@ -286,6 +286,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.enable_async_powermode=0 \
     vendor.display.qdcm.mode_combine=1
 
+# vndservicemanager has been removed from API30 devices (aosp/1235751)
+# but we still need it for display services.
+PRODUCT_PACKAGES += \
+    vndservicemanager
+
 # camera google face detection
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.googfd.enable=1
