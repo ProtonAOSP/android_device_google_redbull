@@ -146,6 +146,8 @@ on init && property:vendor.skip.init=0
 on late-init
     chown system system /sys/devices/virtual/thermal/tz-by-name/skin-therm-monitor/trip_point_0_temp
     chown system system /sys/devices/virtual/thermal/tz-by-name/skin-therm-monitor/trip_point_0_hyst
+    chown system system /sys/devices/virtual/thermal/tz-by-name/cellular-emergency/trip_point_0_temp
+    chown system system /sys/devices/virtual/thermal/tz-by-name/cellular-emergency/trip_point_0_hyst
     chown system system /sys/devices/virtual/thermal/tz-by-name/usbc-therm-monitor/trip_point_0_temp
     chown system system /sys/devices/virtual/thermal/tz-by-name/usbc-therm-monitor/trip_point_0_hyst
     chown system system /sys/devices/virtual/thermal/tz-by-name/soc/mode
@@ -742,28 +744,6 @@ on property:persist.radio.multisim.config=dsds
 # Stop 2nd qcrild when the property set to empty string
 on property:persist.radio.multisim.config=
     stop vendor.qcrild2
-
-# Write the dark theme magic to /misc partition.
-service vendor.theme_set /vendor/bin/misc_writer --set-dark-theme
-    disabled
-    oneshot
-
-# Clear the dark theme magic in /misc partition.
-service vendor.theme_clear /vendor/bin/misc_writer --clear-dark-theme
-    disabled
-    oneshot
-
-# Set dark boot flag on dark mode (UiModeManager.MODE_NIGHT_YES == 2).
-on property:persist.sys.theme=2
-    start vendor.theme_set
-
-# Clear the dark boot flag on light mode (UiModeManager.MODE_NIGHT_NO == 1) or auto mode
-# (UiModeManager.MODE_NIGHT_AUTO == 0).
-on property:persist.sys.theme=1
-    start vendor.theme_clear
-
-on property:persist.sys.theme=0
-    start vendor.theme_clear
 
 # For Japan radio builds, always enforce camera shutter sound
 # Since this property is read by the audio server in system service,
