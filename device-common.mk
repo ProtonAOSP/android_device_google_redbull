@@ -40,6 +40,10 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/sm7250 \
     vendor/google/interfaces
 
+# Include sensors soong namespace
+PRODUCT_SOONG_NAMESPACES += \
+    vendor/qcom/sensors
+
 # Single vendor RIL/Telephony/data with SM7250
   PRODUCT_SOONG_NAMESPACES += \
       vendor/qcom/sm7250/codeaurora/commonsys/telephony/ims/ims-ext-common \
