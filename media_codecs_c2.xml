@@ -110,6 +110,7 @@
             <Feature name="adaptive-playback" />
             <Limit name="concurrent-instances" max="16" />
         </MediaCodec>
+        <!--
         <MediaCodec name="c2.qti.hevc.decoder.secure" type="video/hevc" >
             <Alias name="OMX.qcom.video.decoder.hevc.secure" />
             <Limit name="size" min="96x96" max="4096x2160" />
@@ -125,6 +126,7 @@
             <Feature name="secure-playback" required="true" />
             <Limit name="concurrent-instances" max="4" />
         </MediaCodec>
+        -->
         <MediaCodec name="c2.qti.vp8.decoder" type="video/x-vnd.on2.vp8" >
             <Alias name="OMX.qcom.video.decoder.vp8" />
             <Limit name="size" min="96x96" max="1920x1088" />
