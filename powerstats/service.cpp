@@ -89,11 +89,11 @@ int main(int /* argc */, char ** /* argv */) {
     uint32_t adspId = service->addPowerEntity("ADSP", PowerEntityType::SUBSYSTEM);
     rpmSdp->addEntity(adspId, PowerEntityConfig("ADSP", rpmStateResidencyConfigs));
 
+    uint32_t adspIslandId = service->addPowerEntity("ADSP_ISLAND", PowerEntityType::SUBSYSTEM);
+    rpmSdp->addEntity(adspIslandId, PowerEntityConfig("ADSP_ISLAND", rpmStateResidencyConfigs));
+
     uint32_t cdspId = service->addPowerEntity("CDSP", PowerEntityType::SUBSYSTEM);
     rpmSdp->addEntity(cdspId, PowerEntityConfig("CDSP", rpmStateResidencyConfigs));
-
-    uint32_t slpiId = service->addPowerEntity("SLPI", PowerEntityType::SUBSYSTEM);
-    rpmSdp->addEntity(slpiId, PowerEntityConfig("SLPI", rpmStateResidencyConfigs));
 
     service->addStateResidencyDataProvider(std::move(rpmSdp));
 
