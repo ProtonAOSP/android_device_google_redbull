@@ -960,4 +960,7 @@ include hardware/google/pixel/common/pixel-common-device.mk
 
 # power HAL
 -include hardware/google/pixel/power-libperfmgr/aidl/device.mk
+
+# mm_event
+-include hardware/google/pixel/mm/device.mk
 #################################################################################
