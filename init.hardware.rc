@@ -247,9 +247,6 @@ on late-fs
     chown system system /mnt/vendor/persist/time/ats_15
     chown system system /mnt/vendor/persist/time/ats_16
 
-    # Start time daemon early so that the system time can be set early
-    start time_daemon
-
     # Init sensor specific services
     start init-sensors-sh
 
