@@ -126,7 +126,7 @@ int main(int /* argc */, char ** /* argv */) {
         // Add WLAN power entity
         uint32_t wlanId = service->addPowerEntity("WLAN", PowerEntityType::SUBSYSTEM);
         sp<WlanStateResidencyDataProvider> wlanSdp =
-            new WlanStateResidencyDataProvider(wlanId, "/d/wlan0/power_stats");
+            new WlanStateResidencyDataProvider(wlanId, "/sys/kernel/wifi/power_stats");
         service->addStateResidencyDataProvider(wlanSdp);
 
         // Add Easel power entity
