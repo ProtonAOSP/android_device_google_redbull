@@ -284,10 +284,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.foss.config=1 \
     vendor.display.foss.config_path=/vendor/etc/FOSSConfig.xml \
     vendor.display.enable_async_powermode=0 \
-    vendor.display.qdcm.mode_combine=1 \
-    vendor.display.enable_posted_start_dyn=1 \
-    vendor.display.enable_optimize_refresh=1 \
-    vendor.display.disable_offline_rotator=1
+    vendor.display.qdcm.mode_combine=1
 
 # camera google face detection
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -342,12 +339,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.snapshot_enabled=0 \
     persist.vendor.radio.snapshot_timer=0
-
-PRODUCT_PACKAGES += \
-    gralloc.lito \
-    vendor.qti.hardware.display.composer-service \
-    android.hardware.graphics.mapper@3.0-impl-qti-display \
-    vendor.qti.hardware.display.allocator-service
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
@@ -888,7 +879,6 @@ PRODUCT_PROPERTY_OVERRIDES += vendor.audio.mic_break=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.use_color_management=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.has_wide_color_display=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.has_HDR_display=true
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.protected_contents=true
 
 # Audio low latency feature
 PRODUCT_COPY_FILES += \
@@ -938,6 +928,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 #################################################################################
 
 # Display
+-include hardware/qcom/sm7250/display/config/display-product.mk
 -include vendor/qcom/sm7250/proprietary/display/config/display-product-proprietary.mk
 
 # Security
