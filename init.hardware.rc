@@ -418,6 +418,7 @@ on boot
     chmod 2770 /dev/socket/qmux_radio
 
     setprop wifi.interface wlan0
+    setprop wifi.aware.interface wifi-aware0
 
     chown system system /sys/kernel/hbtp/display_pwr
 
