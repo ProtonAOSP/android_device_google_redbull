@@ -418,6 +418,7 @@ on boot
     chmod 2770 /dev/socket/qmux_radio
 
     setprop wifi.interface wlan0
+    setprop wifi.aware.interface wifi-aware0
 
     chown system system /sys/kernel/hbtp/display_pwr
 
@@ -668,6 +669,18 @@ on property:init.svc.vendor.qti.hardware.display.composer=stopped
 
 on property:init.svc.vendor.qti.hardware.display.composer=running
     start ppd
+
+# Start daemon after boot completed
+on property:sys.boot_completed=1
+    start vendor.ssgtzd
+
+# Used 'disabled' flag, so daemon won't be started until explicit start
+service vendor.ssgtzd /vendor/bin/ssgtzd
+    class late_start
+    user system
+    group system
+    disabled
+    socket ssgtzd stream 0660 system inet
 
 # charger driver exposes now finer grain control, map demo mode to those properties
 # NOTE: demo mode can only be exit wiping data (which reset the persist properties)
