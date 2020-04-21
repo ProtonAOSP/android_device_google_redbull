@@ -107,14 +107,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.google.airbrush.manager</name>
-        <version>1.0</version>
-        <interface>
-            <name>IAirbrushManager</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.am</name>
         <version>1.0</version>
         <interface>
@@ -338,6 +330,15 @@
         </interface>
         <interface>
             <name>IGPAppConnector</name>
+            <instance>default</instance>
+        </interface>
+      </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.alarm</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IAlarm</name>
             <instance>default</instance>
         </interface>
     </hal>
