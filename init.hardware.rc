@@ -138,6 +138,10 @@ on init && property:vendor.skip.init=0
     # Allow PAI targeting per hardware SKU
     setprop ro.oem.key1 ${ro.boot.hardware.sku}
 
+    # Property used by vintf for sku specific manifests
+    # Property used by NFC for sku specific configurations
+    setprop ro.boot.product.hardware.sku ${ro.boot.hardware.sku}
+
     # Battery Defender
     chown system system /sys/devices/platform/soc/soc:google,charger/charge_stop_level
     chown system system /sys/devices/platform/soc/soc:google,charger/charge_start_level
