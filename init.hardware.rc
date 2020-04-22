@@ -138,6 +138,10 @@ on init && property:vendor.skip.init=0
     # Allow PAI targeting per hardware SKU
     setprop ro.oem.key1 ${ro.boot.hardware.sku}
 
+    # Property used by vintf for sku specific manifests
+    # Property used by NFC for sku specific configurations
+    setprop ro.boot.product.hardware.sku ${ro.boot.hardware.sku}
+
     # Battery Defender
     chown system system /sys/devices/platform/soc/soc:google,charger/charge_stop_level
     chown system system /sys/devices/platform/soc/soc:google,charger/charge_start_level
@@ -669,6 +673,18 @@ on property:init.svc.vendor.qti.hardware.display.composer=stopped
 
 on property:init.svc.vendor.qti.hardware.display.composer=running
     start ppd
+
+# Start daemon after boot completed
+on property:sys.boot_completed=1
+    start vendor.ssgtzd
+
+# Used 'disabled' flag, so daemon won't be started until explicit start
+service vendor.ssgtzd /vendor/bin/ssgtzd
+    class late_start
+    user system
+    group system
+    disabled
+    socket ssgtzd stream 0660 system inet
 
 # charger driver exposes now finer grain control, map demo mode to those properties
 # NOTE: demo mode can only be exit wiping data (which reset the persist properties)
