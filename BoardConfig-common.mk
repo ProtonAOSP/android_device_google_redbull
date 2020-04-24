@@ -196,6 +196,8 @@ TARGET_USES_HWC2 := true
 TARGET_USES_DISPLAY_RENDER_INTENTS := true
 TARGET_USES_COLOR_METADATA := true
 TARGET_USES_DRM_PP := true
+TARGET_HAS_WIDE_COLOR_DISPLAY := true
+TARGET_HAS_HDR_DISPLAY := true
 
 # Vendor Interface Manifest
 DEVICE_MANIFEST_FILE := device/google/redbull/manifest.xml
