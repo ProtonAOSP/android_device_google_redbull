@@ -89,7 +89,7 @@ $(call inherit-product, $(LOCAL_PATH)/utils.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 PRODUCT_CHARACTERISTICS := nosdcard
-PRODUCT_SHIPPING_API_LEVEL := 28
+PRODUCT_SHIPPING_API_LEVEL := 30
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -285,6 +285,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.foss.config_path=/vendor/etc/FOSSConfig.xml \
     vendor.display.enable_async_powermode=0 \
     vendor.display.qdcm.mode_combine=1
+
+# vndservicemanager has been removed from API30 devices (aosp/1235751)
+# but we still need it for display services.
+PRODUCT_PACKAGES += \
+    vndservicemanager
 
 # camera google face detection
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -535,7 +540,9 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default
 
 PRODUCT_PACKAGES += \
+    android.hardware.audio@6.0-impl:32 \
     android.hardware.audio@5.0-impl:32 \
+    android.hardware.audio.effect@6.0-impl:32 \
     android.hardware.audio.effect@5.0-impl:32 \
     android.hardware.soundtrigger@2.3-impl \
     android.hardware.bluetooth.audio@2.0-impl \
