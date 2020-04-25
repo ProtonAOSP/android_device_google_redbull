@@ -42,7 +42,8 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Include sensors soong namespace
 PRODUCT_SOONG_NAMESPACES += \
-    vendor/qcom/sensors
+    vendor/qcom/sensors \
+    vendor/google/tools/sensors
 
 # Single vendor RIL/Telephony/data with SM7250
   PRODUCT_SOONG_NAMESPACES += \
