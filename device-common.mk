@@ -40,6 +40,12 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/sm7250 \
     vendor/google/interfaces
 
+# Include GPS soong namespace
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom/sm7250/gps \
+    vendor/qcom/sm7250/proprietary/gps \
+    vendor/qcom/sm7250/codeaurora/location
+
 # Include sensors soong namespace
 PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/sensors \
