@@ -361,6 +361,7 @@ on early-boot
     chown system system /sys/class/backlight/panel0-backlight/vr_mode
     chown system system /sys/class/backlight/panel0-backlight/hbm_mode
     chown system system /sys/class/backlight/panel0-backlight/als_table
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/te2_table
 
     # Wait for insmod_sh to finish all modules
     wait_for_prop vendor.all.modules.ready 1
