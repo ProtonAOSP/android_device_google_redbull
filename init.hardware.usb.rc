@@ -53,6 +53,8 @@ on early-boot
     symlink /config/usb_gadget/g1/configs/b.1 /config/usb_gadget/g1/os_desc/b.1
     write /sys/module/libcomposite/parameters/disable_l1_for_hs "y"
     write /config/usb_gadget/g1/functions/gsi.rndis/rndis_class_id 1
+    # change /config/usb_gadget permission
+    start init-gadgethal-sh
 
 on property:init.svc.console=running
     write /sys/class/power_supply/usb/moisture_detection_enabled 0
