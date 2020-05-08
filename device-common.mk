@@ -962,7 +962,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 -include vendor/qcom/sm7250/proprietary/commonsys-intf/data/data_commonsys-intf_vendor_product.mk
 
 # Sensor
-ENABLE_SENSOR_SSC_FOR_SOONG := true
+ifneq ($(wildcard vendor/google/tools),)
+    ENABLE_SENSOR_SSC_FOR_SOONG := true
+endif
 -include vendor/qcom/sm7250/proprietary/sensors-see/build_config/sns_vendor_board.mk
 -include vendor/qcom/sm7250/proprietary/sensors-see/build_config/sns_vendor_product.mk
 
