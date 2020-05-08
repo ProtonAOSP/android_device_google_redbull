@@ -161,7 +161,6 @@ BOOT_KERNEL_MODULES := \
 	pinctrl-spmi-gpio.ko \
 	pinctrl-spmi-mpp.ko \
 	pwm-qti-lpg.ko \
-	camcc-lito.ko \
 	debugcc-lito.ko \
 	dispcc-lito.ko \
 	gpucc-lito.ko \
@@ -333,63 +332,6 @@ BOOT_KERNEL_MODULES := \
 	snd-soc-wm-adsp.ko \
 	snd-soc-cs35l41.ko \
 	snd-soc-cs35l41-i2c.ko \
-	cam_debug_util.ko \
-	cam_trace.ko \
-	cam_smmu_api.ko \
-	cam_mem_mgr.ko \
-	cam_utils.ko \
-	cam_req_mgr.ko \
-	cam-sync.ko \
-	cam_cpas.ko \
-	cam_cdm.ko \
-	cam_ife_csid.ko \
-	cam_ife_csid17x.ko \
-	cam_ife_csid_lite17x.ko \
-	cam_irq_controller.ko \
-	cam_tasklet_util.ko \
-	cam_vfe.ko \
-	cam-context.ko \
-	cam_isp_packet_parser.ko \
-	cam_ife_hw_mgr.ko \
-	cam_isp_hw_mgr.ko \
-	cam_sensor_vsync_pb.ko \
-	cam_sensor_vsync_dev.ko \
-	cam_isp.ko \
-	cam_res_mgr.ko \
-	cam_cci.ko \
-	cam_csiphy.ko \
-	cam-sensor-io.ko \
-	cam_sensor_util.ko \
-	cam_actuator.ko \
-	fw-update.ko \
-	cam_sensor.ko \
-	cam_eeprom.ko \
-	cam_ois.ko \
-	cam_flash.ko \
-	cam_hfi.ko \
-	cam_a5.ko \
-	cam_ipe.ko \
-	cam_bps.ko \
-	cam_icp.ko \
-	cam_jpeg_enc.ko \
-	cam_jpeg_dma.ko \
-	cam_jpeg_hw_mgr.ko \
-	cam_jpeg.ko \
-	cam-fd-hw-mgr.ko \
-	cam_fd.ko \
-	cam_lrme_hw_mgr.ko \
-	cam_lrme_hw.ko \
-	cam_lrme.ko \
-	cam_req_mgr_late.ko \
-	cam_cci_late.ko \
-	cam_gyro_core.ko \
-	cam_custom_context.ko \
-	cam_custom_csid_dev.ko \
-	cam_custom_dev.ko \
-	cam_custom_hw_mgr.ko \
-	cam_custom_sub_mod_core.ko \
-	cam_custom_sub_mod_dev.ko \
-	cam_custom_sub_mod_soc.ko \
 	msm-vidc.ko \
 	ebtables.ko \
 	ebtable_broute.ko \
