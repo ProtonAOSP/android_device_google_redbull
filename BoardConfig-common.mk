@@ -324,14 +324,6 @@ BOOT_KERNEL_MODULES := \
 	rpmsg_char.ko \
 	rmnet.ko \
 	usb-audio-qmi.ko \
-	snd-soc-rl6231.ko \
-	snd-soc-codec-misc.ko \
-	snd-soc-rt5514-spi.ko \
-	snd-soc-rt5514-qmi.ko \
-	snd-soc-rt5514.ko \
-	snd-soc-wm-adsp.ko \
-	snd-soc-cs35l41.ko \
-	snd-soc-cs35l41-i2c.ko \
 	msm-vidc.ko \
 	ebtables.ko \
 	ebtable_broute.ko \
