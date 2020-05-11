@@ -550,7 +550,6 @@ on property:persist.vendor.hvdcp_opti.start=1
     chown root system /sys/class/power_supply/bms/esr_nominal
 
 service vendor.per_mgr /vendor/bin/pm-service
-    class core
     user system
     group system
     ioprio rt 4
@@ -563,6 +562,17 @@ service per_proxy /vendor/bin/pm-proxy
 
 on property:init.svc.vendor.per_mgr=running
     start per_proxy
+
+# Start per_mgr daemon to boot modem as esim reset is done or not needed
+on property:persist.vendor.modem.esim.reset=done
+    start vendor.per_mgr
+
+on property:persist.vendor.modem.esim.reset=noneed
+    start vendor.per_mgr
+
+# Force to start per_mgr daemon as boot completed
+on property:sys.boot_completed=1
+    start vendor.per_mgr
 
 on property:sys.shutdown.requested=*
     stop per_proxy
