@@ -347,8 +347,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Enable reboot free DSDS
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.telephony.max.active.modems=2 \
     persist.radio.reboot_on_modem_change=false
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    telephony.active_modems.max_count=2
 
 # Disable snapshot timer
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -650,7 +652,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 endif
 
 # setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # Use the default charger mode images
 PRODUCT_PACKAGES += \
@@ -690,6 +692,10 @@ PRODUCT_PACKAGES += \
 # Override heap growth limit due to high display density on device
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=256m
+
+# Use 64-bit dex2oat for better dexopt time.
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat64.enabled=true
 
 PRODUCT_PACKAGES += \
     ipacm \
