@@ -565,9 +565,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcirrusspkrprot \
     libsndmonitor \
-    libmalistener \
     liba2dpoffload \
     btaudio_offload_if \
+    libthermallistener \
     libmaxxaudio \
     libaudiozoom \
     libdevicestatelistener
