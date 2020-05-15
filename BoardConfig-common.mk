@@ -206,8 +206,6 @@ DEVICE_FRAMEWORK_MANIFEST_FILE := device/google/redbull/framework_manifest.xml
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
 
-BOARD_EXT4_SHARE_DUP_BLOCKS := true
-
 # dynamic partition
 BOARD_SUPER_PARTITION_SIZE := 9755951104
 BOARD_SUPER_PARTITION_GROUPS := google_dynamic_partitions
