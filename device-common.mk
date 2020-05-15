@@ -565,9 +565,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcirrusspkrprot \
     libsndmonitor \
-    libmalistener \
     liba2dpoffload \
     btaudio_offload_if \
+    libthermallistener \
     libmaxxaudio \
     libaudiozoom \
     libdevicestatelistener
@@ -944,6 +944,10 @@ endif
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.surface_flinger.supports_background_blur=1 \
     persist.sys.sf.disable_blurs=1
+
+# Set support one-handed mode
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_one_handed_mode = true
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
