@@ -227,3 +227,7 @@ BOARD_SUPER_PARTITION_ERROR_LIMIT := 9231663104
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
 -include device/google/redbull/soong/pixel_soong_config.mk
+
+# List of modules that should not load automatically
+PRODUCT_COPY_FILES += \
+    device/google/redbull/modules.blacklist:$(TARGET_COPY_OUT_VENDOR)/lib/modules/modules.blacklist
