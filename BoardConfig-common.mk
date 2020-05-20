@@ -234,7 +234,7 @@ PRODUCT_COPY_FILES += \
 
 # TARGET_BOOLOADER_BOARD_NAME sensitive common boilerplate
 
-TARGET_BOARD_NAME_DIR=device/google/$(TARGET_BOOTLOADER_BOARD_NAME)
+TARGET_BOARD_NAME_DIR := device/google/$(TARGET_BOOTLOADER_BOARD_NAME)
 -include $(TARGET_BOARD_NAME_DIR:%/=%)-sepolicy/$(TARGET_BOOTLOADER_BOARD_NAME)-sepolicy.mk
 
 TARGET_BOARD_INFO_FILE := $(TARGET_BOARD_NAME_DIR)/board-info.txt
@@ -285,5 +285,61 @@ KERNEL_MODULES_LOAD := $(strip $(shell cat $(firstword $(wildcard \
 # DTB
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_MODULE_DIR)
 
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(KERNEL_MODULES)
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(KERNEL_MODULES_LOAD)
+ifeq (,$(BOOT_KERNEL_MODULES))
+    BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(KERNEL_MODULES)
+    BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(KERNEL_MODULES_LOAD)
+else
+    #
+    # BEWARE: This is a tuning exercise to get right, splitting between
+    # boot essential drivers, fastboot/recovery drivers, and the remainder
+    # used by Android, but not the blacklist (device specific drivers not
+    # common between platforms or drivers that must not be autoloaded) which
+    # are loaded later.
+    #
+    # BOOT_KERNEL_MODULES     - Modules loaded in first stage init.
+    # RECOVERY_KERNEL_MODULES - Additional modules loaded in recovery/fastbootd
+    #                           or in second stage init.
+    # file: modules.blacklist - Not autoloaded. loaded on demand product or HAL.
+    # Remainder               - In second stage init, but after recovery set;
+    #                           minus the blacklist.
+    #
+    BOOT_KERNEL_MODULES_FILTER := $(foreach m,$(BOOT_KERNEL_MODULES),%/$(m))
+    ifneq (,$(RECOVERY_KERNEL_MODULES))
+        RECOVERY_KERNEL_MODULES_FILTER := \
+            $(foreach m,$(RECOVERY_KERNEL_MODULES),%/$(m))
+    endif
+    BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
+            $(filter $(BOOT_KERNEL_MODULES_FILTER) \
+                     $(RECOVERY_KERNEL_MODULES_FILTER),$(KERNEL_MODULES))
+
+    # ALL modules land in /vendor/lib/modules so they could be rmmod/insmod'd,
+    # and modules.list actually limits us to the ones we intend to load.
+    BOARD_VENDOR_KERNEL_MODULES := $(KERNEL_MODULES)
+    # To limit /vendor/lib/modules to just the ones loaded, use:
+    #
+    #   BOARD_VENDOR_KERNEL_MODULES := $(filter-out \
+    #       $(BOOT_KERNEL_MODULES_FILTER),$(KERNEL_MODULES))
+
+    # Group set of /vendor/lib/modules loading order to recovery modules first,
+    # then remainder, subtracting both recovery and boot modules.
+    BOARD_VENDOR_KERNEL_MODULES_LOAD := \
+            $(filter-out $(BOOT_KERNEL_MODULES_FILTER), \
+            $(filter $(RECOVERY_KERNEL_MODULES_FILTER),$(KERNEL_MODULES_LOAD)))
+    BOARD_VENDOR_KERNEL_MODULES_LOAD += \
+            $(filter-out $(BOOT_KERNEL_MODULES_FILTER) \
+                 $(RECOVERY_KERNEL_MODULES_FILTER),$(KERNEL_MODULES_LOAD))
+
+    # NB: Load order governed by modules.load and not by $(BOOT_KERNEL_MODULES)
+    BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := \
+            $(filter $(BOOT_KERNEL_MODULES_FILTER),$(KERNEL_MODULES_LOAD))
+
+    ifneq (,$(RECOVERY_KERNEL_MODULES_FILTER))
+        # Group set of /vendor/lib/modules loading order to boot modules first,
+        # then remainder of recovery modules.
+        BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := \
+            $(filter $(BOOT_KERNEL_MODULES_FILTER),$(KERNEL_MODULES_LOAD))
+        BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD += \
+            $(filter-out $(BOOT_KERNEL_MODULES_FILTER), \
+            $(filter $(RECOVERY_KERNEL_MODULES_FILTER),$(KERNEL_MODULES_LOAD)))
+    endif
+endif
