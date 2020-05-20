@@ -192,6 +192,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CPUBWUseAb",
+      "Path": "/sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/use_ab",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUBWMinFreq",
       "Path": "/sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/min_freq",
       "Values": [
@@ -226,6 +235,15 @@
       "Values": [
         "0",
         "10"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "LLCCBWUseAb",
+      "Path": "/sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/use_ab",
+      "Values": [
+        "0",
+        "1"
       ],
       "ResetOnInit": true
     },
