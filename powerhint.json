@@ -648,6 +648,18 @@
       "Value": "0"
     },
     {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "CPUBWUseAb",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "LLCCBWUseAb",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
       "PowerHint": "CAMERA_STREAMING_LOW",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
