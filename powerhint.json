@@ -164,6 +164,24 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CDCpusetCpus",
+      "Path": "/dev/cpuset/camera-daemon/cpus",
+      "Values": [
+        "0-5",
+        "0-7"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CDDCpusetCpus",
+      "Path": "/dev/cpuset/camera-daemon-dedicated/cpus",
+      "Values": [
+        "6-7",
+        "0-7"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUBWHystTriggerCount",
       "Path": "/sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/hyst_trigger_count",
       "Values": [
@@ -620,6 +638,18 @@
       "Node": "UfsClkGateEnable",
       "Duration": 1000,
       "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_MID",
+      "Node": "CDCpusetCpus",
+      "Duration": 0,
+      "Value": "0-5"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_MID",
+      "Node": "CDDCpusetCpus",
+      "Duration": 0,
+      "Value": "6-7"
     },
     {
       "PowerHint": "CAMERA_STREAMING_MID",
