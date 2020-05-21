@@ -695,6 +695,18 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "CDCpusetCpus",
+      "Duration": 0,
+      "Value": "0-5"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "CDDCpusetCpus",
+      "Duration": 0,
+      "Value": "6-7"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
       "Value": "1728000"
@@ -758,6 +770,18 @@
       "Node": "LLCCBWHystLength",
       "Duration": 0,
       "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_ULTRA",
+      "Node": "CDCpusetCpus",
+      "Duration": 0,
+      "Value": "0-5"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_ULTRA",
+      "Node": "CDDCpusetCpus",
+      "Duration": 0,
+      "Value": "6-7"
     },
     {
       "PowerHint": "CAMERA_STREAMING_ULTRA",
@@ -848,6 +872,18 @@
       "Node": "SdmThermTzMode",
       "Duration": 15000,
       "Value": "disabled"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_LOW",
+      "Node": "CDCpusetCpus",
+      "Duration": 0,
+      "Value": "0-5"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_LOW",
+      "Node": "CDDCpusetCpus",
+      "Duration": 0,
+      "Value": "6-7"
     },
     {
       "PowerHint": "CAMERA_STREAMING_LOW",
