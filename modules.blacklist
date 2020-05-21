@@ -1,0 +1,3 @@
+# List of sub-device specific modules to not load automatically
+blacklist ftm5.ko
+blacklist sec_touch.ko
