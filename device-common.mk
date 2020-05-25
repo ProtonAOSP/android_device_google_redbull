@@ -60,7 +60,8 @@ PRODUCT_SOONG_NAMESPACES += \
       vendor/qcom/sm7250/proprietary/commonsys/telephony-apps/QtiTelephonyService \
       vendor/qcom/sm7250/proprietary/commonsys/telephony-apps/xdivert \
       vendor/qcom/sm7250/proprietary/qcril-data-hal \
-      vendor/qcom/sm7250/proprietary/qcril-hal
+      vendor/qcom/sm7250/proprietary/qcril-hal \
+      vendor/qcom/sm7250/proprietary/data
 
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true
