@@ -215,7 +215,7 @@
             <Feature name="bitrate-modes" value="CQ" />
         </MediaCodec>
         <MediaCodec name="c2.qti.heic.encoder" type="image/vnd.android.heic">
-            <Limit name="size" min="512x512" max="8192x8192" />
+            <Limit name="size" min="512x512" max="4096x2160" />
             <Limit name="block-count" range="1024-138240" /> <!--max-spatial: 8192x4320 -->
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
