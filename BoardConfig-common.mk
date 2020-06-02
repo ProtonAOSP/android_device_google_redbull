@@ -108,6 +108,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_ROOT_EXTRA_SYMLINKS := /vendor/lib/dsp:/dsp
 BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/persist:/persist
+BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/ramdump:/ramdump
 
 include device/google/redbull-sepolicy/redbull-sepolicy.mk
 
@@ -231,3 +232,56 @@ BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 # List of modules that should not load automatically
 PRODUCT_COPY_FILES += \
     device/google/redbull/modules.blacklist:$(TARGET_COPY_OUT_VENDOR)/lib/modules/modules.blacklist
+
+# TARGET_BOOLOADER_BOARD_NAME sensitive common boilerplate
+
+TARGET_BOARD_NAME_DIR=device/google/$(TARGET_BOOTLOADER_BOARD_NAME)
+include $(TARGET_BOARD_NAME_DIR:%/=%)-sepolicy/$(TARGET_BOOTLOADER_BOARD_NAME)-sepolicy.mk
+
+TARGET_BOARD_INFO_FILE := $(TARGET_BOARD_NAME_DIR)/board-info.txt
+TARGET_BOARD_COMMON_PATH := $(TARGET_BOARD_NAME_DIR)/sm7250
+
+# Common kernel file handling
+TARGET_KERNEL_DIR := $(TARGET_BOARD_NAME_DIR:%/=%)-kernel
+
+# DTBO partition definitions
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+    BOARD_PREBUILT_DTBOIMAGE := $(TARGET_KERNEL_DIR)/dtbo.img
+else
+    BOARD_PREBUILT_DTBOIMAGE := $(TARGET_KERNEL_DIR)/vintf/dtbo.img
+endif
+TARGET_FS_CONFIG_GEN := $(TARGET_BOARD_NAME_DIR)/config.fs
+
+# Kernel modules
+ifeq (,$(filter-out $(TARGET_BOOTLOADER_BOARD_NAME)_kasan, $(TARGET_PRODUCT)))
+    KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/kasan
+else ifeq (,$(filter-out $(TARGET_BOOTLOADER_BOARD_NAME)_kernel_debug_memory, $(TARGET_PRODUCT)))
+    KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/debug_memory
+else ifeq (,$(filter-out $(TARGET_BOOTLOADER_BOARD_NAME)_kernel_debug_locking, $(TARGET_PRODUCT)))
+    KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/debug_locking
+else ifeq (,$(filter-out $(TARGET_BOOTLOADER_BOARD_NAME)_kernel_debug_hang, $(TARGET_PRODUCT)))
+    KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/debug_hang
+else ifeq (,$(filter-out $(TARGET_BOOTLOADER_BOARD_NAME)_kernel_debug_api, $(TARGET_PRODUCT)))
+    KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/debug_api
+else ifeq (,$(filter-out $(TARGET_BOOTLOADER_BOARD_NAME)_gki, $(TARGET_PRODUCT)))
+    KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/gki
+else
+    ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+        KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)
+    else
+        KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/vintf
+    endif
+endif
+
+KERNEL_MODULES := $(wildcard $(KERNEL_MODULE_DIR)/*.ko)
+KERNEL_MODULES_LOAD := $(strip $(shell cat $(firstword $(wildcard \
+        $(KERNEL_MODULE_DIR)/modules.load \
+        $(if $(filter userdebug eng,$(TARGET_BUILD_VARIANT)), \
+            $(TARGET_KERNEL_DIR)/vintf/modules.load,) \
+        $(TARGET_KERNEL_DIR)/modules.load))))
+
+# DTB
+BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_MODULE_DIR)
+
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(KERNEL_MODULES)
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(KERNEL_MODULES_LOAD)
