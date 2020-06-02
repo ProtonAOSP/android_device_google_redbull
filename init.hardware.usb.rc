@@ -108,3 +108,6 @@ on property:sys.usb.config=midi && property:sys.usb.configfs=1
     symlink /config/usb_gadget/g1/functions/midi.gs5 /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
+
+on property:persist.vendor.usb.pdo=5V3A
+    write /sys/module/qpnp_pdphy/drivers/platform:qpnp-pdphy/c440000.qcom,spmi:qcom,pm7250b@2:qcom,usb-pdphy@1700/usbpd0/pdo "5V3A"
