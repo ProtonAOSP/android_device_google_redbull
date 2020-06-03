@@ -401,7 +401,7 @@ on early-boot
     chown system system /mnt/vendor/persist/camera/rals_fac_test
     chmod 0660 /mnt/vendor/persist/camera/rals_fac_test
 
-    # Permission for Athletico
+    # Permission for Athle****
     chown system system /dev/sensor_tunnel
     chmod 0660 /dev/sensor_tunnel
 
@@ -536,7 +536,7 @@ on property:sys.boot_completed=1
     chown system system /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/rtx
     chmod 0660 /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/rtx
 
-    # Permission for Athletico
+    # Permission for Athle****
     chown system system /dev/iaxxx-module-celldrv
     chmod 0660 /dev/iaxxx-module-celldrv
 
@@ -654,11 +654,6 @@ service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
    class core
    user root
    oneshot
-
-service tftp_server /vendor/bin/tftp_server
-   class core
-   user root
-   group root system
 
 service modem_svc /vendor/bin/modem_svc -q
    class core
