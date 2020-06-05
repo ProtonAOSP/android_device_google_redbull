@@ -195,6 +195,10 @@ on fs
 
     restorecon_recursive /mnt/vendor/persist
 
+    # Set up camera-related directories and permissions
+    # Add restorecon_recursive command to make sure the restorecon label is persist_camera_file.
+    restorecon_recursive /mnt/vendor/persist/camera
+
 on post-fs
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
@@ -401,10 +405,6 @@ on early-boot
     chown system system /mnt/vendor/persist/camera/rals_fac_test
     chmod 0660 /mnt/vendor/persist/camera/rals_fac_test
 
-    # Permission for Athle****
-    chown system system /dev/sensor_tunnel
-    chmod 0660 /dev/sensor_tunnel
-
     # FG cycle count read from dumpstate + backup restore from health HAL (and pixelstats)
     chown system system /sys/class/power_supply/maxfg/cycle_counts_bins
 
@@ -535,10 +535,6 @@ on property:sys.boot_completed=1
     chmod 0660 /sys/class/power_supply/wireless/capacity
     chown system system /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/rtx
     chmod 0660 /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/rtx
-
-    # Permission for Athle****
-    chown system system /dev/iaxxx-module-celldrv
-    chmod 0660 /dev/iaxxx-module-celldrv
 
     # Permission for bootloader logs
     chown root log /proc/bldrlog
