@@ -273,6 +273,9 @@ else
     endif
 endif
 
+# Copy kheaders.ko to vendor/lib/modules for VTS test
+BOARD_VENDOR_KERNEL_MODULES += $(KERNEL_MODULE_DIR)/kheaders.ko
+
 KERNEL_MODULES := $(wildcard $(KERNEL_MODULE_DIR)/*.ko)
 KERNEL_MODULES_LOAD := $(strip $(shell cat $(firstword $(wildcard \
         $(KERNEL_MODULE_DIR)/modules.load \
