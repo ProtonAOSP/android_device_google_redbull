@@ -108,7 +108,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_ROOT_EXTRA_SYMLINKS := /vendor/lib/dsp:/dsp
 BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/persist:/persist
-BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/ramdump:/ramdump
 
 include device/google/redbull-sepolicy/redbull-sepolicy.mk
 
@@ -272,6 +271,9 @@ else
         KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/vintf
     endif
 endif
+
+# Copy kheaders.ko to vendor/lib/modules for VTS test
+BOARD_VENDOR_KERNEL_MODULES += $(KERNEL_MODULE_DIR)/kheaders.ko
 
 KERNEL_MODULES := $(wildcard $(KERNEL_MODULE_DIR)/*.ko)
 KERNEL_MODULES_LOAD := $(strip $(shell cat $(firstword $(wildcard \
