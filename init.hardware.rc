@@ -410,6 +410,10 @@ on early-boot
     # FG cycle count read from dumpstate + backup restore from health HAL (and pixelstats)
     chown system system /sys/class/power_supply/maxfg/cycle_counts_bins
 
+    # Permission for battery eeprom
+    chown system system /sys/devices/platform/soc/98c000.i2c/i2c-1/1-0050/1-00500/nvmem
+    chmod 0640 /sys/devices/platform/soc/98c000.i2c/i2c-1/1-0050/1-00500/nvmem
+
     # Permission for Pixelstats
     chown system system /sys/class/misc/msm_cirrus_playback/resistance_left_right
     chown system system /sys/devices/platform/soc/${ro.boot.bootdevice}/slowio_read_cnt
