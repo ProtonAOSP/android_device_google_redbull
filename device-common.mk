@@ -258,6 +258,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.capture.enforce_legacy_copp_sr=true \
     vendor.audio.offload.buffer.size.kb=256 \
     persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24 \
+    vendor.audio.offload.gapless.enabled=true \
 
 # MaxxAudio effect and add rotation monitor
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -501,8 +502,8 @@ PRODUCT_PACKAGES += \
     liblocation_api \
     libbatching \
     libgeofencing \
-    android.hardware.gnss@2.0-impl-qti \
-    android.hardware.gnss@2.0-service-qti
+    android.hardware.gnss@2.1-impl-qti \
+    android.hardware.gnss@2.1-service-qti
 
 ENABLE_VENDOR_RIL_SERVICE := true
 
