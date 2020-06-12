@@ -538,6 +538,14 @@ on property:sys.boot_completed=1
     chown system system /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/rtx
     chmod 0660 /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/rtx
 
+    chown system system /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/rxdata
+    chown system system /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/txdata
+    chown system system /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/rxlen
+    chown system system /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/txlen
+    chown system system /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/ccreset
+    chown system system /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/status
+    chown system system /sys/devices/platform/soc/98c000.i2c/i2c-1/1-003b/version
+
     # Permission for bootloader logs
     chown root log /proc/bldrlog
     chmod 0444 /proc/bldrlog
