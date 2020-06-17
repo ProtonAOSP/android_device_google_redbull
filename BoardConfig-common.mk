@@ -106,6 +106,303 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 0x06000000
 # vendor_boot.img
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 0x06000000
 
+# Specify BOOT_KERNEL_MODULES
+#
+# modules for first stage in vendor_boot.img, remainder goes to vendor.img.
+# This list is a superset of all the possible modules required, and is
+# filtered and ordered as per the supplied kernel's modules.load file.
+# Any modules that do not exist will be silently dropped.  This is required
+# because some kernel configurations may have extra debug or test modules,
+# make sure any required to be loaded during first stage init are listed.
+BOOT_KERNEL_MODULES := \
+	msm_ipc_logging.ko \
+	qtee_shm_bridge.ko \
+	qcom_hwspinlock.ko \
+	smem.ko \
+	msm_minidump.ko \
+	watchdog_v2.ko \
+	early_random.ko \
+	qcom-pdc.ko \
+	cmd-db.ko \
+	qcom_rpmh.ko \
+	phy-qcom-ufs.ko \
+	phy-qcom-ufs-qrbtc-sdm845.ko \
+	phy-qcom-ufs-qmp-v4.ko \
+	phy-qcom-ufs-qmp-v4-lito.ko \
+	phy-qcom-ufs-qmp-v3-660.ko \
+	phy-qcom-ufs-qmp-v3.ko \
+	pinctrl-msm.ko \
+	pinctrl-lito.ko \
+	qcom-spmi-wled.ko \
+	msm_bus.ko \
+	clk-qcom.ko \
+	clk-aop-qmp.ko \
+	clk-rpmh.ko \
+	gcc-lito.ko \
+	clk-spmi-pmic-div.ko \
+	qrtr.ko \
+	qmi_helpers.ko \
+	secure_buffer.ko \
+	heap_mem_ext_v01.ko \
+	subsystem_notif.ko \
+	ramdump.ko \
+	msm_memshare.ko \
+	msm_bus_dbg_rpmh.ko \
+	msm_bus_rpmh.ko \
+	rpmh-regulator.ko \
+	qcom-geni-se.ko \
+	msm_geni_serial.ko \
+	msm_dma_iommu_mapping.ko \
+	arm-smmu-debug.ko \
+	iommu-logger.ko \
+	arm-smmu.ko \
+	ufshcd-core.ko \
+	ufshcd-pltfrm.ko \
+	ufs_qcom.ko \
+	spi-geni-qcom.ko \
+	i2c-qcom-geni.ko \
+	ion-alloc.ko \
+	msm_rtb.ko \
+	pinctrl-spmi-gpio.ko \
+	pinctrl-spmi-mpp.ko \
+	pwm-qti-lpg.ko \
+	camcc-lito.ko \
+	debugcc-lito.ko \
+	dispcc-lito.ko \
+	gpucc-lito.ko \
+	npucc-lito.ko \
+	videocc-lito.ko \
+	virt-dma.ko \
+	gpi.ko \
+	msm_scm.ko \
+	mdt_loader.ko \
+	smem_state.ko \
+	smp2p.ko \
+	qcom_ipcc.ko \
+	llcc-slice.ko \
+	llcc-lito.ko \
+	core_hang_detect.ko \
+	gladiator_hang_detect.ko \
+	minidump_log.ko \
+	memory_dump_v2.ko \
+	dcc_v2.ko \
+	service-locator.ko \
+	service-notifier.ko \
+	subsystem-restart.ko \
+	peripheral-loader.ko \
+	subsys-pil-tz.ko \
+	cdsp-loader.ko \
+	qseecom.ko \
+	smcinvoke.ko \
+	microdump_collector.ko \
+	eud.ko \
+	qcom_socinfo.ko \
+	fsa4480-i2c.ko \
+	rpmsg_core.ko \
+	qcom_glink_native.ko \
+	qcom_glink_smem.ko \
+	qcom_glink_spss.ko \
+	glink_probe.ko \
+	glink_pkt.ko \
+	smp2p_sleepstate.ko \
+	event_timer.ko \
+	lpm-stats.ko \
+	msm_pm.ko \
+	rpmh_master_stat.ko \
+	system_pm.ko \
+	rpm_stats.ko \
+	ddr_stats.ko \
+	cdsprm.ko \
+	msm_icnss.ko \
+	modemsmem.ko \
+	qpnp-amoled-regulator.ko \
+	refgen.ko \
+	slg51000-regulator.ko \
+	tps-regulator.ko \
+	msm_rng.ko \
+	adsprpc_compat.ko \
+	adsprpc.ko \
+	fastcvpd.ko \
+	rdbg.ko \
+	qpnp-power-on.ko \
+	msm-poweroff.ko \
+	usb_f_diag.ko \
+	diagchar.ko \
+	governor_bw_vbif.ko \
+	governor_gpubw_mon.ko \
+	governor_msm_adreno_tz.ko \
+	msm_adreno.ko \
+	regmap-spmi.ko \
+	google-bms.ko \
+	at24.ko \
+	hdcp_qseecom.ko \
+	msm_hdcp.ko \
+	citadel-spi.ko \
+	qcom-i2c-pmic.ko \
+	qcom-spmi-pmic.ko \
+	st21nfc.ko \
+	st54j_se.ko \
+	qpnp-revid.ko \
+	devfreq_qcom_fw.ko \
+	adc_tm.ko \
+	msm_sps.ko \
+	qce50.ko \
+	qcedev-module.ko \
+	qcrypto.ko \
+	spmi-pmic-arb.ko \
+	cnss_utils.ko \
+	cnss_prealloc.ko \
+	cnss_nl.ko \
+	msm_sharedmem.ko \
+	phy-generic.ko \
+	phy-msm-ssusb-qmp.ko \
+	phy-msm-snps-hs.ko \
+	xhci-plat-hcd.ko \
+	rndis.ko \
+	usb_f_cdev.ko \
+	usb_f_ccid.ko \
+	dwc3.ko \
+	usb-dwc3-msm.ko \
+	usb_f_qdss.ko \
+	msm_gsi.ko \
+	ipa3.ko \
+	usb_f_gsi.ko \
+	usb_f_mtp.ko \
+	usb_f_ptp.ko \
+	roles.ko \
+	tcpm.ko \
+	logbuffer.ko \
+	pmic-voter.ko \
+	qpnp_pdphy.ko \
+	dwc3-haps.ko \
+	dwc3-of-simple.ko \
+	dwc3-qcom.ko \
+	touchscreen_tbn.ko \
+	vd6281_module.ko \
+	fpc1020_platform_tee.ko \
+	rtc-pm8xxx.ko \
+	i2c-qcom-geni.ko \
+	devfreq_devbw.ko \
+	msm_npu.ko \
+	qpnp-battery.ko \
+	of_batterydata.ko \
+	qpnp-smb5-charger.ko \
+	qpnp-qgauge.ko \
+	sm7250_bms.ko \
+	google_charger.ko \
+	google-battery.ko \
+	overheat_mitigation.ko \
+	p9221_charger.ko \
+	qti_qmi_sensor.ko \
+	bcl_pmic5.ko \
+	bcl_soc.ko \
+	qmi_cdev.ko \
+	lmh_dbg.ko \
+	msm_lmh_dcvs.ko \
+	regulator_aop_cdev.ko \
+	cpu_isolate.ko \
+	lmh_cpu_vdd_cdev.ko \
+	qcom-spmi-temp-alarm.ko \
+	thermal-tsens.ko \
+	slimbus.ko \
+	bluetooth_power.ko \
+	qcom_edac.ko \
+	qcom-cpufreq-hw.ko \
+	leds-qpnp-flash-common.ko \
+	leds-qpnp-flash-v2.ko \
+	of_slimbus.ko \
+	tz_log.ko \
+	google_wlan_mac.ko \
+	msm_ext_display.ko \
+	msm_qmp.ko \
+	governor_bw_hwmon.ko \
+	bimc-bwmon.ko \
+	governor_memlat.ko \
+	arm-memlat-mon.ko \
+	governor_cdsp_l3.ko \
+	qcom-vadc-common.ko \
+	qcom-spmi-adc5.ko \
+	pac193x.ko \
+	qcom_llcc_pmu.ko \
+	nvmem_qfprom.ko \
+	qcom-spmi-sdam.ko \
+	slim_msm_ngd.ko \
+	rpmsg_char.ko \
+	rmnet.ko \
+	usb-audio-qmi.ko \
+	snd-soc-rl6231.ko \
+	snd-soc-codec-misc.ko \
+	snd-soc-rt5514-spi.ko \
+	snd-soc-rt5514-qmi.ko \
+	snd-soc-rt5514.ko \
+	snd-soc-wm-adsp.ko \
+	snd-soc-cs35l41.ko \
+	snd-soc-cs35l41-i2c.ko \
+	cam_debug_util.ko \
+	cam_trace.ko \
+	cam_smmu_api.ko \
+	cam_mem_mgr.ko \
+	cam_utils.ko \
+	cam_req_mgr.ko \
+	cam-sync.ko \
+	cam_cpas.ko \
+	cam_cdm.ko \
+	cam_ife_csid.ko \
+	cam_ife_csid17x.ko \
+	cam_ife_csid_lite17x.ko \
+	cam_irq_controller.ko \
+	cam_tasklet_util.ko \
+	cam_vfe.ko \
+	cam-context.ko \
+	cam_isp_packet_parser.ko \
+	cam_ife_hw_mgr.ko \
+	cam_isp_hw_mgr.ko \
+	cam_sensor_vsync_pb.ko \
+	cam_sensor_vsync_dev.ko \
+	cam_isp.ko \
+	cam_res_mgr.ko \
+	cam_cci.ko \
+	cam_csiphy.ko \
+	cam-sensor-io.ko \
+	cam_sensor_util.ko \
+	cam_actuator.ko \
+	fw-update.ko \
+	cam_sensor.ko \
+	cam_eeprom.ko \
+	cam_ois.ko \
+	cam_flash.ko \
+	cam_hfi.ko \
+	cam_a5.ko \
+	cam_ipe.ko \
+	cam_bps.ko \
+	cam_icp.ko \
+	cam_jpeg_enc.ko \
+	cam_jpeg_dma.ko \
+	cam_jpeg_hw_mgr.ko \
+	cam_jpeg.ko \
+	cam-fd-hw-mgr.ko \
+	cam_fd.ko \
+	cam_lrme_hw_mgr.ko \
+	cam_lrme_hw.ko \
+	cam_lrme.ko \
+	cam_req_mgr_late.ko \
+	cam_cci_late.ko \
+	cam_gyro_core.ko \
+	cam_custom_context.ko \
+	cam_custom_csid_dev.ko \
+	cam_custom_dev.ko \
+	cam_custom_hw_mgr.ko \
+	cam_custom_sub_mod_core.ko \
+	cam_custom_sub_mod_dev.ko \
+	cam_custom_sub_mod_soc.ko \
+	msm-vidc.ko \
+	ebtables.ko \
+	ebtable_broute.ko \
+	sctp.ko \
+	sctp_diag.ko \
+	qrtr-smd.ko \
+	msm_drm.ko \
+
 # system_ext.img
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
 
@@ -239,7 +536,7 @@ PRODUCT_COPY_FILES += \
 
 # TARGET_BOOLOADER_BOARD_NAME sensitive common boilerplate
 
-TARGET_BOARD_NAME_DIR=device/google/$(TARGET_BOOTLOADER_BOARD_NAME)
+TARGET_BOARD_NAME_DIR := device/google/$(TARGET_BOOTLOADER_BOARD_NAME)
 -include $(TARGET_BOARD_NAME_DIR:%/=%)-sepolicy/$(TARGET_BOOTLOADER_BOARD_NAME)-sepolicy.mk
 
 TARGET_BOARD_INFO_FILE := $(TARGET_BOARD_NAME_DIR)/board-info.txt
@@ -290,5 +587,61 @@ KERNEL_MODULES_LOAD := $(strip $(shell cat $(firstword $(wildcard \
 # DTB
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_MODULE_DIR)
 
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(KERNEL_MODULES)
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(KERNEL_MODULES_LOAD)
+ifeq (,$(BOOT_KERNEL_MODULES))
+    BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(KERNEL_MODULES)
+    BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(KERNEL_MODULES_LOAD)
+else
+    #
+    # BEWARE: This is a tuning exercise to get right, splitting between
+    # boot essential drivers, fastboot/recovery drivers, and the remainder
+    # used by Android, but not the blacklist (device specific drivers not
+    # common between platforms or drivers that must not be autoloaded) which
+    # are loaded later.
+    #
+    # BOOT_KERNEL_MODULES     - Modules loaded in first stage init.
+    # RECOVERY_KERNEL_MODULES - Additional modules loaded in recovery/fastbootd
+    #                           or in second stage init.
+    # file: modules.blacklist - Not autoloaded. loaded on demand product or HAL.
+    # Remainder               - In second stage init, but after recovery set;
+    #                           minus the blacklist.
+    #
+    BOOT_KERNEL_MODULES_FILTER := $(foreach m,$(BOOT_KERNEL_MODULES),%/$(m))
+    ifneq (,$(RECOVERY_KERNEL_MODULES))
+        RECOVERY_KERNEL_MODULES_FILTER := \
+            $(foreach m,$(RECOVERY_KERNEL_MODULES),%/$(m))
+    endif
+    BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
+            $(filter $(BOOT_KERNEL_MODULES_FILTER) \
+                     $(RECOVERY_KERNEL_MODULES_FILTER),$(KERNEL_MODULES))
+
+    # ALL modules land in /vendor/lib/modules so they could be rmmod/insmod'd,
+    # and modules.list actually limits us to the ones we intend to load.
+    BOARD_VENDOR_KERNEL_MODULES := $(KERNEL_MODULES)
+    # To limit /vendor/lib/modules to just the ones loaded, use:
+    #
+    #   BOARD_VENDOR_KERNEL_MODULES := $(filter-out \
+    #       $(BOOT_KERNEL_MODULES_FILTER),$(KERNEL_MODULES))
+
+    # Group set of /vendor/lib/modules loading order to recovery modules first,
+    # then remainder, subtracting both recovery and boot modules.
+    BOARD_VENDOR_KERNEL_MODULES_LOAD := \
+            $(filter-out $(BOOT_KERNEL_MODULES_FILTER), \
+            $(filter $(RECOVERY_KERNEL_MODULES_FILTER),$(KERNEL_MODULES_LOAD)))
+    BOARD_VENDOR_KERNEL_MODULES_LOAD += \
+            $(filter-out $(BOOT_KERNEL_MODULES_FILTER) \
+                 $(RECOVERY_KERNEL_MODULES_FILTER),$(KERNEL_MODULES_LOAD))
+
+    # NB: Load order governed by modules.load and not by $(BOOT_KERNEL_MODULES)
+    BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := \
+            $(filter $(BOOT_KERNEL_MODULES_FILTER),$(KERNEL_MODULES_LOAD))
+
+    ifneq (,$(RECOVERY_KERNEL_MODULES_FILTER))
+        # Group set of /vendor/lib/modules loading order to boot modules first,
+        # then remainder of recovery modules.
+        BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := \
+            $(filter $(BOOT_KERNEL_MODULES_FILTER),$(KERNEL_MODULES_LOAD))
+        BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD += \
+            $(filter-out $(BOOT_KERNEL_MODULES_FILTER), \
+            $(filter $(RECOVERY_KERNEL_MODULES_FILTER),$(KERNEL_MODULES_LOAD)))
+    endif
+endif
