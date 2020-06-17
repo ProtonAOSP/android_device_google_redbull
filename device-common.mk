@@ -944,6 +944,10 @@ endif
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode = true
 
+# Enable Incremental on the device via kernel module
+PRODUCT_PRODUCT_PROPERTIES += \
+        ro.incremental.enable=module:/vendor/lib/modules/incrementalfs.ko
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 #################################################################################
