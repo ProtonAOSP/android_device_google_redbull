@@ -226,4 +226,4 @@ BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
 # List of modules that should not load automatically
 PRODUCT_COPY_FILES += \
-    device/google/redbull/modules.blacklist:$(TARGET_COPY_OUT_VENDOR)/lib/modules/modules.blacklist
+    device/google/redbull/modules.blocklist:$(TARGET_COPY_OUT_VENDOR)/lib/modules/modules.blocklist
