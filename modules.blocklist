@@ -1,0 +1,4 @@
+# List of sub-device specific modules to not load automatically
+blocklist ftm5.ko
+blocklist sec_touch.ko
+blocklist incrementalfs.ko
