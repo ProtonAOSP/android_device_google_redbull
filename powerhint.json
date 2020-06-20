@@ -5,6 +5,7 @@
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq",
       "Values": [
         "9999999",
+        "1651200",
         "1075200"
       ],
       "DefaultIndex": 0,
@@ -1009,6 +1010,24 @@
       "Node": "GPUMinFreq",
       "Duration": 0,
       "Value": "0"
+    },
+    {
+      "PowerHint": "Flipendo",
+      "Node": "CPULittleClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1651200"
+    },
+    {
+      "PowerHint": "Flipendo",
+      "Node": "CPUBigPlusClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1766400"
+    },
+    {
+      "PowerHint": "Flipendo",
+      "Node": "CPUBigClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1728000"
     }
   ]
 }
