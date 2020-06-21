@@ -466,7 +466,7 @@ BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
 # List of modules that should not load automatically
 PRODUCT_COPY_FILES += \
-    device/google/redbull/modules.blacklist:$(TARGET_COPY_OUT_VENDOR)/lib/modules/modules.blacklist
+    device/google/redbull/modules.blocklist:$(TARGET_COPY_OUT_VENDOR)/lib/modules/modules.blocklist
 
 # TARGET_BOOLOADER_BOARD_NAME sensitive common boilerplate
 
@@ -528,16 +528,16 @@ else
     #
     # BEWARE: This is a tuning exercise to get right, splitting between
     # boot essential drivers, fastboot/recovery drivers, and the remainder
-    # used by Android, but not the blacklist (device specific drivers not
+    # used by Android, but not the blocklist (device specific drivers not
     # common between platforms or drivers that must not be autoloaded) which
     # are loaded later.
     #
     # BOOT_KERNEL_MODULES     - Modules loaded in first stage init.
     # RECOVERY_KERNEL_MODULES - Additional modules loaded in recovery/fastbootd
     #                           or in second stage init.
-    # file: modules.blacklist - Not autoloaded. loaded on demand product or HAL.
+    # file: modules.blocklist - Not autoloaded. loaded on demand product or HAL.
     # Remainder               - In second stage init, but after recovery set;
-    #                           minus the blacklist.
+    #                           minus the blocklist.
     #
     BOOT_KERNEL_MODULES_FILTER := $(foreach m,$(BOOT_KERNEL_MODULES),%/$(m))
     ifneq (,$(RECOVERY_KERNEL_MODULES))
