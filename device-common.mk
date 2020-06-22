@@ -748,8 +748,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 
 # Enable stats logging in LMKD
 TARGET_LMKD_STATS_LOG := true
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.lmk.log_stats=true
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.gadgethal.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.gadgethal.sh
