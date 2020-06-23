@@ -95,3 +95,6 @@ persist.bluetooth.bqr.event_mask=14
 # BQR minimum report interval configuration
 persist.bluetooth.bqr.min_interval_ms=500
 
+# System props to enable aac vbr feature
+persist.bluetooth.a2dp_aac.vbr_supported=true
+
