@@ -35,7 +35,10 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/qcom/sm7250/display \
     vendor/google/camera \
     vendor/qcom/sm7250 \
-    vendor/google/interfaces
+    vendor/google/interfaces \
+    vendor/google_devices/common/proprietary/confirmatioui_hal \
+    vendor/google_nos/host/android \
+
 
 # Include GPS soong namespace
 PRODUCT_SOONG_NAMESPACES += \
