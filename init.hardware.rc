@@ -46,7 +46,7 @@ on early-init && property:ro.revision="DEV1.0"
 on early-init && property:ro.boot.mode=charger
     setprop vendor.skip.init 1
     # Loading kernel modules in background
-    start insmod_sh
+    start charger_insmod_sh
 
 on init && property:vendor.skip.init=0
     # Boot time fs tuning
@@ -695,6 +695,13 @@ on property:sys.retaildemo.enabled=1
     setprop persist.vendor.charge.start.level 30
 
 service insmod_sh /vendor/bin/init.insmod.sh /vendor/etc/init.insmod.${ro.hardware}.cfg
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service charger_insmod_sh /vendor/bin/init.insmod.sh /vendor/etc/init.insmod.charger.cfg
     class main
     user root
     group root system
