@@ -951,6 +951,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.disable_rescue=true
 endif
 
+# Enable Incremental on the device via kernel module
+PRODUCT_PRODUCT_PROPERTIES += \
+        ro.incremental.enable=module:/vendor/lib/modules/incrementalfs.ko
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 #################################################################################
