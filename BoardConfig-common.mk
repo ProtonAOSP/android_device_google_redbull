@@ -466,7 +466,8 @@ BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
 # List of modules that should not load automatically
 PRODUCT_COPY_FILES += \
-    device/google/redbull/modules.blocklist:$(TARGET_COPY_OUT_VENDOR)/lib/modules/modules.blocklist
+    device/google/redbull/modules.blocklist:$(TARGET_COPY_OUT_VENDOR)/lib/modules/modules.blocklist \
+    device/google/redbull/init.insmod.charger.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod.charger.cfg \
 
 # TARGET_BOOLOADER_BOARD_NAME sensitive common boilerplate
 
