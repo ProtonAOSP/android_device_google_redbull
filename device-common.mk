@@ -635,7 +635,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    audio.snd_card.open.retries=50
+    vendor.audio.snd_card.open.retries=50
 
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
@@ -958,6 +958,10 @@ ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.disable_rescue=true
 endif
+
+# Enable Incremental on the device via kernel module
+PRODUCT_PRODUCT_PROPERTIES += \
+        ro.incremental.enable=module:/vendor/lib/modules/incrementalfs.ko
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
