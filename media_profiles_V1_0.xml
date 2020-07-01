@@ -225,12 +225,12 @@
                    channels="1" />
         </EncoderProfile>
 
-        <!-- highspeed_low: 1920 x 1080 240fps 63.0 Mbps -->
+        <!-- highspeed_low: 1280 x 720 240fps 42.0 Mbps -->
         <EncoderProfile quality="highspeedlow" fileFormat="mp4" duration="30">
             <Video codec="h264"
-                   bitRate="63000000"
-                   width="1920"
-                   height="1080"
+                   bitRate="42000000"
+                   width="1280"
+                   height="720"
                    frameRate="240" />
             <!-- audio setting is ignored -->
             <Audio codec="aac"
@@ -239,12 +239,26 @@
                    channels="1" />
         </EncoderProfile>
 
-        <!-- highspeed_high: 1920 x 1080 240fps 63.0 Mbps -->
+        <!-- highspeed_high: 1920 x 1080 120fps 42.0 Mbps -->
         <EncoderProfile quality="highspeedhigh" fileFormat="mp4" duration="30">
             <Video codec="h264"
-                   bitRate="63000000"
+                   bitRate="42000000"
                    width="1920"
                    height="1080"
+                   frameRate="120" />
+            <!-- audio setting is ignored -->
+            <Audio codec="aac"
+                   bitRate="96000"
+                   sampleRate="48000"
+                   channels="1" />
+        </EncoderProfile>
+
+        <!-- highspeed720p: 1280 x 720 240fps 42.0 Mbps -->
+        <EncoderProfile quality="highspeed720p" fileFormat="mp4" duration="30">
+            <Video codec="h264"
+                   bitRate="42000000"
+                   width="1280"
+                   height="720"
                    frameRate="240" />
             <!-- audio setting is ignored -->
             <Audio codec="aac"
@@ -253,13 +267,13 @@
                    channels="1" />
         </EncoderProfile>
 
-        <!-- highspeed_1080p: 1920 x 1080 240fps 63.0 Mbps -->
+        <!-- highspeed_1080p: 1920 x 1080 120fps 42.0 Mbps -->
         <EncoderProfile quality="highspeed1080p" fileFormat="mp4" duration="30">
             <Video codec="h264"
-                   bitRate="63000000"
+                   bitRate="42000000"
                    width="1920"
                    height="1080"
-                   frameRate="240" />
+                   frameRate="120" />
             <!-- audio setting is ignored -->
             <Audio codec="aac"
                    bitRate="96000"
