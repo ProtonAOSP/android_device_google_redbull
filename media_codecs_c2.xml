@@ -151,7 +151,7 @@
             <Limit name="performance-point-1920x1080" value="120" />
             <Limit name="performance-point-1280x720" value="240" />
             <Feature name="adaptive-playback" />
-            <Limit name="concurrent-instances" max="6" />
+            <Limit name="concurrent-instances" max="7" />
         </MediaCodec>
         <MediaCodec name="c2.qti.vp9.decoder.secure" type="video/x-vnd.on2.vp9" >
             <Limit name="size" min="96x96" max="4096x2160" />
