@@ -145,3 +145,12 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/platform/soc/soc:fp_fpc*        irq               0600  system system
 /sys/devices/platform/soc/soc:fp_fpc*        wakeup_enable     0200  system system
 /sys/devices/platform/soc/soc:fp_fpc*        hw_reset          0600  system system
+
+# logbuffer
+/dev/logbuffer_usbpd      0640   system system
+/dev/logbuffer_pps        0640   system system
+/dev/logbuffer_ssoc       0640   system system
+/dev/logbuffer_smblib     0640   system system
+/dev/logbuffer_ttf        0640   system system
+/dev/logbuffer_wireless   0640   system system
+/dev/logbuffer_rtx        0640   system system
