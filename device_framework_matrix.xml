@@ -257,14 +257,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>hardware.google.light</name>
-        <version>1.1</version>
-        <interface>
-            <name>ILight</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.bluetooth_sar</name>
         <version>1.1</version>
         <interface>
@@ -360,5 +352,12 @@
             <name>IGPAppConnector</name>
             <instance>default</instance>
         </interface>
+    </hal>
+    <hal format="aidl" optional="false">
+         <name>com.google.hardware.pixel.display</name>
+         <interface>
+             <name>IDisplay</name>
+             <instance>default</instance>
+         </interface>
     </hal>
 </compatibility-matrix>
