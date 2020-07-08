@@ -292,7 +292,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.paneltype=2 \
     ro.vendor.display.sensortype=2 \
     vendor.display.enable_async_powermode=0 \
-    vendor.display.qdcm.mode_combine=1
+    vendor.display.qdcm.mode_combine=1 \
+    vendor.display.lbe.supported=1
 
 # vndservicemanager has been removed from API30 devices (aosp/1235751)
 # but we still need it for display services.
@@ -361,8 +362,7 @@ PRODUCT_PACKAGES += \
 
 # Light HAL
 PRODUCT_PACKAGES += \
-    lights.lito \
-    hardware.google.light@1.1-service
+    lights.lito
 
 # Memtrack HAL
 PRODUCT_PACKAGES += \
@@ -957,7 +957,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 endif
 
 # Enable Incremental on the device via kernel module
-PRODUCT_PRODUCT_PROPERTIES += \
+PRODUCT_PROPERTY_OVERRIDES += \
         ro.incremental.enable=module:/vendor/lib/modules/incrementalfs.ko
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
