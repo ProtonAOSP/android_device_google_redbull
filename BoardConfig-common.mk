@@ -499,8 +499,6 @@ else ifeq (,$(filter-out $(TARGET_BOOTLOADER_BOARD_NAME)_kernel_debug_hang, $(TA
     KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/debug_hang
 else ifeq (,$(filter-out $(TARGET_BOOTLOADER_BOARD_NAME)_kernel_debug_api, $(TARGET_PRODUCT)))
     KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/debug_api
-else ifeq (,$(filter-out $(TARGET_BOOTLOADER_BOARD_NAME)_gki, $(TARGET_PRODUCT)))
-    KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/gki
 else
     ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
         KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)
