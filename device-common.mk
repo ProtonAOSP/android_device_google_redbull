@@ -290,7 +290,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.paneltype=2 \
-    ro.vendor.display.sensortype=2 \
+    ro.vendor.display.sensortype=1 \
     vendor.display.enable_async_powermode=0 \
     vendor.display.qdcm.mode_combine=1 \
     vendor.display.lbe.supported=1
@@ -401,8 +401,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # DRM HAL
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service \
     android.hardware.drm@1.3-service.clearkey \
     android.hardware.drm@1.3-service.widevine
 
