@@ -377,6 +377,56 @@
       "ResetOnInit": true
     },
     {
+      "Name": "SkinThermTzOffset",
+      "Path": "/sys/devices/virtual/thermal/tz-by-name/skin-therm/offset",
+      "Values": [
+        "0",
+        "-2500"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "SkinThermCpuTzOffset",
+      "Path": "/sys/devices/virtual/thermal/tz-by-name/skin-therm-cpu/offset",
+      "Values": [
+        "0",
+        "-2500"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "SkinThermMonitorTzOffset",
+      "Path": "/sys/devices/virtual/thermal/tz-by-name/skin-therm-monitor/offset",
+      "Values": [
+        "0",
+        "-2500"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CellularEmergencyTzOffset",
+      "Path": "/sys/devices/virtual/thermal/tz-by-name/cellular-emergency/offset",
+      "Values": [
+        "0",
+        "-2500"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "PanelAudioThermTzOffset",
+      "Path": "/sys/devices/virtual/thermal/tz-by-name/panel-audio-therm/offset",
+      "Values": [
+        "0",
+        "-2500"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "UfsClkGateEnable",
       "Path": "/sys/devices/platform/soc/1d84000.ufshc/clkgate_enable",
       "Values": [
