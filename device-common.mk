@@ -847,6 +847,9 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+
 # Set Vendor SPL to match platform
 VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 
