@@ -1,0 +1,17 @@
+{
+  "Profiles": [
+    {
+      "Name": "CameraServiceHighCapacity",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "cpuset",
+            "Path": "camera-daemon-dedicated"
+          }
+        }
+      ]
+    }
+  ]
+}
