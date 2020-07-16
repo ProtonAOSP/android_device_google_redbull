@@ -185,6 +185,24 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CDCpusetCpus",
+      "Path": "/dev/cpuset/camera-daemon/cpus",
+      "Values": [
+        "0-5",
+        "0-7"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CDDCpusetCpus",
+      "Path": "/dev/cpuset/camera-daemon-dedicated/cpus",
+      "Values": [
+        "6-7",
+        "0-7"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUBWHystTriggerCount",
       "Path": "/sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/hyst_trigger_count",
       "Values": [
@@ -644,6 +662,18 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_MID",
+      "Node": "CDCpusetCpus",
+      "Duration": 0,
+      "Value": "0-5"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_MID",
+      "Node": "CDDCpusetCpus",
+      "Duration": 0,
+      "Value": "6-7"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_MID",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
       "Value": "1900800"
@@ -683,6 +713,18 @@
       "Node": "CDSchedtuneHighCap",
       "Duration": 0,
       "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "CDCpusetCpus",
+      "Duration": 0,
+      "Value": "0-5"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "CDDCpusetCpus",
+      "Duration": 0,
+      "Value": "6-7"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
@@ -749,6 +791,18 @@
       "Node": "LLCCBWHystLength",
       "Duration": 0,
       "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_ULTRA",
+      "Node": "CDCpusetCpus",
+      "Duration": 0,
+      "Value": "0-5"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_ULTRA",
+      "Node": "CDDCpusetCpus",
+      "Duration": 0,
+      "Value": "6-7"
     },
     {
       "PowerHint": "CAMERA_STREAMING_ULTRA",
@@ -839,6 +893,18 @@
       "Node": "SdmThermTzMode",
       "Duration": 15000,
       "Value": "disabled"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_LOW",
+      "Node": "CDCpusetCpus",
+      "Duration": 0,
+      "Value": "0-5"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_LOW",
+      "Node": "CDDCpusetCpus",
+      "Duration": 0,
+      "Value": "6-7"
     },
     {
       "PowerHint": "CAMERA_STREAMING_LOW",
