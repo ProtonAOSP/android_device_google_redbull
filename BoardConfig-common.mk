@@ -106,6 +106,9 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 0x06000000
 # vendor_boot.img
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 0x06000000
 
+# Allow LZ4 compression
+BOARD_RAMDISK_USE_LZ4 := true
+
 # Specify BOOT_KERNEL_MODULES
 #
 # modules for first stage in vendor_boot.img, remainder goes to vendor.img.
