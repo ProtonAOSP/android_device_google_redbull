@@ -116,14 +116,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.google.wireless_charger</name>
-        <version>1.2</version>
-        <interface>
-            <name>IWirelessCharger</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.am</name>
         <version>1.0</version>
         <interface>
