@@ -127,15 +127,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl">
-      <name>vendor.google.wireless_charger</name>
-      <transport>hwbinder</transport>
-      <version>1.2</version>
-      <interface>
-        <name>IWirelessCharger</name>
-        <instance>default</instance>
-      </interface>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.memtrack</name>
         <transport>hwbinder</transport>
         <impl level="generic"></impl>
