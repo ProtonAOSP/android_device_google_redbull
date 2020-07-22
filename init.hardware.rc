@@ -35,8 +35,20 @@ on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
 
-    # Disable EAS
-    write /sys/kernel/debug/sched_features NO_ENERGY_AWARE
+    # configure governor settings
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 20000
+
+    # configure governor settings for big cluster
+    write /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor schedutil
+    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us 20000
+
+    # configure governor settings for big big CPU
+    write /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor schedutil
+    write /sys/devices/system/cpu/cpu7/cpufreq/schedutil/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpu7/cpufreq/schedutil/down_rate_limit_us 20000
 
 # Disable VDSO on JAWS boards.
 on early-init && property:ro.revision="DEV1.0"
@@ -49,6 +61,22 @@ on early-init && property:ro.boot.mode=charger
     start charger_insmod_sh
 
 on init && property:vendor.skip.init=0
+    # Boot time cpuset and stune
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/background/cpus 0-5
+    write /dev/cpuset/system-background/cpus 0-5
+    write /dev/cpuset/restricted/cpus 2-5
+    write /dev/stune/foreground/schedtune.prefer_idle 1
+    write /dev/stune/foreground/schedtune.prefer_high_cap 1
+    write /dev/stune/foreground/schedtune.boost 100
+    write /dev/stune/schedtune.prefer_idle 1
+    write /dev/stune/schedtune.prefer_high_cap 1
+    write /dev/stune/schedtune.boost 100
+    write /dev/stune/top-app/schedtune.prefer_idle 1
+    write /dev/stune/top-app/schedtune.prefer_high_cap 1
+    write /dev/stune/top-app/schedtune.boost 100
+
     # Boot time fs tuning
     write /sys/block/sda/queue/iostats 0
     write /sys/block/sda/queue/scheduler cfq
@@ -95,32 +123,12 @@ on init && property:vendor.skip.init=0
     write /sys/devices/system/cpu/cpu6/online 1
     write /sys/devices/system/cpu/cpu7/online 1
 
-    # configure governor settings for little cluster
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 20000
-
-    # configure governor settings for big cluster
-    write /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor schedutil
-    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us 20000
-
-    # configure governor settings for big big CPU
-    write /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor schedutil
-    write /sys/devices/system/cpu/cpu7/cpufreq/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpu7/cpufreq/schedutil/down_rate_limit_us 20000
-
     # ZRAM setup
     write /sys/block/zram0/comp_algorithm lz4
     write /proc/sys/vm/page-cluster 0
 
     # Some user code relies on ro.boot.hardware.revision
     setprop ro.boot.hardware.revision ${ro.revision}
-
-    # set default schedTune value for foreground/top-app
-    write /dev/stune/foreground/schedtune.prefer_idle 1
-    write /dev/stune/top-app/schedtune.boost 10
-    write /dev/stune/top-app/schedtune.prefer_idle 1
 
     mkdir /dev/cpuset/camera-daemon
     write /dev/cpuset/camera-daemon/cpus 0-7
@@ -522,6 +530,17 @@ on property:sys.boot_completed=1
     write /dev/cpuset/background/cpus 4-5
     write /dev/cpuset/system-background/cpus 2-5
     write /dev/cpuset/restricted/cpus 2-5
+
+    # Setup runtime schedTune
+    write /dev/stune/foreground/schedtune.prefer_idle 1
+    write /dev/stune/foreground/schedtune.prefer_high_cap 0
+    write /dev/stune/foreground/schedtune.boost 0
+    write /dev/stune/schedtune.prefer_idle 0
+    write /dev/stune/schedtune.prefer_high_cap 0
+    write /dev/stune/schedtune.boost 0
+    write /dev/stune/top-app/schedtune.prefer_idle 1
+    write /dev/stune/top-app/schedtune.prefer_high_cap 0
+    write /dev/stune/top-app/schedtune.boost 10
 
     # Setup runtime blkio
     # value for group_idle is us
