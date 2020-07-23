@@ -706,6 +706,18 @@
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
+      "Node": "CDSchedtuneBoost",
+      "Duration": 1000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_LAUNCH",
+      "Node": "CDSchedtuneHighCap",
+      "Duration": 1000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_LAUNCH",
       "Node": "UfsClkGateEnable",
       "Duration": 1000,
       "Value": "0"
