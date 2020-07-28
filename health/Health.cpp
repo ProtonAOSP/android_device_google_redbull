@@ -66,7 +66,7 @@ static BatteryMetricsLogger battMetricsLogger(kBatteryResistance, kBatteryOCV);
 static LowBatteryShutdownMetrics shutdownMetrics(kVoltageAvg);
 static DeviceHealth deviceHealth;
 
-#define UFS_DIR "/sys/devices/platform/soc/1d84000.ufshc"
+#define UFS_DIR "/dev/sys/block/bootdevice"
 constexpr char kUfsHealthEol[]{UFS_DIR "/health_descriptor/eol_info"};
 constexpr char kUfsHealthLifetimeA[]{UFS_DIR "/health_descriptor/life_time_estimation_a"};
 constexpr char kUfsHealthLifetimeB[]{UFS_DIR "/health_descriptor/life_time_estimation_b"};
