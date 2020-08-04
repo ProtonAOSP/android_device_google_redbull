@@ -786,7 +786,7 @@ on property:vendor.all.modules.ready=1
     chmod 660 /dev/touch_offload
 
 # Conditionally enable the twoshay touch service
-on property:persist.enable_twoshay=1
+on property:persist.vendor.enable_twoshay=1
     enable twoshay
 
 # bugreport is triggered by holding down volume down, volume up and power
