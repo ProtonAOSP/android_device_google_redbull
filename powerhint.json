@@ -382,7 +382,8 @@
       "Path": "/sys/devices/virtual/thermal/tz-by-name/skin-therm/offset",
       "Values": [
         "0",
-        "-2500"
+        "-500",
+        "-3000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -392,7 +393,8 @@
       "Path": "/sys/devices/virtual/thermal/tz-by-name/skin-therm-cpu/offset",
       "Values": [
         "0",
-        "-2500"
+        "-500",
+        "-3000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -402,7 +404,8 @@
       "Path": "/sys/devices/virtual/thermal/tz-by-name/skin-therm-monitor/offset",
       "Values": [
         "0",
-        "-2500"
+        "-500",
+        "-3000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -412,7 +415,8 @@
       "Path": "/sys/devices/virtual/thermal/tz-by-name/cellular-emergency/offset",
       "Values": [
         "0",
-        "-2500"
+        "-500",
+        "-3000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -422,7 +426,8 @@
       "Path": "/sys/devices/virtual/thermal/tz-by-name/panel-audio-therm/offset",
       "Values": [
         "0",
-        "-2500"
+        "-500",
+        "-3000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -781,31 +786,31 @@
       "PowerHint": "CAMERA_STREAMING_MID",
       "Node": "SkinThermMonitorTzOffset",
       "Duration": 0,
-      "Value": "-2500"
+      "Value": "-3000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_MID",
       "Node": "SkinThermTzOffset",
       "Duration": 0,
-      "Value": "-2500"
+      "Value": "-3000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_MID",
       "Node": "SkinThermCpuTzOffset",
       "Duration": 0,
-      "Value": "-2500"
+      "Value": "-3000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_MID",
       "Node": "CellularEmergencyTzOffset",
       "Duration": 0,
-      "Value": "-2500"
+      "Value": "-3000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_MID",
       "Node": "PanelAudioThermTzOffset",
       "Duration": 0,
-      "Value": "-2500"
+      "Value": "-3000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
@@ -889,31 +894,31 @@
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "SkinThermMonitorTzOffset",
       "Duration": 0,
-      "Value": "-2500"
+      "Value": "-3000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "SkinThermTzOffset",
       "Duration": 0,
-      "Value": "-2500"
+      "Value": "-3000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "SkinThermCpuTzOffset",
       "Duration": 0,
-      "Value": "-2500"
+      "Value": "-3000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CellularEmergencyTzOffset",
       "Duration": 0,
-      "Value": "-2500"
+      "Value": "-3000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "PanelAudioThermTzOffset",
       "Duration": 0,
-      "Value": "-2500"
+      "Value": "-3000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_ULTRA",
@@ -1018,6 +1023,36 @@
       "Value": "disabled"
     },
     {
+      "PowerHint": "CAMERA_STREAMING_ULTRA",
+      "Node": "SkinThermMonitorTzOffset",
+      "Duration": 15000,
+      "Value": "-500"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_ULTRA",
+      "Node": "SkinThermTzOffset",
+      "Duration": 15000,
+      "Value": "-500"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_ULTRA",
+      "Node": "SkinThermCpuTzOffset",
+      "Duration": 15000,
+      "Value": "-500"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_ULTRA",
+      "Node": "CellularEmergencyTzOffset",
+      "Duration": 15000,
+      "Value": "-500"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_ULTRA",
+      "Node": "PanelAudioThermTzOffset",
+      "Duration": 15000,
+      "Value": "-500"
+    },
+    {
       "PowerHint": "CAMERA_STREAMING_FRONT_OR_PREVIEW_ONLY",
       "Node": "CDCpusetCpus",
       "Duration": 0,
@@ -1141,31 +1176,31 @@
       "PowerHint": "CAMERA_STREAMING_LOW",
       "Node": "SkinThermMonitorTzOffset",
       "Duration": 0,
-      "Value": "-2500"
+      "Value": "-3000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_LOW",
       "Node": "SkinThermTzOffset",
       "Duration": 0,
-      "Value": "-2500"
+      "Value": "-3000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_LOW",
       "Node": "SkinThermCpuTzOffset",
       "Duration": 0,
-      "Value": "-2500"
+      "Value": "-3000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_LOW",
       "Node": "CellularEmergencyTzOffset",
       "Duration": 0,
-      "Value": "-2500"
+      "Value": "-3000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_LOW",
       "Node": "PanelAudioThermTzOffset",
       "Duration": 0,
-      "Value": "-2500"
+      "Value": "-3000"
     },
     {
       "PowerHint": "CAMERA_SHOT",
