@@ -562,6 +562,12 @@
     },
     {
       "PowerHint": "LAUNCH",
+      "Node": "TASchedtuneHighCap",
+      "Duration": 5000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "LAUNCH",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 5000,
       "Value": "9999999"
