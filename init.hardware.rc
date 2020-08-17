@@ -164,7 +164,7 @@ on init && property:vendor.skip.init=0
     chown system system /sys/devices/platform/soc/soc:google,charger/charge_start_level
 
     # report max frequency to unity tasks.
-    write /proc/sys/kernel/sched_lib_name "libunity.so"
+    write /proc/sys/kernel/sched_lib_name "UnityMain,libunity.so"
     write /proc/sys/kernel/sched_lib_mask_force 255
 
 on late-init
