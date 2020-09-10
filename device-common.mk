@@ -839,12 +839,6 @@ PRODUCT_PACKAGES += $(HIDL_WRAPPER)
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.build.svn=1
 
-# ZRAM writeback
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.zram.mark_idle_delay_mins=60 \
-    ro.zram.first_wb_delay_mins=180 \
-    ro.zram.periodic_wb_delay_hours=24
-
 # Enable iwlan service logging for debug
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     PRODUCT_PROPERTY_OVERRIDES += persist.vendor.iwlan.logging.logcat=true
