@@ -362,6 +362,7 @@ BOOT_KERNEL_MODULES := \
 	sctp_diag.ko \
 	qrtr-smd.ko \
 	msm_drm.ko \
+	dm-user.ko \
 
 # system_ext.img
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
