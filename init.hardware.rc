@@ -280,6 +280,9 @@ on late-fs
     # Init sensor specific services
     start init-sensors-sh
 
+    # Start the twoshay touch service
+    start twoshay
+
     # turn off vblank irq immediately after turning off
     write /sys/module/drm/parameters/vblankoffdelay -1
 
