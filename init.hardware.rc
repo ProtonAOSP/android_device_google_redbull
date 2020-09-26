@@ -280,8 +280,8 @@ on late-fs
     # Init sensor specific services
     start init-sensors-sh
 
-    # Init twoshay
-    start init-twoshay-sh
+    # Start the twoshay touch service
+    start twoshay
 
     # turn off vblank irq immediately after turning off
     write /sys/module/drm/parameters/vblankoffdelay -1
@@ -797,16 +797,6 @@ on property:vendor.all.modules.ready=1
 
 # Conditionally enable the twoshay touch service
 on property:persist.vendor.enable_twoshay=1
-    enable twoshay
-
-service init-twoshay-sh /vendor/bin/init.twoshay.sh
-    class main
-    user root
-    group root system
-    disabled
-    oneshot
-
-on property:vendor.twoshay.study_group=1
     enable twoshay
 
 # bugreport is triggered by holding down volume down, volume up and power
