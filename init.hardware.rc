@@ -374,6 +374,10 @@ on early-boot
     chown system system /mnt/vendor/persist/sensors/registry/factory_data/sns_fac_registry
     restorecon_recursive /mnt/vendor/persist/sensors/registry/factory_data
 
+    # Restore SeLinux Context for preventing temp.json with
+    # incorrect security context
+    restorecon /mnt/vendor/persist/sensors/registry/temp.json
+
     chmod 770 /mnt/vendor/persist/audio
     chmod 660 /mnt/vendor/persist/audio/audio.cal
     chown media audio /mnt/vendor/persist/audio
