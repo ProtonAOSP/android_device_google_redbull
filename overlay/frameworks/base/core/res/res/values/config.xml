@@ -307,16 +307,6 @@
     <!-- True if Unprocessed audio source supports the required frequency range and level -->
     <bool name="config_supportAudioSourceUnprocessed">true</bool>
 
-    <!-- An array of device capabilities defined by GSMA SGP.22 v2.0, and their corresponding major
-         version. -->
-    <string-array translatable="false" name="config_telephonyEuiccDeviceCapabilities">
-        <item>"gsm,11"</item>
-        <item>"utran,11"</item>
-        <item>"cdma1x,1"</item>
-        <item>"hrpd,3"</item>
-        <item>"ehrpd,12"</item>
-        <item>"eutran,11"</item>
-    </string-array>
 
     <!-- Whether the new Auto Selection Network UI should be shown -->
     <bool name="config_enableNewAutoSelectNetworkUI">true</bool>
