@@ -810,10 +810,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
 
-# Pixel atrace HAL
-PRODUCT_PACKAGES += \
-    android.hardware.atrace@1.0-service.pixel
-
 # dynamic partition
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
