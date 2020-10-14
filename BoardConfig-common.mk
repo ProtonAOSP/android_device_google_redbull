@@ -66,14 +66,21 @@ BOARD_USES_METADATA_PARTITION := true
 AB_OTA_UPDATER := true
 
 AB_OTA_PARTITIONS += \
-    boot \
-    vendor_boot \
     system \
-    vbmeta \
     dtbo \
     product \
     vbmeta_system \
     system_ext
+
+ifneq ($(PRODUCT_BUILD_BOOT_IMAGE),false)
+AB_OTA_PARTITIONS += boot
+endif
+ifneq ($(PRODUCT_BUILD_VENDOR_BOOT_IMAGE),false)
+AB_OTA_PARTITIONS += vendor_boot
+endif
+ifneq ($(PRODUCT_BUILD_VBMETA_IMAGE),false)
+AB_OTA_PARTITIONS += vbmeta
+endif
 
 # Partitions (listed in the file) to be wiped under recovery.
 TARGET_RECOVERY_WIPE := device/google/redbull/recovery.wipe
