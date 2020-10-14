@@ -829,7 +829,7 @@ PRODUCT_PACKAGES += $(HIDL_WRAPPER)
 
 # Increment the SVN for any official public releases
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.vendor.build.svn=2
+	ro.vendor.build.svn=4
 
 # ZRAM writeback
 PRODUCT_PROPERTY_OVERRIDES += \
