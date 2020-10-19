@@ -976,6 +976,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
+# Enable watchdog timeout loop breaker.
+PRODUCT_PROPERTY_OVERRIDES += \
+    framework_watchdog.fatal_window.second=600 \
+    framework_watchdog.fatal_count=3
+
 #################################################################################
 # This is the End of device-common.mk file.
 # Now, Pickup other split device-common.mk files:
