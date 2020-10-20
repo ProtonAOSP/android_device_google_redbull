@@ -187,7 +187,7 @@ PRODUCT_PACKAGES += \
 
 # Context hub HAL
 PRODUCT_PACKAGES += \
-    android.hardware.contexthub@1.1-service.generic
+    android.hardware.contexthub@1.2-service.generic
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -979,6 +979,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
         ro.incremental.enable=module:/vendor/lib/modules/incrementalfs.ko
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
+# Enable watchdog timeout loop breaker.
+PRODUCT_PROPERTY_OVERRIDES += \
+    framework_watchdog.fatal_window.second=600 \
+    framework_watchdog.fatal_count=3
 
 #################################################################################
 # This is the End of device-common.mk file.
