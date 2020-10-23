@@ -396,7 +396,7 @@ PRODUCT_PACKAGES_DEBUG += \
 
 #Bluetooth AFH HAL
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.bt_channel_avoidance@1.0-impl
+    vendor.google.bluetooth_ext.bt_channel_avoidance@1.0-impl
 
 # Bluetooth SoC
 PRODUCT_PROPERTY_OVERRIDES += \
