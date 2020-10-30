@@ -963,6 +963,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
+# Enable blurs
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.surface_flinger.supports_background_blur=1
+
 #################################################################################
 # This is the End of device-common.mk file.
 # Now, Pickup other split device-common.mk files:
