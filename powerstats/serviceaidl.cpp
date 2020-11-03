@@ -45,17 +45,15 @@ void addDisplayEnergyConsumer(std::shared_ptr<PowerStats> p) {
 
     displayConsumer = PowerStatsEnergyConsumer::createMeterAndEntityConsumer(p,
             EnergyConsumerId::DISPLAY, {"PPVAR_VPH_PWR_OLED"}, "Display",
-            {{"Off", 1}, // TODO(b/170959063): Find suitable coefficients here
-             {"LP", 1},
-             {"1080x2340@60", 1},
-             {"1080x2340@90", 1}});
+            {{"LP", 41},
+             {"1080x2340@60", 124},
+             {"1080x2340@90", 162}});
 
     if (!displayConsumer) {
         displayConsumer = PowerStatsEnergyConsumer::createMeterAndEntityConsumer(p,
             EnergyConsumerId::DISPLAY, {"VPH_PWR_AMOLED"}, "Display",
-            {{"Off", 1}, // TODO(b/170959063): Find suitable coefficients here
-             {"LP", 1},
-             {"1080x2340@60", 1}});
+            {{"LP", 33},
+             {"1080x2340@60", 106}});
     }
 
     p->addEnergyConsumer(displayConsumer);
