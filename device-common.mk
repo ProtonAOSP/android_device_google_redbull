@@ -693,21 +693,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
   logd.logpersistd.size=30
 endif
 
-# Citadel
-PRODUCT_PACKAGES += \
-    citadeld \
-    citadel_updater \
-    android.hardware.authsecret@1.0-service.citadel \
-    android.hardware.oemlock@1.0-service.citadel \
-    android.hardware.weaver@1.0-service.citadel \
-    android.hardware.keymaster@4.1-service.citadel \
-    android.hardware.identity@1.0-service.citadel \
-    wait_for_strongbox
-
-# Citadel debug stuff
-PRODUCT_PACKAGES_DEBUG += \
-    test_citadel
-
 # Storage: for factory reset protection feature
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
@@ -819,11 +804,6 @@ PRODUCT_COPY_FILES += \
 
 # dynamic partition
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# fastbootd
-PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl.pixel \
-    fastbootd
 
 # Use /product/etc/fstab.postinstall to mount system_other
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -951,10 +931,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.thermal_warmreset = true \
 
-# Resume on Reboot support
-PRODUCT_PACKAGES += \
-    android.hardware.rebootescrow-service.citadel
-
 # Vendor verbose logging default property
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -1022,6 +998,9 @@ endif
 
 # Project
 include hardware/google/pixel/common/pixel-common-device.mk
+
+# Citadel
+include hardware/google/pixel/citadel/citadel.mk
 
 # Factory OTA
 -include vendor/google/factoryota/client/factoryota.mk
