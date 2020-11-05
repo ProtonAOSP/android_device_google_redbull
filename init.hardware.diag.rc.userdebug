@@ -109,3 +109,9 @@ on property:vendor.usb.config=*
 
 on property:persist.vendor.usb.usbradio.config=*
    start usbd
+
+on property:power.battery_input.suspended=true
+   write /sys/kernel/debug/google_charger/input_suspend 1
+
+on property:power.battery_input.suspended=false
+   write /sys/kernel/debug/google_charger/input_suspend 0
