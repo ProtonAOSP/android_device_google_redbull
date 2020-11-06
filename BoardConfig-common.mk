@@ -481,7 +481,11 @@ TARGET_BOARD_INFO_FILE := $(TARGET_BOARD_NAME_DIR)/board-info.txt
 TARGET_BOARD_COMMON_PATH := $(TARGET_BOARD_NAME_DIR)/sm7250
 
 # Common kernel file handling
-TARGET_KERNEL_DIR := device/google/redbull-kernel
+ifneq (,$(filter $(TARGET_DEVICE),bramble redfin))
+    TARGET_KERNEL_DIR := device/google/redbull-kernel
+else
+    TARGET_KERNEL_DIR := $(TARGET_BOARD_NAME_DIR:%/=%)-kernel
+endif
 
 # DTBO partition definitions
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
