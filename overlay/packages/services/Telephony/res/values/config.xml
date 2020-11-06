@@ -35,6 +35,6 @@
          when a call recording app is in use. -->
     <bool name="config_support_telephony_audio_device">true</bool>
 
-    <!-- Currently this device can't connect to 5G network in DSDS mode. -->
-    <bool name="config_5g_connection_in_dsds_mode">false</bool>
+    <!-- This device can connect to 5G network in DSDS mode. -->
+    <bool name="config_5g_connection_in_dsds_mode">true</bool>
 </resources>
