@@ -847,7 +847,7 @@ PRODUCT_COPY_FILES += \
 # Set Vendor SPL to match platform
 VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 
-PRODUCT_PROPERTY_OVERRIDES += vendor.audio.adm.buffering.ms=3
+PRODUCT_PROPERTY_OVERRIDES += vendor.audio.adm.buffering.ms=2
 PRODUCT_PROPERTY_OVERRIDES += vendor.audio_hal.period_multiplier=2
 PRODUCT_PROPERTY_OVERRIDES += af.fast_track_multiplier=1
 
