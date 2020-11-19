@@ -403,7 +403,7 @@ PRODUCT_PACKAGES_DEBUG += \
 
 #Bluetooth AFH HAL
 PRODUCT_PACKAGES += \
-    vendor.google.bluetooth_ext.bt_channel_avoidance@1.0-impl
+    hardware.google.bluetooth.bt_channel_avoidance@1.0-impl
 
 # Bluetooth SoC
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -830,7 +830,7 @@ PRODUCT_PACKAGES += $(HIDL_WRAPPER)
 
 # Increment the SVN for any official public releases
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.vendor.build.svn=12
+	ro.vendor.build.svn=16
 
 # Enable iwlan service logging for debug
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
