@@ -143,9 +143,9 @@ PRODUCT_PACKAGES += \
     update_verifier
 
 PRODUCT_PACKAGES += \
-    e2fsck_ramdisk \
-    tune2fs_ramdisk \
-    resize2fs_ramdisk
+    linker.vendor_ramdisk \
+    tune2fs.vendor_ramdisk \
+    resize2fs.vendor_ramdisk
 
 # Use Sdcardfs
 PRODUCT_PRODUCT_PROPERTIES += \
