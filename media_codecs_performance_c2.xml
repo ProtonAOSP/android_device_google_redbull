@@ -34,7 +34,30 @@
             <!-- measured 90%:180-181 med:180 N=19 -->
             <Limit name="measured-frame-rate-1920x1080" range="180-180" /> <!-- v90%=1.0 -->
         </MediaCodec>
+        <MediaCodec name="c2.qti.avc.decoder.low_latency" type="video/avc" update="true">
+            <Limit name="measured-frame-rate-320x240" range="1164-1164" /> <!-- N=50 v96%=1.1 -->
+            <!-- measured 90%:780-807 med:784 N=12 -->
+            <Limit name="measured-frame-rate-720x480" range="784-793" /> <!-- v90%=1.0 -->
+            <!-- measured 90%:377-382 med:380 N=12 -->
+            <Limit name="measured-frame-rate-1280x720" range="379-380" /> <!-- v90%=1.0 -->
+            <!-- measured 90%:180-181 med:180 N=19 -->
+            <Limit name="measured-frame-rate-1920x1080" range="180-180" /> <!-- v90%=1.0 -->
+        </MediaCodec>
         <MediaCodec name="c2.qti.hevc.decoder" type="video/hevc" update="true">
+            <!-- measured 90%:1259-1417 med:1314 N=12 -->
+            <Limit name="measured-frame-rate-352x288" range="1314-1336" /> <!-- v90%=1.1 -->
+            <!-- measured 90%:1036-1107 med:1081 N=12 -->
+            <Limit name="measured-frame-rate-640x360" range="1071-1071" /> <!-- v90%=1.0 -->
+            <!-- measured 90%:948-976 med:962 N=12 -->
+            <Limit name="measured-frame-rate-720x480" range="961-962" /> <!-- v90%=1.0 -->
+            <!-- measured 90%:485-497 med:492 N=12 -->
+            <Limit name="measured-frame-rate-1280x720" range="491-491" /> <!-- v90%=1.0 -->
+            <!-- measured 90%:383-391 med:388 N=12 -->
+            <Limit name="measured-frame-rate-1920x1080" range="387-387" /> <!-- v90%=1.0 -->
+            <!-- measured 90%:107-108 med:107 N=12 -->
+            <Limit name="measured-frame-rate-3840x2160" range="107-107" /> <!-- v90%=1.0 -->
+        </MediaCodec>
+        <MediaCodec name="c2.qti.hevc.decoder.low_latency" type="video/hevc" update="true">
             <!-- measured 90%:1259-1417 med:1314 N=12 -->
             <Limit name="measured-frame-rate-352x288" range="1314-1336" /> <!-- v90%=1.1 -->
             <!-- measured 90%:1036-1107 med:1081 N=12 -->

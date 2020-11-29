@@ -164,8 +164,11 @@ on init && property:vendor.skip.init=0
     chown system system /sys/devices/platform/soc/soc:google,charger/charge_start_level
 
     # report max frequency to unity tasks.
-    write /proc/sys/kernel/sched_lib_name "libunity.so"
+    write /proc/sys/kernel/sched_lib_name "UnityMain,libunity.so"
     write /proc/sys/kernel/sched_lib_mask_force 255
+
+    # Charge stats (write 0)
+    chown system system /sys/class/power_supply/battery/charge_stats
 
 on late-init
     chown system system /sys/devices/virtual/thermal/tz-by-name/skin-therm-monitor/trip_point_0_temp
@@ -277,6 +280,9 @@ on late-fs
     # Init sensor specific services
     start init-sensors-sh
 
+    # Start the twoshay touch service
+    start twoshay
+
     # turn off vblank irq immediately after turning off
     write /sys/module/drm/parameters/vblankoffdelay -1
 
@@ -363,6 +369,10 @@ on early-boot
     chown system system /mnt/vendor/persist/sensors/registry/factory_data
     chown system system /mnt/vendor/persist/sensors/registry/factory_data/sns_fac_registry
     restorecon_recursive /mnt/vendor/persist/sensors/registry/factory_data
+
+    # Restore SeLinux Context for preventing temp.json with
+    # incorrect security context
+    restorecon /mnt/vendor/persist/sensors/registry/temp.json
 
     chmod 770 /mnt/vendor/persist/audio
     chmod 660 /mnt/vendor/persist/audio/audio.cal
@@ -784,6 +794,15 @@ service loc_launcher /vendor/bin/loc_launcher
     user gps
     group gps
 
+# Allow access to touch
+on property:vendor.all.modules.ready=1
+    chown system input /dev/touch_offload
+    chmod 660 /dev/touch_offload
+
+# Conditionally enable the twoshay touch service
+on property:persist.vendor.enable_twoshay=1
+    enable twoshay
+
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/dumpstate -d -p -z
     class main
@@ -815,6 +834,9 @@ on property:persist.radio.multisim.config=
 # Since this property is read by the audio server in system service,
 # it should be written by the system init.
 on property:ro.boot.hardware.radio.subtype=1
+    setprop audio.camerasound.force true
+# BUG FIX: b/163674593
+on property:ro.boot.hardware.sku=G5NZ6
     setprop audio.camerasound.force true
 
 on property:persist.sys.device_provisioned=1
