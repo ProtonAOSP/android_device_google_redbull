@@ -44,7 +44,6 @@ setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" true
 write_headers "redfin bramble"
 
 write_makefiles "$MY_DIR"/redfin-proprietary-files.txt true
-write_makefiles "$MY_DIR"/redfin-proprietary-files-vendor.txt true
 
 cat << EOF >> "$ANDROIDMK"
 EOF
@@ -60,7 +59,6 @@ setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT"
 write_headers
 
 write_makefiles "$MY_DIR"/bramble-proprietary-files.txt true
-write_makefiles "$MY_DIR"/bramble-proprietary-files-vendor.txt true
 
 cat << EOF >> "$ANDROIDMK"
 EOF

@@ -60,13 +60,11 @@ fi
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/redfin-proprietary-files.txt "$REDFIN_SRC" "$SECTION"
-extract "$MY_DIR"/redfin-proprietary-files-vendor.txt "$REDFIN_SRC" "$SECTION"
 
 # Reinitialize the helper for bramble
 DEVICE=bramble
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/bramble-proprietary-files.txt "$BRAMBLE_SRC" "$SECTION"
-extract "$MY_DIR"/bramble-proprietary-files-vendor.txt "$BRAMBLE_SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh
