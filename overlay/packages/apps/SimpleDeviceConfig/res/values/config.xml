@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2020 The Proton AOSP Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<resources>
+    <string-array name="configs_device">
+        <!-- ConnectivityThermalPowerManager 5G modem monitoring rules -->
+        <item>connectivity_thermal_power_manager/cellular_thermal_thermal_status_action_list=</item>
+        <item>connectivity_thermal_power_manager/sub6_approved_carrier_ids=1839,2126,2032,2146,1802,1849,1187,1,1788,1951,1952,1989,1404,2020,1403,1962,576,2021,1895,2008,1505,2,2101,2102,2103,2104,2419,28,718,1492,25,2147,2397,3,,1453,1454,1456,1993,2360,2361,32,27,1487,1958,2016,1345,1353,15,30,850,1894,2100,1581,2110,2109,1888,1881,1884,31,1707</item>
+        <item>connectivity_thermal_power_manager/sub6_device_supported=true</item>
+    </string-array>
+</resources>
