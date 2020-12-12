@@ -37,4 +37,7 @@
 
     <!-- Currently this device can't connect to 5G network in DSDS mode. -->
     <bool name="config_5g_connection_in_dsds_mode">false</bool>
+
+    <!-- The package name for the platform carrier config app, bundled with system image. -->
+    <string name="platform_carrier_config_package" translatable="false">com.google.android.carrier</string>
 </resources>
