@@ -1,0 +1,9 @@
+# redfin overrides
+
+# system_ext - stock
+system_ext/lib/liblistenjni.qti.so
+system_ext/lib64/liblistenjni.qti.so
+
+# product - stock
+product/bin/twoshay
+product/etc/felica/common.cfg
