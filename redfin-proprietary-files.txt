@@ -343,7 +343,6 @@ system_ext/etc/permissions/telephonyservice.xml
 -product/app/SSRestartDetector/SSRestartDetector.apk
 -product/app/VZWAPNLib/VZWAPNLib.apk;PRESIGNED
 product/bin/qspmsvc
-product/bin/twoshay
 product/etc/ambient/matcher_tah.leveldb
 product/etc/CarrierSettings/airtel_in.pb
 product/etc/CarrierSettings/apt_tw.pb
@@ -452,7 +451,6 @@ product/etc/felica/mfs.cfg
 product/etc/firmware/music_detector.descriptor
 product/etc/firmware/music_detector.sound_model
 product/etc/init/qspmsvc.rc
-product/etc/init/twoshay.rc
 product/etc/permissions/com.android.omadm.service.xml
 product/etc/permissions/com.android.sdm.plugins.connmo.xml
 product/etc/permissions/com.android.sdm.plugins.dcmo.xml
