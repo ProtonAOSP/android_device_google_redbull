@@ -515,9 +515,9 @@ PRODUCT_PACKAGES += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.1-impl-pixel-legacy \
-    android.hardware.boot@1.1-impl-pixel-legacy.recovery \
-    android.hardware.boot@1.1-service \
+    android.hardware.boot@1.2-impl-pixel-legacy \
+    android.hardware.boot@1.2-impl-pixel-legacy.recovery \
+    android.hardware.boot@1.2-service \
 
 #GNSS HAL
 PRODUCT_PACKAGES += \
@@ -832,7 +832,7 @@ PRODUCT_PACKAGES += $(HIDL_WRAPPER)
 # Increment the SVN for any official public releases
 ifeq ($(PRODUCT_DEVICE_SVN_OVERRIDE),)
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.vendor.build.svn=20
+	ro.vendor.build.svn=21
 endif
 
 # Enable iwlan service logging for debug
