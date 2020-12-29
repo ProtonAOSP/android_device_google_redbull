@@ -816,10 +816,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power.stats@1.0-service.pixel
 
-# PowerStats AIDL HAL
-PRODUCT_PACKAGES += \
-    android.hardware.power.stats-service.pixel
-
 QTI_TELEPHONY_UTILS := qti-telephony-utils
 QTI_TELEPHONY_UTILS += qti_telephony_utils.xml
 PRODUCT_PACKAGES += $(QTI_TELEPHONY_UTILS)
