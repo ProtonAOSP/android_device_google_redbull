@@ -87,7 +87,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PACKAGES += \
     messaging \
-    dmabuf_dump
 
 TARGET_PRODUCT_PROP := $(LOCAL_PATH)/product.prop
 
