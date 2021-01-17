@@ -359,6 +359,7 @@ product/etc/CarrierSettings/carrier_list.pb
 product/etc/CarrierSettings/cellcom_us.pb
 product/etc/CarrierSettings/cht_tw.pb
 product/etc/CarrierSettings/congstar_de.pb
+product/etc/CarrierSettings/consumercellulartmo_us.pb
 product/etc/CarrierSettings/cricket_us.pb
 product/etc/CarrierSettings/cricket5g_us.pb
 product/etc/CarrierSettings/cspire_us.pb
@@ -394,6 +395,7 @@ product/etc/CarrierSettings/orange_fr.pb
 product/etc/CarrierSettings/others.pb
 product/etc/CarrierSettings/pcmobilebell_ca.pb
 product/etc/CarrierSettings/rakuten_jp.pb
+product/etc/CarrierSettings/redpockettmo_us.pb
 product/etc/CarrierSettings/rjio_in.pb
 product/etc/CarrierSettings/rogers_ca.pb
 product/etc/CarrierSettings/sfr_fr.pb
@@ -425,6 +427,7 @@ product/etc/CarrierSettings/three_dk.pb
 product/etc/CarrierSettings/tim_it.pb
 product/etc/CarrierSettings/tmobile_nl.pb
 product/etc/CarrierSettings/tmobile_us.pb
+product/etc/CarrierSettings/tmomvno_us.pb
 product/etc/CarrierSettings/tracfonetmo_us.pb
 product/etc/CarrierSettings/tracfoneverizon_us.pb
 product/etc/CarrierSettings/tstar_tw.pb
