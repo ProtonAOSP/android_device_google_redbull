@@ -1015,6 +1015,8 @@ include hardware/google/pixel/citadel/citadel.mk
 
 # Pixel Logger
 include hardware/google/pixel/PixelLogger/PixelLogger.mk
+
+-include $(LOCAL_PATH)/redbull_allowlist.mk
 #################################################################################
 
 # Set system properties identifying the chipset
