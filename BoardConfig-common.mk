@@ -525,6 +525,9 @@ ifeq (,$(filter-out $(TARGET_BOOTLOADER_BOARD_NAME)_kasan, $(TARGET_PRODUCT)))
     KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/kasan
 else ifeq (,$(filter-out $(TARGET_BOOTLOADER_BOARD_NAME)_kernel_debug_memory, $(TARGET_PRODUCT)))
     KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/debug_memory
+else ifeq (,$(filter-out $(TARGET_BOOTLOADER_BOARD_NAME)_kernel_debug_memory_accounting, $(TARGET_PRODUCT)))
+    KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/debug_memory_accounting
+BOARD_KERNEL_CMDLINE += page_owner=on
 else ifeq (,$(filter-out $(TARGET_BOOTLOADER_BOARD_NAME)_kernel_debug_locking, $(TARGET_PRODUCT)))
     KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/debug_locking
 else ifeq (,$(filter-out $(TARGET_BOOTLOADER_BOARD_NAME)_kernel_debug_hang, $(TARGET_PRODUCT)))
