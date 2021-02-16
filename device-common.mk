@@ -954,8 +954,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Enforce generic ramdisk allow list
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
-
 # Enable watchdog timeout loop breaker.
 PRODUCT_PROPERTY_OVERRIDES += \
     framework_watchdog.fatal_window.second=600 \
