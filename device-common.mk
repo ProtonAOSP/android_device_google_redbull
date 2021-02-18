@@ -149,6 +149,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.sys.sdcardfs=1
 
+# Use FUSE passthrough
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.fuse.passthrough.enable=true
+
 PRODUCT_PACKAGES += \
     bootctrl.lito \
     bootctrl.lito.recovery
