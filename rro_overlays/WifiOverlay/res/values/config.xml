@@ -111,4 +111,9 @@
          Remove before Android 12 release! -->
     <bool translatable="false" name="config_wifiMultiStaLocalOnlyConcurrencyEnabled">true</bool>
     <bool translatable="false" name="config_wifiMultiStaNetworkSwitchingMakeBeforeBreakEnabled">true</bool>
+
+    <!-- Disable channel utilization estimation with fixed value.
+         b/160239223: Rx time is excluded in cca busy time and channel utilization is calculated
+         correctly during heavy DL traffic -->
+    <bool translatable="false" name="config_wifiChannelUtilizationOverrideEnabled">false</bool>
 </resources>
