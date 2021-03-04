@@ -75,7 +75,6 @@ AB_OTA_UPDATER := true
 
 AB_OTA_PARTITIONS += \
     system \
-    dtbo \
     product \
     vbmeta_system \
     system_ext
@@ -85,6 +84,7 @@ AB_OTA_PARTITIONS += boot
 endif
 ifneq ($(PRODUCT_BUILD_VENDOR_BOOT_IMAGE),false)
 AB_OTA_PARTITIONS += vendor_boot
+AB_OTA_PARTITIONS += dtbo
 endif
 ifneq ($(PRODUCT_BUILD_VBMETA_IMAGE),false)
 AB_OTA_PARTITIONS += vbmeta
