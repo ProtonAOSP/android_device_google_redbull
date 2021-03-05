@@ -489,8 +489,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ims.mm_minqp=1
 
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.6-impl-google \
-    android.hardware.camera.provider@2.6-service-google \
+    android.hardware.camera.provider@2.7-impl-google \
+    android.hardware.camera.provider@2.7-service-google \
     camera.lito \
     lib_multicam_dualfov_capture_session \
     libgooglecamerahwl_impl \
