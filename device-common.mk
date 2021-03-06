@@ -489,8 +489,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ims.mm_minqp=1
 
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.6-impl-google \
-    android.hardware.camera.provider@2.6-service-google \
+    android.hardware.camera.provider@2.7-impl-google \
+    android.hardware.camera.provider@2.7-service-google \
     camera.lito \
     lib_multicam_dualfov_capture_session \
     libgooglecamerahwl_impl \
@@ -961,6 +961,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     framework_watchdog.fatal_window.second=600 \
     framework_watchdog.fatal_count=3
 
+# Set system properties identifying the chipset
+PRODUCT_VENDOR_PROPERTIES += ro.soc.manufacturer=Qualcomm
+PRODUCT_VENDOR_PROPERTIES += ro.soc.model=SDM670
+
 #################################################################################
 # This is the End of device-common.mk file.
 # Now, Pickup other split device-common.mk files:
@@ -1012,3 +1016,7 @@ include hardware/google/pixel/citadel/citadel.mk
 # Pixel Logger
 include hardware/google/pixel/PixelLogger/PixelLogger.mk
 #################################################################################
+
+# Set system properties identifying the chipset
+PRODUCT_VENDOR_PROPERTIES += ro.soc.manufacturer=Qualcomm
+PRODUCT_VENDOR_PROPERTIES += ro.soc.model=SDM670
