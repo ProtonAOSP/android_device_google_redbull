@@ -1,5 +1,9 @@
 // Define the soong config module for Pixel in this Android.bp
 
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
 soong_config_module_type {
     name: "pixel_sensors_cc_defaults",
     module_type: "cc_defaults",
