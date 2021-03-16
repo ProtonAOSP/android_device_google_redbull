@@ -42,6 +42,7 @@ const struct SysfsCollector::SysfsPaths sysfs_paths = {
     .UFSLifetimeA = UFSHC_PATH(health_descriptor/life_time_estimation_a),
     .UFSLifetimeB = UFSHC_PATH(health_descriptor/life_time_estimation_b),
     .UFSLifetimeC = UFSHC_PATH(health_descriptor/life_time_estimation_c),
+    .UFSHostResetPath = UFSHC_PATH(err_stats/err_host_reset),
     .F2fsStatsPath = "/sys/fs/f2fs/",
     .EEPROMPath = "/dev/battery_history"
 };
