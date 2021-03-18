@@ -79,8 +79,7 @@ int main(int /* argc */, char ** /* argv */) {
          .lastEntryPrefix = "Sleep Last Entered At:",
          .lastEntryTransform = rpmConvertToMs}};
 
-    sp<GenericStateResidencyDataProvider> rpmSdp =
-        new GenericStateResidencyDataProvider("/sys/power/rpmh_stats/master_stats");
+    auto rpmSdp = sp<GenericStateResidencyDataProvider>::make("/sys/power/rpmh_stats/master_stats");
 
     uint32_t apssId = service->addPowerEntity("APSS", PowerEntityType::SUBSYSTEM);
     rpmSdp->addEntity(apssId, PowerEntityConfig("APSS", rpmStateResidencyConfigs));
@@ -116,8 +115,7 @@ int main(int /* argc */, char ** /* argv */) {
          .totalTimePrefix = "actual last sleep(msec):",
          .lastEntrySupported = false}};
 
-    sp<GenericStateResidencyDataProvider> socSdp =
-        new GenericStateResidencyDataProvider("/sys/power/system_sleep/stats");
+    auto socSdp = sp<GenericStateResidencyDataProvider>::make("/sys/power/system_sleep/stats");
 
     uint32_t socId = service->addPowerEntity("SoC", PowerEntityType::POWER_DOMAIN);
     socSdp->addEntity(socId, PowerEntityConfig(socStateResidencyConfigs));
@@ -127,19 +125,20 @@ int main(int /* argc */, char ** /* argv */) {
     if (isDebuggable) {
         // Add WLAN power entity
         uint32_t wlanId = service->addPowerEntity("WLAN", PowerEntityType::SUBSYSTEM);
-        sp<WlanStateResidencyDataProvider> wlanSdp =
-            new WlanStateResidencyDataProvider(wlanId, "/sys/kernel/wifi/power_stats");
+        auto wlanSdp = sp<WlanStateResidencyDataProvider>::make(wlanId,
+            "/sys/kernel/wifi/power_stats");
         service->addStateResidencyDataProvider(wlanSdp);
     }
 
     uint32_t displayId = service->addPowerEntity("Display", PowerEntityType::SUBSYSTEM);
-    sp<DisplayStateResidencyDataProvider> displaySdp =
-        new DisplayStateResidencyDataProvider(displayId,
-        "/sys/class/backlight/panel0-backlight/state", {"Off", "LP", "1080x2340@60", "1080x2340@90"});
+    auto displaySdp =
+        sp<DisplayStateResidencyDataProvider>::make(displayId,
+        "/sys/class/backlight/panel0-backlight/state",
+        std::vector<std::string>{"Off", "LP", "1080x2340@60", "1080x2340@90"});
     service->addStateResidencyDataProvider(displaySdp);
 
     // Add Power Entities that require the Aidl data provider
-    sp<AidlStateResidencyDataProvider> aidlSdp = new AidlStateResidencyDataProvider();
+    auto aidlSdp = sp<AidlStateResidencyDataProvider>::make();
     uint32_t citadelId = service->addPowerEntity("Citadel", PowerEntityType::SUBSYSTEM);
     aidlSdp->addEntity(citadelId, "Citadel", {"Last-Reset", "Active", "Deep-Sleep"});
 
