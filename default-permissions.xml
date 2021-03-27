@@ -127,4 +127,9 @@
         <permission name="android.permission.ACCESS_COARSE_LOCATION" fixed="true"/>
         <permission name="android.permission.ACCESS_BACKGROUND_LOCATION" fixed="true"/>
     </exception>
+
+    <exception package="com.google.android.gnsspixelmonitor">
+        <permission name="android.permission.ACCESS_FINE_LOCATION" fixed="true"/>
+        <permission name="android.permission.ACCESS_BACKGROUND_LOCATION" fixed="true"/>
+    </exception>
 </exceptions>
