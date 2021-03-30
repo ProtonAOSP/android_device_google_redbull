@@ -154,3 +154,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/logbuffer_ttf        0640   system system
 /dev/logbuffer_wireless   0640   system system
 /dev/logbuffer_rtx        0640   system system
+
+# pixelstat
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm7250b@2:qcom,usb-pdphy@1700/usbpd0/typec/port0/port0-partner identity/id_header 0444 system system
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm7250b@2:qcom,usb-pdphy@1700/usbpd0/typec/port0/port0-partner identity/product 0444 system system
+
