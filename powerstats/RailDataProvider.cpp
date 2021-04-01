@@ -210,7 +210,6 @@ Return<void> RailDataProvider::getEnergyData(const hidl_vec<uint32_t>& railIndic
   std::lock_guard<std::mutex> _lock(mOdpm.mLock);
   Status ret = parseIioEnergyNodes();
   if (ret != Status::SUCCESS) {
-    ALOGE("Failed to getEnergyData");
     _hidl_cb(eVal, ret);
     return Void();
   }
