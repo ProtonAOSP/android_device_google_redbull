@@ -327,7 +327,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # camera enable RT thread
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.realtimethread=1
+    persist.vendor.camera.realtimethread=1
 
 # Lets the vendor library that Google Camera HWL is enabled
 PRODUCT_PROPERTY_OVERRIDES += \
