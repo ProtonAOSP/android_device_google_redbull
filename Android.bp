@@ -36,3 +36,12 @@ license {
     ],
     // large-scale-change unable to identify any license_text files
 }
+
+vintf_compatibility_matrix {
+    name: "redbull_product_compatibility_matrix.xml",
+    stem: "compatibility_matrix.redbull.xml",
+    product_specific: true,
+    srcs: [
+        "device_framework_matrix_product.xml",
+    ],
+}
