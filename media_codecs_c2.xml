@@ -215,6 +215,15 @@
             <Limit name="performance-point-1920x1080" value="120" />
             <Limit name="performance-point-1280x720" value="240" />
             <Feature name="bitrate-modes" value="VBR,CBR" />
+            <!-- Video Quality control -->
+                    <!-- QP supported using vendor extensions -->
+            <Feature name="qp-bounds" />
+            <Mapping kind="vq" name="video-qp-b-max" value="vendor.qti-ext-enc-qp-range.qp-b-max" />
+            <Mapping kind="vq" name="video-qp-b-min" value="vendor.qti-ext-enc-qp-range.qp-b-min" />
+            <Mapping kind="vq" name="video-qp-i-max" value="vendor.qti-ext-enc-qp-range.qp-i-max" />
+            <Mapping kind="vq" name="video-qp-i-min" value="vendor.qti-ext-enc-qp-range.qp-i-min" />
+            <Mapping kind="vq" name="video-qp-p-max" value="vendor.qti-ext-enc-qp-range.qp-p-max" />
+            <Mapping kind="vq" name="video-qp-p-min" value="vendor.qti-ext-enc-qp-range.qp-p-min" />
         </MediaCodec>
         <MediaCodec name="c2.qti.hevc.encoder" type="video/hevc">
             <Alias name="OMX.qcom.video.encoder.hevc" />
