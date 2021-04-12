@@ -967,10 +967,7 @@ PRODUCT_VENDOR_PROPERTIES += ro.soc.model=SDM670
 
 # Include the redbull product FCM
 # (TODO: b/169535506) This includes the FCM for system_ext and product partition.
-# Vendor Freeze system-only builds use a different FCM.
-ifneq ($(PRODUCT_VENDOR_FREEZE_SYSTEM_BUILD),true)
 PRODUCT_PACKAGES += redbull_product_compatibility_matrix.xml
-endif
 
 #################################################################################
 # This is the End of device-common.mk file.
