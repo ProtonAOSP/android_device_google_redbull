@@ -1,4 +1,4 @@
-<compatibility-matrix version="1.0" type="framework" level="5">
+<compatibility-matrix version="1.0" type="framework" level="6">
    <hal format="hidl" optional="false">
        <name>com.qualcomm.qti.imscmservice</name>
        <version>2.2</version>
@@ -46,6 +46,15 @@
         <version>1.0</version>
         <interface>
             <name>IComponentStore</name>
+            <instance>default</instance>
+            <instance>software</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="false">
+        <name>android.hardware.media.c2</name>
+        <version>1.0</version>
+        <interface>
+            <name>IConfigurable</name>
             <instance>default</instance>
             <instance>software</instance>
         </interface>
@@ -113,6 +122,14 @@
             <name>IQcRilAudio</name>
             <instance>slot1</instance>
             <instance>slot2</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="false">
+        <name>vendor.qti.hardware.radio.atcmdfwd</name>
+        <version>1.0</version>
+        <interface>
+            <name>IAtCmdFwd</name>
+            <instance>AtCmdFwdService</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="false">
@@ -194,6 +211,14 @@
         <version>4.0</version>
         <interface>
             <name>IQtiMapper</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="false">
+        <name>vendor.qti.hardware.display.mapperextensions</name>
+        <version>1.0</version>
+        <interface>
+            <name>IQtiMapperExtensions</name>
             <instance>default</instance>
         </interface>
     </hal>
