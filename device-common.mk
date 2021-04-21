@@ -38,7 +38,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/google/interfaces \
     vendor/google_devices/common/proprietary/confirmatioui_hal \
     vendor/google_nos/host/android \
-
+    vendor/google_nos/test/system-test-harness
 
 # Include GPS soong namespace
 PRODUCT_SOONG_NAMESPACES += \
