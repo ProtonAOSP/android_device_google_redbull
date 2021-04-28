@@ -422,7 +422,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # DRM HAL
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.3-service.clearkey \
+    android.hardware.drm@1.4-service.clearkey \
     android.hardware.drm@1.4-service.widevine
 
 # NFC and Secure Element packages
@@ -833,7 +833,7 @@ PRODUCT_PACKAGES += $(HIDL_WRAPPER)
 # Increment the SVN for any official public releases
 ifeq ($(PRODUCT_DEVICE_SVN_OVERRIDE),)
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.vendor.build.svn=26
+	ro.vendor.build.svn=27
 endif
 
 # Enable iwlan service logging for debug
