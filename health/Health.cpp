@@ -59,7 +59,9 @@ constexpr char kBatteryResistance[] {FG_DIR "/bms/resistance"};
 constexpr char kBatteryOCV[] {FG_DIR "/bms/voltage_ocv"};
 constexpr char kVoltageAvg[] {FG_DIR "/battery/voltage_now"};
 
-static BatteryDefender battDefender;
+#define WLC_DIR "/sys/class/power_supply/wireless"
+
+static BatteryDefender battDefender(WLC_DIR "/present");
 static BatteryThermalControl battThermalControl(
     "sys/devices/virtual/thermal/tz-by-name/soc/mode");
 static BatteryMetricsLogger battMetricsLogger(kBatteryResistance, kBatteryOCV);
@@ -76,7 +78,6 @@ constexpr char kUFSName[]{"UFS0"};
 
 constexpr char kTCPMPSYName[]{"tcpm-source-psy-usbpd0"};
 
-#define WLC_DIR "/sys/class/power_supply/wireless"
 static bool needs_wlc_updates = false;
 constexpr char kWlcCapacity[]{WLC_DIR "/capacity"};
 
@@ -118,6 +119,9 @@ static bool FileExists(const std::string &filename) {
 void private_healthd_board_init(struct healthd_config *hc) {
   hc->ignorePowerSupplyNames.push_back(android::String8(kTCPMPSYName));
   needs_wlc_updates = FileExists(kWlcCapacity);
+  if (needs_wlc_updates == false) {
+    battDefender.setWirelessNotSupported();
+  }
 }
 
 int private_healthd_board_battery_update(struct android::BatteryProperties *props) {
