@@ -159,3 +159,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm7250b@2:qcom,usb-pdphy@1700/usbpd0/typec/port0/port0-partner identity/id_header 0444 system system
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm7250b@2:qcom,usb-pdphy@1700/usbpd0/typec/port0/port0-partner identity/product 0444 system system
 
+# Input
+/sys/devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.2.auto/usb1/1-1/*/*/leds/* brightness 0660 system system
+/sys/devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.2.auto/usb1/1-1/*/*/leds/* multi_intensity 0660 system system
+
