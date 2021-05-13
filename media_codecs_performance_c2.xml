@@ -179,17 +179,17 @@
     <Encoders>
         <!-- C2 HW encoders -->
         <MediaCodec name="c2.qti.avc.encoder" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="106-234" />
-            <Limit name="measured-frame-rate-720x480" range="64-140" />
-            <Limit name="measured-frame-rate-1280x720" range="26-56" />
-            <Limit name="measured-frame-rate-1920x1080" range="20-44" />
+            <Limit name="measured-frame-rate-320x240" range="210-390" />
+            <Limit name="measured-frame-rate-720x480" range="180-280" />
+            <Limit name="measured-frame-rate-1280x720" range="85-151" />
+            <Limit name="measured-frame-rate-1920x1080" range="50-90" />
         </MediaCodec>
         <MediaCodec name="c2.qti.hevc.encoder" type="video/hevc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="309-310" /><!-- Manual N=20 -->
-            <Limit name="measured-frame-rate-720x480" range="124-126" /><!-- Manual N=20 -->
-            <Limit name="measured-frame-rate-1280x720" range="93-124" /><!-- Manual N=20 -->
-            <Limit name="measured-frame-rate-1920x1080" range="82-87" /><!-- Manual N=20 -->
-            <Limit name="measured-frame-rate-3840x2160" range="11-25" /><!-- Manual N=20 -->
+            <Limit name="measured-frame-rate-320x240" range="210-390" /><!-- Manual N=20 -->
+            <Limit name="measured-frame-rate-720x480" range="180-280" /><!-- Manual N=20 -->
+            <Limit name="measured-frame-rate-1280x720" range="85-151" /><!-- Manual N=20 -->
+            <Limit name="measured-frame-rate-1920x1080" range="50-90" /><!-- Manual N=20 -->
+            <Limit name="measured-frame-rate-3840x2160" range="18-30" /><!-- Manual N=20 -->
         </MediaCodec>
         <MediaCodec name="c2.qti.vp8.encoder" type="video/x-vnd.on2.vp8" update="true">
             <Limit name="measured-frame-rate-320x180" range="429-461" /><!-- Manual N=20 -->
