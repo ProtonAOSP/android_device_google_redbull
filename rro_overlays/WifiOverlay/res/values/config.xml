@@ -116,4 +116,7 @@
          b/160239223: Rx time is excluded in cca busy time and channel utilization is calculated
          correctly during heavy DL traffic -->
     <bool translatable="false" name="config_wifiChannelUtilizationOverrideEnabled">false</bool>
+
+    <!-- Whether to use the explicit vendor HAL API: IWifiStaIface.setRoamingState for disabling fw roaming. -->
+    <bool translatable="false" name="config_wifiUseHalApiToDisableFwRoaming">true</bool>
 </resources>
