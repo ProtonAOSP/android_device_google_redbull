@@ -71,7 +71,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.vendor.debug.sensors.accel_cal=1
 
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.vendor.testing_battery_profile=0
+    persist.vendor.testing_battery_profile=2
 
 # The default value of this variable is false and should only be set to true when
 # the device allows users to retain eSIM profiles after factory reset of user data.
