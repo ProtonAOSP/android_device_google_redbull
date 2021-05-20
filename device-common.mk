@@ -502,16 +502,10 @@ PRODUCT_PACKAGES += \
     libmmcamera_interface \
     libcameradepthcalibrator
 
-SOONG_CONFIG_NAMESPACES += gch
-SOONG_CONFIG_gch += \
-    feature \
-# Use legacy common hal module.
-SOONG_CONFIG_gch_feature := use_legacy_hal
-
 # Google Camera HAL test libraries in debug builds
 PRODUCT_PACKAGES_DEBUG += \
     libgoogle_camera_hal_proprietary_tests \
-    libgoogle_camera_hal_tests.vendor
+    libgoogle_camera_hal_tests
 
 PRODUCT_PACKAGES += \
     fs_config_dirs \
@@ -838,7 +832,7 @@ PRODUCT_PACKAGES += $(HIDL_WRAPPER)
 # Increment the SVN for any official public releases
 ifeq ($(PRODUCT_DEVICE_SVN_OVERRIDE),)
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.vendor.build.svn=27
+	ro.vendor.build.svn=28
 endif
 
 # Enable iwlan service logging for debug
