@@ -515,7 +515,9 @@ PRODUCT_PACKAGES += \
 ENABLE_VENDOR_RIL_SERVICE := true
 
 HOSTAPD := hostapd
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 HOSTAPD += hostapd_cli
+endif
 PRODUCT_PACKAGES += $(HOSTAPD)
 
 WPA := wpa_supplicant.conf
@@ -842,7 +844,7 @@ PRODUCT_PACKAGES += $(HIDL_WRAPPER)
 # Increment the SVN for any official public releases
 ifeq ($(PRODUCT_DEVICE_SVN_OVERRIDE),)
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.vendor.build.svn=25
+	ro.vendor.build.svn=27
 endif
 
 # Enable iwlan service logging for debug
