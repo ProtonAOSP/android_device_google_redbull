@@ -1030,7 +1030,3 @@ ifneq ($(wildcard vendor/),)
 -include $(LOCAL_PATH)/redbull_allowlist.mk
 endif
 #################################################################################
-
-# Set system properties identifying the chipset
-PRODUCT_VENDOR_PROPERTIES += ro.soc.manufacturer=Qualcomm
-PRODUCT_VENDOR_PROPERTIES += ro.soc.model=SDM670
