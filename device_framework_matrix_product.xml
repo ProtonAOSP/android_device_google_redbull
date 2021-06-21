@@ -9,7 +9,7 @@
    </hal>
     <hal format="hidl" optional="false">
         <name>com.qualcomm.qti.uceservice</name>
-        <version>2.2</version>
+        <version>2.3</version>
         <interface>
             <name>IUceService</name>
             <instance>com.qualcomm.qti.uceservice</instance>
