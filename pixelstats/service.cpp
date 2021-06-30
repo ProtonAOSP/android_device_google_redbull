@@ -46,9 +46,9 @@ const struct SysfsCollector::SysfsPaths sysfs_paths = {
     .F2fsStatsPath = "/sys/fs/f2fs/",
     .EEPROMPath = "/dev/battery_history"
 };
-
-const char *const kAudioUevent = "/kernel/q6audio/q6voice_uevent";
-const char *const kSSOCDetailsPath = "/sys/class/power_supply/battery/ssoc_details";
+const struct UeventListener::UeventPaths ueventPaths = {
+    .AudioUevent = "/kernel/q6audio/q6voice_uevent",
+    .WirelessChargerPtmcUevent = "POWER_SUPPLY_PTMC_ID="};
 
 int main() {
     LOG(INFO) << "starting PixelStats";
@@ -60,7 +60,7 @@ int main() {
         return 1;
     }
 
-    UeventListener ueventListener(kAudioUevent, kSSOCDetailsPath);
+    UeventListener ueventListener(ueventPaths);
     std::thread listenThread(&UeventListener::ListenForever, &ueventListener);
     listenThread.detach();
 
