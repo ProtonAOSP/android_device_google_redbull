@@ -968,7 +968,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Set system properties identifying the chipset
 PRODUCT_VENDOR_PROPERTIES += ro.soc.manufacturer=Qualcomm
-PRODUCT_VENDOR_PROPERTIES += ro.soc.model=SDM7250
+PRODUCT_VENDOR_PROPERTIES += ro.soc.model=SM7250
 
 # Include the redbull product FCM
 # (TODO: b/169535506) This includes the FCM for system_ext and product partition.
