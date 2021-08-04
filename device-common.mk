@@ -100,6 +100,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_SHIPPING_API_LEVEL := 30
+BOARD_SHIPPING_API_LEVEL := 30
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
