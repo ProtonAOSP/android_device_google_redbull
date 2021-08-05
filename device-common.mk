@@ -38,7 +38,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/qcom/sm7250/display \
     vendor/google/camera \
     vendor/qcom/sm7250 \
-    vendor/google/interfaces
+    vendor/google/interfaces \
+    vendor/qcom/opensource/commonsys-intf/display \
 
 # Include GPS soong namespace
 PRODUCT_SOONG_NAMESPACES += \
@@ -531,7 +532,6 @@ endif
 
 # Wifi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
     wificond \
     libwpa_client \
     WifiOverlay
@@ -985,6 +985,97 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Enable missing props
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.opa.eligible_device=true
+
+# Vendor build.prop
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.crypto.dm_default_key.options_format.version=2 \
+    persist.vendor.sensors.odl.adsp=true \
+    persist.vendor.sensors.allow_non_default_discovery=true \
+    ro.hardware.egl=adreno \
+    ro.hardware.vulkan=adreno \
+    drm.service.enabled=true \
+    media.mediadrmservice.enable=true \
+
+# product
+PRODUCT_PACKAGES += \
+    libhidltransport.product \
+
+# system_ext
+PRODUCT_PACKAGES += \
+    libgralloc.qti \
+    libqdMetaData \
+    vendor.display.config@1.0 \
+    vendor.display.config@1.1 \
+    vendor.display.config@1.2 \
+    vendor.display.config@1.3 \
+    vendor.display.config@1.4 \
+    vendor.display.config@1.5 \
+    vendor.display.config@1.6 \
+    vendor.display.config@1.7 \
+    vendor.display.config@1.8 \
+    vendor.qti.hardware.systemhelper@1.0 \
+
+# vendor
+PRODUCT_PACKAGES += \
+    android.hardware.identity-support-lib.vendor:64 \
+    android.hardware.sensors@2.0-ScopedWakelock.vendor \
+    android.hardware.sensors@2.0-service.multihal \
+    chre \
+    flp.conf \
+    libavservices_minijail.vendor:64 \
+    libcld80211:32 \
+    libcodec2_hidl@1.0.vendor:64 \
+    libcodec2_vndk.vendor \
+    libcppbor.vendor:64 \
+    libdisplayconfig.qti.vendor:32 \
+    libgooglecamerahal.vendor:32 \
+    libgooglecamerahalutils.vendor:32 \
+    libhwbinder.vendor \
+    libjson \
+    libkeymaster_messages.vendor:64 \
+    libkeymaster_portable.vendor:64 \
+    libmedia_ecoservice.vendor \
+    libnetfilter_conntrack:64 \
+    libnfnetlink:64 \
+    libnos:64 \
+    libnos_client_citadel:64 \
+    libnos_datagram:64 \
+    libnos_datagram_citadel:64 \
+    libnos_transport:64 \
+    libnosprotos:64 \
+    libprotobuf-cpp-full-vendorcompat \
+    libpuresoftkeymasterdevice.vendor:64 \
+    libqdutils:32 \
+    libqservice:32 \
+    libqti_vndfwk_detect.vendor:32 \
+    libsoft_attestation_cert.vendor:64 \
+    libstagefright_bufferpool@2.0.1.vendor \
+    libteeui_hal_support.vendor:64 \
+    libtinycompress \
+    libtinyxml \
+    libvndfwk_detect_jni.qti.vendor \
+    libwifi-hal-ctrl \
+    libwifi-hal-qcom \
+    libwifi-hal:64 \
+    nos_app_avb:64 \
+    nos_app_identity:64 \
+    nos_app_keymaster:64 \
+    nos_app_weaver:64 \
+    vendor.display.config@1.0.vendor \
+    vendor.display.config@1.1.vendor \
+    vendor.display.config@1.2.vendor \
+    vendor.display.config@1.3.vendor \
+    vendor.display.config@1.4.vendor:64 \
+    vendor.display.config@1.5.vendor:64 \
+    vendor.display.config@1.6.vendor:64 \
+    vendor.display.config@1.7.vendor:64 \
+    vendor.display.config@1.8.vendor:64 \
+    vendor.display.config@1.9.vendor:64 \
+    vendor.display.config@2.0.vendor:32 \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
+    vendor.qti.hardware.camera.postproc@1.0.vendor:64 \
+    vendor.qti.hardware.display.mapper@1.0.vendor:64 \
+    vendor.qti.hardware.systemhelper@1.0.vendor \
 
 #################################################################################
 # This is the End of device-common.mk file.
