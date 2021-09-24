@@ -482,6 +482,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.media.omx=0 \
 
+# Media Performance Class 11
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.odm.build.media_performance_class=30
+
 # Enable ECO service
 QC2_HAVE_ECO_SERVICE := true
 
