@@ -89,10 +89,14 @@
     <exception package="com.google.android.apps.cbrsnetworkmonitor">
         <!-- Location access to create CBRS geofences-->
         <permission name="android.permission.ACCESS_FINE_LOCATION" fixed="true"/>
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" fixed="true"/>
         <permission name="android.permission.ACCESS_BACKGROUND_LOCATION" fixed="true"/>
     </exception>
 
     <exception package="com.google.android.apps.scone">
+        <!-- Location access to determine proximity to a CBRS network coverage area -->
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" fixed="false"/>
+        <permission name="android.permission.ACCESS_BACKGROUND_LOCATION" fixed="false"/>
         <!-- Used to call ActivityTransition API for Smart OOS & Smart PNO -->
         <permission name="android.permission.ACTIVITY_RECOGNITION" fixed="false"/>
     </exception>
