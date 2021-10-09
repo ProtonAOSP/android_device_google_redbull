@@ -83,6 +83,9 @@ endif
 ifneq ($(PRODUCT_BUILD_SYSTEM_EXT_IMAGE),false)
 AB_OTA_PARTITIONS += system_ext
 endif
+ifneq ($(PRODUCT_BUILD_VENDOR_IMAGE),false)
+AB_OTA_PARTITIONS += vendor
+endif
 ifneq ($(PRODUCT_BUILD_BOOT_IMAGE),false)
 AB_OTA_PARTITIONS += boot
 endif
