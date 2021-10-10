@@ -282,9 +282,6 @@ on late-fs
     # Init sensor specific services
     start init-sensors-sh
 
-    # Start the twoshay touch service
-    start twoshay
-
     # turn off vblank irq immediately after turning off
     write /sys/module/drm/parameters/vblankoffdelay -1
 
@@ -783,10 +780,6 @@ service loc_launcher /vendor/bin/loc_launcher
 on property:vendor.all.modules.ready=1
     chown system input /dev/touch_offload
     chmod 660 /dev/touch_offload
-
-# Conditionally enable the twoshay touch service
-on property:persist.vendor.enable_twoshay=1
-    enable twoshay
 
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/dumpstate -d -p -z
