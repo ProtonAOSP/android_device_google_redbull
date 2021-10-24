@@ -1019,7 +1019,6 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1.vendor:64 \
     android.hardware.biometrics.fingerprint@2.2.vendor:64 \
     android.hardware.bluetooth@1.0.vendor \
-    android.hardware.confirmationui@1.0.vendor:64 \
     android.hardware.gatekeeper@1.0.vendor \
     android.hardware.identity-support-lib.vendor:64 \
     android.hardware.identity_credential.xml \
@@ -1094,7 +1093,6 @@ PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor:32 \
     libsoft_attestation_cert.vendor:64 \
     libstagefright_bufferpool@2.0.1.vendor \
-    libteeui_hal_support.vendor:64 \
     libtinycompress \
     libvndfwk_detect_jni.qti.vendor \
     libwifi-hal-ctrl \
