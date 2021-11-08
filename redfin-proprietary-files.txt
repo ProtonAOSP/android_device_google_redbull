@@ -687,6 +687,7 @@ product/lib/libdmjavaplugin.so
 -vendor/etc/vintf/manifest/manifest_input.classifier-service.xml
 -vendor/etc/vintf/manifest/manifest_wifi_ext.xml
 -vendor/etc/vintf/manifest/rebootescrow-citadel.xml
+-vendor/etc/vintf/manifest/vendor.google.wireless_charger@1.3-service-vendor.xml
 -vendor/framework/com.google.android.camera.experimental2020.jar
 vendor/bin/adpl
 vendor/bin/adsprpcd
